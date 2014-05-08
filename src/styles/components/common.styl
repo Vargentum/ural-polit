@@ -1,6 +1,9 @@
+/*------------------------------------*\
+    HEADER
+\*------------------------------------*/
 .l-header
   background-color: $body-bg-contrast
-  border-bottom: 1px solid #a8a8ad
+  border-bottom: 1px solid $gray-light
   padding: 10px 0 15px
 
   .articles-list
@@ -28,11 +31,47 @@
   margin: 12px 0
 
 
-.logo
+/*------------------------------------*\
+    FOOTER
+\*------------------------------------*/
+.l-footer
+  background-color: $body-bg-contrast
+  padding-bottom: 15px
+
+.l-footer__main
+  @extend .l-header__main
+
+.l-footer__btm
+  position relative
+  border-top: 1px solid $gray-light
+  make-row()
+  color: $gray-light;
   margin-top: 10px
+  padding-top: 15px
+  font-size: 12px
+  line-height: 1.2;
+
+  &>*
+    make-lg-column(5)
+
+  p
+    margin: 0
+
+  a
+    color $gray
+    text-decoration: underline;
+    &:hover,&:focus
+      text-decoration: none;
+
+/*------------------------------------*\
+    COMPONENTS
+\*------------------------------------*/
+.logo
   make-lg-column(3)
+  margin-top: 10px
   &:hover,&:focus
     text-decoration: none;
+
 
 
 .widget-date
@@ -123,6 +162,12 @@ for $item in $exchange-fluctuations
       sprite: $icon-rss
       margin-right: 2px
 
+
+
+  .l-footer &
+    @extend .l-header__main__right
+    position relative
+    top 59px
 
 .project-search
   reset-box-model()
@@ -222,3 +267,15 @@ for $item in $exchange-fluctuations
 
   a
     color: inherit;
+
+.web-counters
+  reset-list()
+  make-lg-column(6)
+  padding: 0
+  margin-top: 10px
+
+  li
+    display inline-block
+    size 90px 30px
+    margin-top: 4px
+
