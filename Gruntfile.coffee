@@ -118,13 +118,26 @@ module.exports = (grunt) ->
           silent: true
           filenameSuffix: ".html"
 
+
+    sprite:
+      icons:
+        src: ['<%= project.assets %>/img/icons/*.png']
+        destImg: '<%= project.assets %>/img/<%= pkg.name %>-icons.png'
+        destCSS: '<%= project.styles %>/core/sprite.styl'
+        imgPath: '../img/<%= pkg.name %>-icons.png'
+        algorithm: 'binary-tree'
+        padding: 2
+        engine: 'pngsmith'
+        cssFormat: 'stylus'
+
+
     open:
       server:
         path: "http://localhost:<%= connect.options.port %>"
 
     watch:
       stylus:
-        files: "<%= project.styles %>{,*/}*.styl"
+        files: "<%= project.styles %>/{,*/}*.styl"
         tasks: ["process-styles"]
 
       plugins:
@@ -138,6 +151,10 @@ module.exports = (grunt) ->
       includes:
         files: "<%= project.views %>"
         tasks: ["process-html"]
+
+      icons:
+        files: '<%= sprite.icons.src %>'
+        tasks: ['make-sprite']
 
       livereload:
         options:
@@ -163,12 +180,17 @@ module.exports = (grunt) ->
     "coffee"
     "uglify:components"
   ]
+  grunt.registerTask "make-sprite", [
+    "sprite"
+  ]
+
   grunt.registerTask "build", [
     "concat"
     "process-styles"
     "process-html"
     "process-plugins"
     "process-components"
+    "make-sprite"
   ]
   grunt.registerTask "default", ["build"]
   grunt.registerTask "server", [
