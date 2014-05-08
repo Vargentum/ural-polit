@@ -1,0 +1,224 @@
+.l-header
+  background-color: $body-bg-contrast
+  border-bottom: 1px solid #a8a8ad
+  padding: 10px 0 15px
+
+  .articles-list
+    @extend .list-group
+    make-row()
+    margin-top: 20px
+    margin-bottom: 20px
+
+    li
+      make-lg-column(2)
+
+
+
+.l-header__main
+  make-row()
+  border-top: 10px solid #51525c
+
+.l-header__main__right
+  make-lg-column(7)
+  padding-left: 30px
+
+
+.l-header__main__row
+  jLine middle
+  margin: 12px 0
+
+
+.logo
+  margin-top: 10px
+  make-lg-column(3)
+  &:hover,&:focus
+    text-decoration: none;
+
+
+.widget-date
+  font-size: 11px;
+  color: $text-color
+
+
+.widget-weather
+  hLine()
+  font-size: 11px;
+  color: $gray-light
+
+$weather-types = day $weather-day,
+                 night $weather-night
+
+for $item in $weather-types
+  .widget-weather__{$item[0]}
+    color: $text-color;
+    &:before
+      pi middle
+      position relative
+      top -3px
+      margin: 0 2px 0 5px
+      sprite $item[1]
+
+
+
+
+.widget-currency
+  hLine()
+  color: $gray-light
+  font-size: 12px
+
+$available-currencies = dollar $currency-dollar,
+                        euro   $currency-euro,
+                        rouble $currency-rouble
+
+for $item in $available-currencies
+  .widget-currency__{$item[0]}
+    &:after
+      pi middle
+      position relative
+      top -1px
+      sprite: $item[1]
+
+$exchange-fluctuations = up down
+
+for $item in $exchange-fluctuations
+  .widget-currency__exchange--{$item}
+    &:before
+      pi middle
+      position relative
+      top -2px
+      @extend .caret
+      margin: 0 3px 0 5px
+      border-left-width  4px
+      border-right-width 4px
+
+    if $item == up
+      color $brand-success
+      margin-right: 20px
+      &:before
+        transform rotate(180deg)
+
+    else if $item == down
+      color $brand-danger
+
+
+
+.project-nav
+  color $gray-light
+  font-size: 11px
+  text-transform: uppercase;
+
+  ul
+    reset-list()
+
+  li
+    display inline-block
+    margin-right: 25px
+
+  a
+    color inherit
+
+  .rss
+    &:before
+      pi()
+      sprite: $icon-rss
+      margin-right: 2px
+
+
+.project-search
+  reset-box-model()
+  size: 320px 30px
+  position relative
+
+  &:after
+    pb(left 5px top 50%)
+    sprite $icon-search
+    transform translateY(-50%)
+
+  input
+    absolute left top
+    size 100%
+    @extend .form-control
+    background-color: $body-bg-contrast
+    padding: 0 30px
+
+  button
+    absolute right 10px top 50%
+    transform translateY(-50%)
+    background-color: transparent
+    @extend .text-hide
+    sprite $icon-enter
+
+
+
+.set-region
+  make-row()
+  margin: 0 0 15px
+  font-weight: 700
+  ul
+    reset-list()
+
+  li
+    display inline-block
+    margin-right: 10px
+
+  a
+    pressable()
+    display block
+    padding: 5px 10px
+    color inherit
+    border $input-border
+    border-radius 1px
+
+
+.top-news
+  reset-list()
+  make-row()
+  margin-bottom: 15px
+
+  li
+    make-lg-column(3.33)
+
+.top-news__article
+  display block
+  height: 100px
+  position relative
+  text-decoration: none;
+  padding: 10px
+  font-size: 15px
+  font-weight: 700
+  color: $body-bg
+  pressable()
+
+  &:hover,&:focus
+    color: $body-bg;
+
+  .flexbox &
+    display flex
+    align-items flex-end
+
+  img
+    absolute left top
+    display block
+    size 100%
+
+  span
+    position relative
+    z-index: 1
+
+
+.project-catalog
+  make-row()
+  padding: 5px 0
+  text-transform: uppercase;
+  font-size: 17px
+  font-weight: 700
+
+  ul
+    reset-list()
+
+  li
+    margin-left: 25px
+    display inline-block
+
+  a
+    color: inherit;

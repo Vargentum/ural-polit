@@ -13,7 +13,7 @@
   <!--allows ie8 users to use Google Chrome Frame plugin in our browser-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <!--Analytics include-->	
+  <!--Analytics include-->
   <link href="//www.google-analytics.com" rel="dns-prefetch">
   <link href="//ajax.googleapis.com" rel="dns-prefetch">
   <!--CSS include-->
@@ -24,93 +24,139 @@
 <body itemscope itemtype='http://schema.org/WebPage'>
 
 <!--HEADER start-->
-<header class="container">
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brand</a>
-      </div>
+<header class="l-header">
+  <div class="container">
+    <div class="row">
+      <img class="img-responsive" src="http://fakeimg.pl/1000x90/?text=1000x90">
+    </div>
+    <ul class="articles-list">
+      <li>
+        <a class="article">
+          <time>18.03</time>
+          <div>СКР: Ярош и Тягнибок воевали против россиян в Чечне</div>
+        </a>
+      </li>
+      <li>
+        <a class="article">
+          <time>18.03</time>
+          <div>СКР: Ярош и Тягнибок воевали против россиян в Чечне</div>
+        </a>
+      </li>
+      <li>
+        <a class="article">
+          <time>18.03</time>
+          <div>СКР: Ярош и Тягнибок воевали против россиян в Чечне</div>
+        </a>
+      </li>
+      <li>
+        <a class="article">
+          <time>18.03</time>
+          <div>СКР: Ярош и Тягнибок воевали против россиян в Чечне</div>
+        </a>
+      </li>
+      <li>
+        <a class="article">
+          <time>18.03</time>
+          <div>СКР: Ярош и Тягнибок воевали против россиян в Чечне</div>
+        </a>
+      </li>
+    </ul>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+    <div class="l-header__main">
+      <!--logo-->
+      <a class="logo" href="/" itemprop='url'>
+        <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
+        <span class="text-hide" itemprop="name">УралПолит.ru</span>
+        <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
+      </a>
+
+      <div class="l-header__main__right">
+        <div class="l-header__main__row">
+          <time class="widget-date">14 апреля 2014 года</time>
+          <div class="widget-weather">
+            <span>Погода:</span>
+            <span class="widget-weather__day">+5°С</span>
+            <span class="widget-weather__night">−3°С</span>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+          <div class="widget-currency">
+            <div>
+              <span class="widget-currency__dollar">1</span>
+              =
+              <span class="widget-currency__rouble">36.0000</span>
+              <span class="widget-currency__exchange--up">+0.1825</span>
+            </div>
+            <div>
+              <span class="widget-currency__euro">1</span>
+              =
+              <span class="widget-currency__rouble">36.0000</span>
+              <span class="widget-currency__exchange--down">-0.1825</span>
+            </div>
+
+          </div>
+        </div>
+        <div class="l-header__main__row">
+          <nav class="project-nav">
+            <ul>
+              <li><a href="#">О проекте</a></li>
+              <li><a href="#">Реклама</a></li>
+              <li><a href="#">Подписка</a></li>
+              <li><a class="rss" href="#">RSS</a></li>
             </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+          </nav>
+          <form class="project-search">
+            <input type="text" placeholder="Поиск">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <nav class="set-region">
+      <ul>
+        <li><a href="#">Свердловская область</a></li>
+        <li><a href="#">Челябинская область</a></li>
+        <li><a href="#">Курганская область</a></li>
+        <li><a href="#">Тюменская область</a></li>
+        <li><a href="#">ХМАО</a></li>
+        <li><a href="#">ЯНАО</a></li>
+      </ul>
+    </nav>
+
+    <ul class="top-news">
+      <li>
+        <a href="#" class="top-news__article">
+          <img src="http://fakeimg.pl/320x100/?text=320x100">
+          <span>Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="top-news__article">
+          <img src="http://fakeimg.pl/320x100/?text=320x100">
+          <span>Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="top-news__article">
+          <img src="http://fakeimg.pl/320x100/?text=320x100">
+          <span>Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</span>
+        </a>
+      </li>
+    </ul>
+
+    <nav class="project-catalog">
+      <ul>
+        <li><a href="#">Личный взгляд</a></li>
+        <li><a href="#">Спецпроекты</a></li>
+        <li><a href="#">Слухи</a></li>
+        <li><a href="#">Фоторепортаж</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 <!--HEADER end-->
 
 <!--MAIN start-->
 <main class="container">
-
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-      <span class="sr-only">60% Complete</span>
-    </div>
-  </div>
-
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-      60%
-    </div>
-  </div>
-
-  <div class="jumbotron">
-    <h1>Hello, world!</h1>
-    <p>...</p>
-    <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-  </div>
-
-  <ul class="pagination">
-    <li><a href="#">&laquo;</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">&raquo;</a></li>
-  </ul>
 
 </main>
 <!--MAIN end-->

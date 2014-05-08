@@ -58,10 +58,13 @@ center-block() {
 }
 
 // Sizing shortcutss
-size(w, h) {
-  width: w;
-  height: h;
-}
+size()
+  if length(arguments) == 1
+    width: arguments[0]
+    height: arguments[0]
+  else
+    width: arguments[0]
+    height: arguments[1]
 
 square(l) {
   size(l,l);
@@ -164,8 +167,8 @@ border-left-radius(radius) {
 //           transition: transform trans;
 // }
 
-// Transformations
-rotate(degrees) {
+// Transformations (DISABLED - autoprefixer done with this)
+/*rotate(degrees) {
   -webkit-transform: s("rotate(%s)", degrees);
       -ms-transform: s("rotate(%s)", degrees); // IE9+
           transform: s("rotate(%s)", degrees);
@@ -199,7 +202,7 @@ rotateY(deg) {
   -webkit-transform: s("rotateY(%s)", deg);
       -ms-transform: s("rotateY(%s)", deg); // IE9 only
           transform: s("rotateY(%s)", deg);
-}
+}*/
 // perspective(p) {
 //   -webkit-perspective: p;
 //      -moz-perspective: p;
@@ -914,3 +917,206 @@ input-size(input-height, padding-vertical, padding-horizontal, font-size, line-h
     height: auto;
   }
 }
+
+
+
+
+//
+// CUSTOM MIXINS
+// --------------------------------------------------
+/*------------------------------------*\
+    Some mixins from Nib library
+\*------------------------------------*/
+border(color, args...)
+  if color is a 'color'
+    border: 1px solid color args
+  else
+    border: arguments
+
+replace-text(image, x=50%, y=50%)
+  hide-text()
+  background-image image
+  background-repeat no-repeat
+  background-position x y
+
+-pos(type, args)
+  i = 0
+  position: unquote(type)
+  for j in (1..4)
+    if length(args) > i
+      {args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+    i += 1
+
+fixed()
+  -pos('fixed', arguments)
+
+absolute()
+  -pos('absolute', arguments)
+
+relative()
+  -pos('relative', arguments)
+
+
+/*------------------------------------*\
+  Shortcuts for pseudo-elements
+\*------------------------------------*/
+pb()
+  content: '';
+  display: block;
+  absolute: arguments
+
+pi($align = auto)
+  content: '';
+  display: inline-block;
+  vertical-align $align
+
+
+/*------------------------------------*\
+  Quick image insert
+\*------------------------------------*/
+img($name, $position = '50% 50%', $repeat = no-repeat)
+  background-image data($img-path + $name)
+  background-repeat $repeat
+  background-position unquote($position)
+
+
+/*------------------------------------*\
+    Layout helpers
+\*------------------------------------*/
+hLine($align = baseline)
+  &>*
+    display: inline-block
+    vertical-align: $align
+
+  if $align == none
+    &>*
+      display: block
+      vertical-align: auto
+      vertical-align: initial
+
+
+jLine($align = baseline)
+  .flexbox &
+    display flex
+    justify-content space-between
+    align-items $align
+    if $align == top
+      align-items flex-start
+    if $align == bottom
+      align-items flex-end
+    if $align == middle
+      align-items center
+  .no-flexbox &
+    hLine $align
+    if $align == stretch
+      hLine middle
+    text-align: justify
+    font-size: 1px
+    line-height: 0
+    text-justify: newspaper
+    zoom: 1
+    text-align-last: justify
+    &:after
+      pi()
+      height: 0
+      overflow: hidden
+      visibility: hidden
+      width: 100%
+    &>*
+      text-align: left
+      font-size: $base-f-size
+      line-height: $base-f-height
+
+
+vAlign($type = middle, $full = true)
+  hLine $type
+  &:after
+    pi $type
+    size: 0 100%
+  //prevent bugs on small screens
+  white-space nowrap
+  &>*
+    white-space normal
+    if $full == true
+      width: 100%
+
+
+/*------------------------------------*\
+    Unsorted
+\*------------------------------------*/
+test($color = red)
+  border $color !important
+
+trans()
+  transition-property arguments[0]
+  if arguments[1] == true
+    transition-duration arguments[1]
+  else
+    transition-duration $transition-duration
+
+
+
+/*------------------------------------*\
+    Resetting
+\*------------------------------------*/
+nested-reset()
+  div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+  pre, a, abbr, acronym, address, code, del, dfn, em, img,
+  dl, dt, dd, ol, ul, li, fieldset, form, label,
+  legend, caption, tbody, tfoot, thead, tr
+    reset-box-model()
+    reset-font()
+  table
+    reset-table()
+  caption, th, td
+    reset-table-cell()
+  a img
+    border: none
+
+reset-box-model()
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+
+reset-font()
+  font-weight: inherit
+  font-style: inherit
+  font-family: inherit
+  font-size: 100%
+  vertical-align: baseline
+
+reset-body()
+  line-height: 1
+  color: black
+  background: white
+
+reset-table()
+  border-collapse: separate
+  border-spacing: 0
+  vertical-align: middle
+
+reset-table-cell()
+  text-align: left
+  font-weight: normal
+  vertical-align: middle
+
+reset-html5()
+  article, aside, canvas, details, figcaption,
+  figure, footer, header, hgroup, menu, nav,
+  section, summary, main
+    reset-box-model()
+    display: block
+  audio, canvas, video
+    display inline-block
+  audio:not([controls]),[hidden]
+    display none
+
+
+reset-list()
+  reset-box-model()
+  list-style-type none
+
+pressable($deep = 2px)
+  &:active
+    transform translateY($deep)
