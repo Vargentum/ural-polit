@@ -446,3 +446,31 @@ form-inline() {
     right: ($grid-gutter-width / 2);
   }
 }
+
+
+/*Custom radio and checkbox inputs (choise input)*/
+.custom-choise-input
+  display block
+  cursor pointer
+
+  input[type=radio],
+  input[type=checkbox]
+    display none
+
+
+.custom-choise-input__label
+  display block
+  position relative
+  padding-left: 30px
+  &:before
+    pb(left top)
+    size 20px
+    sprite $input-choise
+
+  input[type=radio]:checked ~ &
+    &:before
+      sprite $input-radio
+
+  input[type=checkbox]:checked ~ &
+    &:before
+      sprite $input-checkbox

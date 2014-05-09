@@ -14,9 +14,9 @@
   vertical-align: middle;
   cursor: pointer;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   white-space: nowrap;
-  button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+  button-size($padding-base-vertical / 2, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
   user-select none;
 
   &:focus,
@@ -74,6 +74,14 @@
 .btn-danger {
   button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
+
+
+.btn-serv
+  button-variant($body-bg, $text-color, $text-color);
+  font-size: 11px
+  text-transform: uppercase;
+  padding: ($padding-base-vertical / 3)  ($padding-base-horizontal / 3)
+  font-weight: 400
 
 
 // Link buttons

@@ -11,13 +11,13 @@ $gray-darker ?=            lighten(#000, 13.5%); // #222
 $gray-dark ?=              lighten(#000, 20%);   // #333
 $gray ?=                   lighten(#000, 33.5%); // #555
 $gray-light ?=             lighten(#000, 60%);   // #999
-$gray-lighter ?=           lighten(#000, 93.5%); // #eee
+$gray-lighter ?=           lighten(#000, 65%); // #eee
 
-$brand-primary ?=         #428bca;
-$brand-success ?=         #5cb85c;
-$brand-info ?=            #5bc0de;
+$brand-primary ?=         #c41b1a;
+$brand-success ?=         #83a575;
+$brand-info ?=            #999;
 $brand-warning ?=         #f0ad4e;
-$brand-danger ?=          #d9534f;
+$brand-danger ?=          #c5666a;
 
 
 //== Scaffolding
@@ -25,12 +25,14 @@ $brand-danger ?=          #d9534f;
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg ?=               #fff;
+$body-bg ?=               #ffffff;
+$body-bg-contrast ?=      #f6f6f7;
+
 //** Global text color on `<body>`.
-$text-color ?=            $gray-dark;
+$text-color ?=            #51515b;
 
 //** Global textual link color.
-$link-color ?=            $brand-primary;
+$link-color ?=            $text-color;
 //** Link hover color set via `darken()` function.
 $link-hover-color ?=      darken($link-color, 15%);
 
@@ -39,11 +41,13 @@ $link-hover-color ?=      darken($link-color, 15%);
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif ?=  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif ?=  "PT Sans", sans-serif;
 $font-family-serif ?=       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace ?=   Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base ?=        $font-family-sans-serif;
+$font-family-secondary ?=   Arial, "Helvetica Neue", Helvetica, sans-serif;
+
 
 $font-size-base ?=          14px;
 $font-size-large ?=         ceil(($font-size-base * 1.25)); // ~18px
@@ -63,7 +67,7 @@ $line-height-computed ?=    floor(($font-size-base * $line-height-base)); // ~20
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family ?=    inherit;
-$headings-font-weight ?=    500;
+$headings-font-weight ?=    700;
 $headings-line-height ?=    1.1;
 $headings-color ?=          inherit;
 
@@ -71,7 +75,7 @@ $headings-color ?=          inherit;
 //-- Iconography
 //
 //## Specify custom locations of the include Glyphicons icon font. Useful for those including Bootstrap via Bower.
-
+$img-path ?=                "../img/"
 $icon-font-path ?=          "../fonts/";
 $icon-font-name ?=          "glyphicons-halflings-regular";
 $icon-font-svg-id ?=        "glyphicons_halflingsregular";
@@ -95,8 +99,8 @@ $padding-xs-horizontal ?=     5px;
 $line-height-large ?=         1.33;
 $line-height-small ?=         1.5;
 
-$border-radius-base ?=        4px;
-$border-radius-large ?=       6px;
+$border-radius-base ?=        1px;
+$border-radius-large ?=       5px;
 $border-radius-small ?=       3px;
 
 //** Global color for active items (e.g., navs or dropdowns).
@@ -105,9 +109,9 @@ $component-active-color ?=    #fff;
 $component-active-bg ?=       $brand-primary;
 
 //** Width of the `border` for generating carets that indicator dropdowns.
-$caret-width-base ?=          4px;
+$caret-width-base ?=          5px;
 //** Carets increase slightly in size for larger components.
-$caret-width-large ?=         5px;
+$caret-width-large ?=         4px;
 
 
 //== Tables
@@ -135,11 +139,11 @@ $table-border-color ?=            #ddd;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight ?=                normal;
+$btn-font-weight ?=                700;
 
-$btn-default-color ?=              #333;
+$btn-default-color ?=              $text-color;
 $btn-default-bg ?=                 #fff;
-$btn-default-border ?=             #ccc;
+$btn-default-border ?=             $text-color;
 
 $btn-primary-color ?=              #fff;
 $btn-primary-bg ?=                 $brand-primary;
@@ -171,22 +175,22 @@ $btn-link-disabled-color ?=        $gray-light;
 //** `<input>` background color
 $input-bg ?=                       #fff;
 //** `<input disabled>` background color
-$input-bg-disabled ?=              $gray-lighter;
+$input-bg-disabled ?=              $gray;
 
 //** Text color for `<input>`s
-$input-color ?=                    $gray;
+$input-color ?=                    $text-color;
 //** `<input>` border color
-$input-border ?=                   #ccc;
+$input-border ?=                   #c1c5c8;
 //** `<input>` border radius
-$input-border-radius ?=            $border-radius-base;
+$input-border-radius ?=            1px;
 //** Border color for inputs on focus
-$input-border-focus ?=             #66afe9;
+$input-border-focus ?=             $brand-success;
 
 //** Placeholder text color
 $input-color-placeholder ?=        $gray-light;
 
 //** Default `.form-control` height
-$input-height-base ?=              ($line-height-computed + ($padding-base-vertical * 2) + 2);
+$input-height-base ?=              ($line-height-computed + ($padding-base-vertical * 2) + 4);
 //** Large `.form-control` height
 $input-height-large ?=             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2);
 //** Small `.form-control` height
@@ -270,13 +274,13 @@ $screen-tablet ?=              $screen-sm-min;
 
 // Medium screen / desktop
 // Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
-$screen-md ?=                  992px;
+$screen-md ?=                  1000px;
 $screen-md-min ?=              $screen-md;
 $screen-desktop ?=             $screen-md-min;
 
 // Large screen / wide desktop
 // Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
-$screen-lg ?=                  1200px;
+$screen-lg ?=                  1000px;
 $screen-lg-min ?=              $screen-lg;
 $screen-lg-desktop ?=          $screen-lg-min;
 
@@ -291,9 +295,9 @@ $screen-md-max ?=              ($screen-lg-min - 1);
 //## Define your custom responsive grid.
 
 //** Number of columns in the grid.
-$grid-columns ?=              12;
+$grid-columns ?=              10;
 //** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width ?=         30px;
+$grid-gutter-width ?=         20px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 $grid-float-breakpoint ?=     $screen-sm-min;
@@ -311,12 +315,12 @@ $container-tablet ?=             ((720px + $grid-gutter-width));
 $container-sm ?=                 $container-tablet;
 
 // Medium screen / desktop
-$container-desktop ?=            ((940px + $grid-gutter-width));
+$container-desktop ?=            ((980px + $grid-gutter-width));
 //** For `$screen-md-min` and up.
 $container-md ?=                 $container-desktop;
 
 // Large screen / wide desktop
-$container-large-desktop ?=      ((1140px + $grid-gutter-width));
+$container-large-desktop ?=      ((980px + $grid-gutter-width));
 //** For `$screen-lg-min` and up.
 $container-lg ?=                 $container-large-desktop;
 
@@ -879,3 +883,6 @@ $media-screen-min-lg-desktop ?= screen-min($screen-lg)
 // Min Max
 $media-tablet ?= min-max($screen-sm, $screen-sm-max)
 $media-desktop ?= min-max($screen-md, $screen-md-max)
+
+
+$transition-duration ?= 400ms
