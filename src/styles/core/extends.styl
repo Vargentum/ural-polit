@@ -1,0 +1,69 @@
+/*------------------------------------*\
+    Some useful classes
+\*------------------------------------*/
+.l-hLine
+  hLine()
+
+.l-jLine
+  jLine()
+
+for $i in bottom middle top float
+  .l-hLine--{$i}
+    hLine($i)
+  .l-jLine--{$i}
+    jLine($i)
+
+
+
+.l-island
+  display block
+  background-color: $body-bg-contrast
+  border-color $gray-lighter
+  margin: 20px 0
+  padding: 20px
+
+.l-island--fence
+  @extend .l-island
+  position relative
+  border none
+  //top fence
+  &:before,
+  &:after
+    pb(left bottom -5px)
+    size 100% 8px
+    img('island-fence-helper.png','0 0', repeat-x)
+    z-index: 1;
+
+  &:before
+    top -5px
+
+
+
+.arrow-after
+  &:after
+    content: ' →'
+    display inline-block
+
+
+.link-emulate-article
+  a&
+    display block
+    text-decoration: none;
+    cursor pointer
+
+    &:hover,&:focus
+      text-decoration: none;
+
+
+.reset-list
+  reset-list()
+
+
+
+.article-with-hover
+  border 1px solid transparent
+  transition background-color $transition-duration, border-color $transition-duration
+
+  &:hover,&:focus
+    background-color: $body-bg-contrast
+    border-color $gray-lighter

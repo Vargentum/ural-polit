@@ -47,6 +47,7 @@ module.exports = (grunt) ->
         src: [
           "<%= project.styles %>/variables.styl"
           "<%= project.styles %>/mixins.styl"
+          "<%= project.styles %>/sprite.styl"
           "<%= project.styles %>/reset/*.styl"
           "<%= project.styles %>/core/*.styl"
           "<%= project.styles %>/bootstrap-components/*.styl"
@@ -123,7 +124,7 @@ module.exports = (grunt) ->
       icons:
         src: ['<%= project.assets %>/img/icons/*.png']
         destImg: '<%= project.assets %>/img/<%= pkg.name %>-icons.png'
-        destCSS: '<%= project.styles %>/core/sprite.styl'
+        destCSS: '<%= project.styles %>/sprite.styl'
         imgPath: '../img/<%= pkg.name %>-icons.png'
         algorithm: 'binary-tree'
         padding: 2

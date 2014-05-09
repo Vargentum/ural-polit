@@ -1,0 +1,493 @@
+.news-section
+  position relative
+
+  ul
+    reset-list()
+
+  .btn-serv-wrap
+    margin-bottom: 20px
+    padding: 0 10px
+
+  /*------------------------------------*\
+    TYPE: Important
+  \*------------------------------------*/
+  &.type-important
+    @extend .l-island
+    margin-left: 0
+    margin-right: 0
+    padding: 0
+    border-left: none
+    border-right none
+
+    .news-section__title
+      padding-top: 20px
+      padding-bottom: 20px
+
+    ul
+      make-row()
+      margin-bottom: 20px
+
+    li
+      make-lg-column(2)
+
+    .news-article
+      @extend .article-with-hover
+
+    time
+      display block
+      margin: 5px 0
+
+    .news-article__title
+      font-size: 14px
+      margin: 5px 0
+
+    .news-article__theme
+      font-size: 12px
+      color $gray-light
+      text-transform: uppercase;
+      margin: 5px 0
+
+    .news-article__body
+      font-size: 12px
+
+    .news-article__tag
+      padding: ($padding-base-vertical / 2) ($padding-base-horizontal / 2)
+      border-width 1px
+      font-weight: 400
+
+    .bnr-wrap
+      hLine()
+      text-align: center;
+      margin: 20px 0
+
+    .news-section__footer
+      make-row()
+      margin: 20px 0
+
+      .btn
+        make-lg-column(4)
+        make-lg-column-offset(3)
+        font-size: 12px
+        border $gray-light
+        font-weight: 400
+        text-transform: uppercase
+        padding: 6px
+
+
+
+
+  /*------------------------------------*\
+    TYPE: content centered
+  \*------------------------------------*/
+  &.type-content-centered
+    text-align: center;
+
+  /*------------------------------------*\
+    TYPE: news from partners
+  \*------------------------------------*/
+  &.type-from-partner
+    make-lg-column(10)
+    border-top: 1px solid $gray-lighter
+    margin: 20px 0
+    padding: 15px 0
+
+    ul
+      make-row()
+
+    li
+      make-lg-column(3.3)
+
+
+.news-section__title
+  margin: 0
+  font-size: 18px
+  font-weight: 700
+  color: $brand-primary;
+  padding: 15px 10px
+  
+  &.type-non-accented
+    color: $text-color;
+    font-size: 14px
+    padding-top: 19px
+
+
+/*------------------------------------*\
+  Base class for news article instance
+\*------------------------------------*/
+.news-article
+  @extend .link-emulate-article
+  color $text-color
+  clearfix()
+
+  .news-article__counter
+    border @color
+
+  time
+    color: $brand-info;
+    font-size: 0.75em
+    font-family: $font-family-secondary;
+
+  .attention-label
+    font-family: $font-family-secondary;
+    color: $brand-primary;
+
+
+  .comments-widget
+    @extend .btn-group
+    color $text-color
+    font-weight: 700
+    font-size: 12px
+    text-transform: uppercase;
+
+
+  .comments-widget__unit
+    @extend .btn
+    @extend .btn-default
+    padding: 3px 20px
+
+  .comments-widget__unit--counter
+    font-size: 16px
+    padding: 1px 0 3px
+    width 70px
+    text-align: center;
+
+
+
+  /*------------------------------------*\
+    TYPE: preview
+  \*------------------------------------*/
+  &.type-preview
+    border-top: 1px solid $gray-lighter
+    padding: 15px 10px
+    position relative
+    trans background-color
+    font-size: 15px
+
+    &:hover,&:focus
+      text-decoration: none;
+      background-color: $body-bg-contrast
+
+    .news-article__photo
+      size 80px 60px
+      margin-right: 15px
+      margin-bottom: 3px
+      float left
+
+    .news-article__title
+      font-size: 15px
+      margin: 0
+
+    .news-article__body
+      font-size: 14px
+      clear both
+
+    aside
+      margin-bottom: 5px
+      hLine()
+
+
+    &.state-attention
+
+      .news-article__title
+        font-weight: 700
+
+    &.state-disabled
+
+      .news-article__counter
+        border-color $gray-lighter
+
+
+
+  /*------------------------------------*\
+    TYPE: preview short
+  \*------------------------------------*/
+  &.type-preview-short
+    @extend .arrow-after
+    @extend .article-with-hover
+    font-weight: 700
+    padding: 5px 10px
+
+
+  /*------------------------------------*\
+    TYPE: preview large
+  \*------------------------------------*/
+  &.type-preview-large
+    padding: 10px
+    @extend .article-with-hover
+
+    time
+      display block
+      margin: 10px 0 5px
+
+    .news-article__title
+      font-size: 18px
+      margin: 0 0 15px
+
+  /*------------------------------------*\
+    TYPE: opinion
+  \*------------------------------------*/
+  &.type-opinion
+    @extend .l-island--fence
+    padding: 10px
+    jLine middle
+
+    $author-photo-size = 80px
+
+    .news-article__column-lt
+      size $author-photo-size
+      position relative
+      border-radius 50%
+      overflow hidden
+
+      img
+        size $author-photo-size
+
+
+    .news-article__column-rt
+      .csscalc &
+        width s('calc(100% - %s - 10px)', $author-photo-size)
+
+    .news-article__tag
+      font-size: 11px;
+      @extend .btn
+      button-variant($text-color, rgba(0,0,0,0), $text-color);
+      border-width 1px
+      font-weight: normal
+      padding-left:  4px
+      padding-right: 4px
+      text-transform: uppercase;
+
+    .news-article__author
+      font-size: 11px
+
+    .news-article__body
+      font-weight: 700
+      font-size: 16px
+      
+    
+    &.state-disabled
+      background-color transparent
+
+      .news-article__tag
+        button-variant($gray-lighter, rgba(0,0,0,0), $gray-lighter);
+
+      //mask for image
+      .news-article__column-lt
+        &:after
+          pb(left top)
+          size 100%
+          background-color: rgba(200,200,200,.75)
+
+      
+    &.state-attention
+      background-color: #c5cacc
+
+  /*------------------------------------*\
+    TYPE: top commented
+  \*------------------------------------*/
+  &.type-top-commented
+    padding: 0 10px
+    margin-bottom: 20px
+
+    time
+      width: 70px
+
+
+    .news-article__body
+      font-weight: 700
+
+
+
+  /*------------------------------------*\
+    TYPE: poll
+  \*------------------------------------*/
+  &.type-poll
+
+    .news-article__body
+      @extend .l-island
+      margin: 0
+      padding-left: 10px
+      padding-right: 10px
+
+    .news-article__footer
+      jLine bottom
+      margin-top: 20px
+
+    li
+      margin-bottom: 10px
+
+
+
+  /*------------------------------------*\
+    TYPE: person
+  \*------------------------------------*/
+  &.type-person
+    text-align: center;
+    border-top: 1px solid $gray-lighter
+    padding: 10px 0
+    @extend .article-with-hover
+
+    &:hover,&:focus
+      border-color transparent
+      border-top: 1px solid $gray-lighter
+
+    &>*
+      display block
+      margin: 5px auto
+
+    .news-article__photo
+      border-radius: 50%
+      size 110px
+
+    .news-article__title
+      font-size: 13px
+      font-weight: 700
+
+    .news-article__body
+      font-size: 12px
+
+
+  /*------------------------------------*\
+    TYPE: project
+  \*------------------------------------*/
+  &.type-project
+    text-align: center;
+    border-top: 1px solid $gray-lighter
+    padding: 10px 0
+    @extend .article-with-hover
+
+    &:hover,&:focus
+      border-color transparent
+      border-top: 1px solid $gray-lighter
+
+    &>*
+      display block
+      margin: 10px auto
+
+    .news-article__photo
+      border-radius: 50%
+      size 135px
+
+    .news-article__title
+      font-size: 15px
+      font-weight: 700
+
+    .news-article__body
+      font-size: 13px
+
+
+  /*------------------------------------*\
+    TYPE: project
+  \*------------------------------------*/
+  &.type-from-partner
+    margin: 20px 0
+
+    .news-article__photo
+      float left
+      size 70px
+      margin-right: 5px
+
+    .news-article__title
+      font-size: 13px
+      margin: 0 0 5px
+
+    .news-article__body
+      font-size: 13px
+
+
+  /*------------------------------------*\
+    STATE: disabled (base class)
+  \*------------------------------------*/
+  &.state-disabled
+    &,
+    &:hover,
+    &:focus
+      color: $gray-lighter
+      background-color: transparent
+      cursor default !important
+
+    .news-article__title,
+    .news-article__theme,
+    .news-article__body
+      color: $gray-lighter
+
+
+
+
+/*------------------------------------*\
+  News article components
+\*------------------------------------*/
+.news-article__body
+  display block
+  margin: 5px 0
+
+
+.news-article__header
+  position relative
+  color: $body-bg;
+
+  .news-article__title
+    absolute left bottom
+    width: 100%;
+    margin: 0
+    padding: 10px 20px
+    font-size: 16px
+    font-weight: 700
+    color: inherit
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+
+  img
+    size 100% auto
+    @extend .img-responsive
+
+  .news-article__counter
+    border @color
+    absolute right 10px bottom 10px
+
+  .news-article__tag
+    @extend .btn
+    button-variant($body-bg, rgba(81, 81, 91, .4), $body-bg);
+    absolute left 10px top 10px
+
+
+
+.news-article__counter
+  font-family: $font-family-secondary;
+  font-size: 10px
+  padding: 1px 3px
+  margin: 0 5px
+  clear both
+
+
+
+/*------------------------------------*\
+   Comment
+ \*------------------------------------*/
+.comment-article
+  @extend .l-island--fence
+  @extend .link-emulate-article
+  margin: 5px 0
+
+  time
+    color $gray-light
+    font-size: 10px
+
+  &:hover,&:focus
+    .comment-article__body
+      text-decoration: underline
+
+
+.comment-article__author
+  color $gray-light
+  font-size: 10px
+  &:before
+    pi middle
+    sprite $icon-user
+    margin-right: 5px
+    transform translateY(-2px)
+
+
+.comment-article__body
+  @extend .arrow-after
+  margin-top: 5px
+  font-size: 12px

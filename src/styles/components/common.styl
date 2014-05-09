@@ -37,6 +37,7 @@
 .l-footer
   background-color: $body-bg-contrast
   padding-bottom: 15px
+  margin-top: 20px
 
 .l-footer__main
   @extend .l-header__main
@@ -62,6 +63,42 @@
     text-decoration: underline;
     &:hover,&:focus
       text-decoration: none;
+
+
+
+
+/*------------------------------------*\
+    MAIN
+\*------------------------------------*/
+.l-main
+  position relative
+
+.l-main__column-1
+  make-lg-column(4)
+
+
+.l-main__column-2
+  make-lg-column(3)
+
+
+.l-main__column-3
+  make-lg-column(3)
+
+
+.social-widgets-list
+  @extend .l-island
+  border none
+
+  li
+    margin: 20px 0
+    &:last-child
+      margin-bottom: 0
+
+.social-widgets-list__title
+  font-size: 14px
+  font-weight: bold
+  margin: 0 0 15px
+
 
 /*------------------------------------*\
     COMPONENTS
@@ -279,3 +316,6 @@ for $item in $exchange-fluctuations
     size 90px 30px
     margin-top: 4px
 
+.bnr-wrap
+  margin: 20px 0
+  make-row()

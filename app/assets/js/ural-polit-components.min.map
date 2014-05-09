@@ -1,1 +1,1 @@
-{"version":3,"file":"ural-polit-components.min.js","sources":["..\\..\\..\\temp\\temp-components.js"],"names":["call","this"],"mappings":"CAAA,cAGGA,KAAKC"}
+{"version":3,"file":"ural-polit-components.min.js","sources":["..\\..\\..\\temp\\temp-components.js"],"names":["$","body","root","title","find","succinct","size","call","this"],"mappings":"CAAA,WACEA,EAAE,WACA,GAAIC,GAAMC,EAAMC,CAOhB,OANAD,GAAOF,EAAE,mCACTG,EAAQD,EAAKE,KAAK,wBAClBH,EAAOC,EAAKE,KAAK,uBACjBD,EAAME,UACJC,KAAM,KAEDL,EAAKI,UACVC,KAAM,SAITC,KAAKC"}
