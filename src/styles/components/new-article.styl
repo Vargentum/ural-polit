@@ -1,6 +1,15 @@
 .news-section
   position relative
 
+  .l-header &
+    make-row()
+    margin-top: 20px
+    margin-bottom: 20px
+
+    li
+      make-lg-column(2)
+
+
   ul
     reset-list()
 
@@ -151,6 +160,12 @@
     width 70px
     text-align: center;
 
+
+
+  .l-header &
+    &:hover,&:focus
+      .news-article__title
+        text-decoration: underline
 
 
   /*------------------------------------*\
@@ -459,6 +474,8 @@
   clear both
 
 
+.news-article__title
+  display: block
 
 /*------------------------------------*\
    Comment

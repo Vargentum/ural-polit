@@ -13,7 +13,6 @@
 .nav:before,
 .pager:before,
 .panel-body:before,
-.l-header .articles-list:before,
 .l-header__main:before,
 .l-footer__main:before,
 .l-footer__btm:before,
@@ -21,6 +20,7 @@
 .top-news:before,
 .project-catalog:before,
 .bnr-wrap:before,
+.l-header .news-section:before,
 .news-section.type-important ul:before,
 .news-section.type-important .news-section__footer:before,
 .news-section.type-from-partner ul:before,
@@ -39,7 +39,6 @@
 .nav:after,
 .pager:after,
 .panel-body:after,
-.l-header .articles-list:after,
 .l-header__main:after,
 .l-footer__main:after,
 .l-footer__btm:after,
@@ -47,6 +46,7 @@
 .top-news:after,
 .project-catalog:after,
 .bnr-wrap:after,
+.l-header .news-section:after,
 .news-section.type-important ul:after,
 .news-section.type-important .news-section__footer:after,
 .news-section.type-from-partner ul:after {
@@ -68,7 +68,6 @@
 .nav:after,
 .pager:after,
 .panel-body:after,
-.l-header .articles-list:after,
 .l-header__main:after,
 .l-footer__main:after,
 .l-footer__btm:after,
@@ -76,6 +75,7 @@
 .top-news:after,
 .project-catalog:after,
 .bnr-wrap:after,
+.l-header .news-section:after,
 .news-section.type-important ul:after,
 .news-section.type-important .news-section__footer:after,
 .news-section.type-from-partner ul:after {
@@ -4399,8 +4399,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .label-danger[href]:focus {
   background-color: #bd5055;
 }
-.list-group,
-.l-header .articles-list {
+.list-group {
   margin-bottom: 20px;
   padding-left: 0;
 }
@@ -6224,7 +6223,6 @@ a.thumbnail.active {
   border-bottom-color: #000;
 }
 .clearfix:before,
-.l-header .articles-list:before,
 .l-header__main:before,
 .l-footer__main:before,
 .l-footer__btm:before,
@@ -6232,11 +6230,11 @@ a.thumbnail.active {
 .top-news:before,
 .project-catalog:before,
 .bnr-wrap:before,
+.l-header .news-section:before,
 .news-section.type-important ul:before,
 .news-section.type-important .news-section__footer:before,
 .news-section.type-from-partner ul:before,
 .clearfix:after,
-.l-header .articles-list:after,
 .l-header__main:after,
 .l-footer__main:after,
 .l-footer__btm:after,
@@ -6244,6 +6242,7 @@ a.thumbnail.active {
 .top-news:after,
 .project-catalog:after,
 .bnr-wrap:after,
+.l-header .news-section:after,
 .news-section.type-important ul:after,
 .news-section.type-important .news-section__footer:after,
 .news-section.type-from-partner ul:after {
@@ -6251,7 +6250,6 @@ a.thumbnail.active {
   display: table;
 }
 .clearfix:after,
-.l-header .articles-list:after,
 .l-header__main:after,
 .l-footer__main:after,
 .l-footer__btm:after,
@@ -6259,6 +6257,7 @@ a.thumbnail.active {
 .top-news:after,
 .project-catalog:after,
 .bnr-wrap:after,
+.l-header .news-section:after,
 .news-section.type-important ul:after,
 .news-section.type-important .news-section__footer:after,
 .news-section.type-from-partner ul:after {
@@ -6324,24 +6323,6 @@ a.thumbnail.active {
   background-color: #f6f6f7;
   border-bottom: 1px solid #999;
   padding: 10px 0 15px;
-}
-.l-header .articles-list {
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.l-header .articles-list li {
-  position: relative;
-  min-height: 1px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-@media (min-width:1000px) {
-  .l-header .articles-list li {
-    float: left;
-    width: 20%;
-  }
 }
 .l-header__main,
 .l-footer__main {
@@ -6873,6 +6854,24 @@ a.thumbnail.active {
 /*------------------------------------*     TYPE: news from partners
   \*------------------------------------*/
 }
+.l-header .news-section {
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.l-header .news-section li {
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width:1000px) {
+  .l-header .news-section li {
+    float: left;
+    width: 20%;
+  }
+}
 .news-section ul {
   margin: 0;
   padding: 0;
@@ -7074,6 +7073,10 @@ a.thumbnail.active {
   padding: 1px 0 3px;
   width: 70px;
   text-align: center;
+}
+.l-header .news-article:hover .news-article__title,
+.l-header .news-article:focus .news-article__title {
+  text-decoration: underline;
 }
 .news-article.type-preview {
   border-top: 1px solid #a6a6a6;
@@ -7534,6 +7537,9 @@ fieldset[disabled] .news-article__header .news-article__tag.active {
   padding: 1px 3px;
   margin: 0 5px;
   clear: both;
+}
+.news-article__title {
+  display: block;
 }
 /*------------------------------------*    Comment
  \*------------------------------------*/
