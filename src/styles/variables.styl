@@ -274,13 +274,13 @@ $screen-tablet ?=              $screen-sm-min;
 
 // Medium screen / desktop
 // Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
-$screen-md ?=                  1000px;
+$screen-md ?=                  1024px;
 $screen-md-min ?=              $screen-md;
 $screen-desktop ?=             $screen-md-min;
 
 // Large screen / wide desktop
 // Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
-$screen-lg ?=                  1000px;
+$screen-lg ?=                  1024px;
 $screen-lg-min ?=              $screen-lg;
 $screen-lg-desktop ?=          $screen-lg-min;
 
@@ -886,3 +886,8 @@ $media-desktop ?= min-max($screen-md, $screen-md-max)
 
 
 $transition-duration ?= 400ms
+
+// Brakepoint class
+b($condition)
+  @media $condition
+    {block}

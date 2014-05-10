@@ -1,21 +1,69 @@
 .news-section
   position relative
 
-  .l-header &
-    make-row()
-    margin-top: 20px
-    margin-bottom: 20px
-
-    li
-      make-lg-column(2)
-
-
   ul
     reset-list()
 
   .btn-serv-wrap
     margin-bottom: 20px
     padding: 0 10px
+
+
+
+  /*------------------------------------*\
+    TYPE: header section 1
+  \*------------------------------------*/
+  &.type-header-section-1
+    make-row()
+    @extend .hidden-xs
+    margin-top: 20px
+    margin-bottom: 20px
+
+    li
+      make-lg-column(2)
+
+      +b($media-tablet)
+        make-sm-column(3.33)
+        hide-except(1..3)
+
+
+  /*------------------------------------*\
+    TYPE: header section 2 (banners)
+  \*------------------------------------*/
+  &.type-header-section-2
+    make-row()
+    @extend .hidden-sm
+    @extend .hidden-xs
+    margin-bottom: 15px
+
+    li
+      make-xs-column(3.33)
+
+    .news-article
+      position relative
+      height: 100px
+      padding: 10px
+      text-decoration: none;
+
+      .flexbox &
+        display flex
+        flex-direction column
+        justify-content flex-end
+
+    .news-article__title
+      font-size: 14px
+      font-weight: 700
+      color: $body-bg;
+      position relative
+      margin: 0
+
+    .news-article__photo
+      absolute left top
+      size 100%
+
+
+
+
 
   /*------------------------------------*\
     TYPE: Important
@@ -37,10 +85,16 @@
       margin-bottom: 20px
 
     li
+      make-xs-column(5)
+      make-sm-column(3.33)
       make-lg-column(2)
 
-    .news-article
-      @extend .article-with-hover
+      +b($media-tablet)
+        hide-except(1..3)
+
+      +b($media-max-phone)
+        hide-except(1..2)
+
 
     time
       display block
@@ -59,11 +113,6 @@
     .news-article__body
       font-size: 12px
 
-    .news-article__tag
-      padding: ($padding-base-vertical / 2) ($padding-base-horizontal / 2)
-      border-width 1px
-      font-weight: 400
-
     .bnr-wrap
       hLine()
       text-align: center;
@@ -74,28 +123,96 @@
       margin: 20px 0
 
       .btn
-        make-lg-column(4)
-        make-lg-column-offset(3)
         font-size: 12px
         border $gray-light
         font-weight: 400
         text-transform: uppercase
         padding: 6px
-
-
+        make-xs-column(8)
+        make-sm-column(6)
+        make-lg-column(4)
+        center-block()
 
 
   /*------------------------------------*\
-    TYPE: content centered
+    TYPE: person
   \*------------------------------------*/
-  &.type-content-centered
+  &.type-persons
     text-align: center;
+
+    .news-article
+      padding: 10px 0
+
+      &,&:hover,&:focus
+        border-top-color: $gray-lighter
+
+      &>*
+        display block
+        margin: 5px auto
+
+    .news-article__photo
+      border-radius: 50%
+      size 110px
+
+    .news-article__title
+      font-size: 13px
+      font-weight: 700
+
+    .news-article__body
+      font-size: 12px
+
+
+    +b($media-max-phone)
+
+      ul
+        make-row()
+
+      li
+        make-xs-column(5)
+
+  /*------------------------------------*\
+    TYPE: project
+  \*------------------------------------*/
+  &.type-projects
+    text-align: center;
+    @extend .hidden-xs
+
+    .news-article
+      padding: 10px 0
+
+      &,&:hover,&:focus
+        border-top-color: $gray-lighter
+
+      &>*
+        display block
+        margin: 10px auto
+
+    .news-article__photo
+      border-radius: 50%
+      size 135px
+
+    .news-article__title
+      font-size: 15px
+      font-weight: 700
+
+    .news-article__body
+      font-size: 13px
+
+    +b($media-max-phone)
+
+      ul
+        make-row()
+
+      li
+        make-xs-column(5)
+
 
   /*------------------------------------*\
     TYPE: news from partners
   \*------------------------------------*/
   &.type-from-partner
     make-lg-column(10)
+    @extend .hidden-xs
     border-top: 1px solid $gray-lighter
     margin: 20px 0
     padding: 15px 0
@@ -104,7 +221,27 @@
       make-row()
 
     li
-      make-lg-column(3.3)
+      make-sm-column(3.33)
+      make-lg-column(3.33)
+
+
+    .news-article
+      margin: 20px 0
+      padding: 10px
+
+    .news-article__photo
+      float left
+      size 70px
+      margin-right: 5px
+
+    .news-article__title
+      font-size: 13px
+      margin: 0 0 5px
+
+    .news-article__body
+      font-size: 13px
+
+
 
 
 .news-section__title
@@ -125,11 +262,10 @@
 \*------------------------------------*/
 .news-article
   @extend .link-emulate-article
+  @extend .article-with-hover
   color $text-color
   clearfix()
 
-  .news-article__counter
-    border @color
 
   time
     color: $brand-info;
@@ -172,15 +308,12 @@
     TYPE: preview
   \*------------------------------------*/
   &.type-preview
-    border-top: 1px solid $gray-lighter
     padding: 15px 10px
     position relative
-    trans background-color
     font-size: 15px
 
-    &:hover,&:focus
-      text-decoration: none;
-      background-color: $body-bg-contrast
+    &,&:hover,&:focus
+      border-top-color: $gray-lighter
 
     .news-article__photo
       size 80px 60px
@@ -190,11 +323,10 @@
 
     .news-article__title
       font-size: 15px
-      margin: 0
+      margin: 0 0 5px
 
     .news-article__body
       font-size: 14px
-      clear both
 
     aside
       margin-bottom: 5px
@@ -218,7 +350,6 @@
   \*------------------------------------*/
   &.type-preview-short
     @extend .arrow-after
-    @extend .article-with-hover
     font-weight: 700
     padding: 5px 10px
 
@@ -228,7 +359,6 @@
   \*------------------------------------*/
   &.type-preview-large
     padding: 10px
-    @extend .article-with-hover
 
     time
       display block
@@ -262,15 +392,7 @@
       .csscalc &
         width s('calc(100% - %s - 10px)', $author-photo-size)
 
-    .news-article__tag
-      font-size: 11px;
-      @extend .btn
-      button-variant($text-color, rgba(0,0,0,0), $text-color);
-      border-width 1px
-      font-weight: normal
-      padding-left:  4px
-      padding-right: 4px
-      text-transform: uppercase;
+
 
     .news-article__author
       font-size: 11px
@@ -333,82 +455,6 @@
 
 
 
-  /*------------------------------------*\
-    TYPE: person
-  \*------------------------------------*/
-  &.type-person
-    text-align: center;
-    border-top: 1px solid $gray-lighter
-    padding: 10px 0
-    @extend .article-with-hover
-
-    &:hover,&:focus
-      border-color transparent
-      border-top: 1px solid $gray-lighter
-
-    &>*
-      display block
-      margin: 5px auto
-
-    .news-article__photo
-      border-radius: 50%
-      size 110px
-
-    .news-article__title
-      font-size: 13px
-      font-weight: 700
-
-    .news-article__body
-      font-size: 12px
-
-
-  /*------------------------------------*\
-    TYPE: project
-  \*------------------------------------*/
-  &.type-project
-    text-align: center;
-    border-top: 1px solid $gray-lighter
-    padding: 10px 0
-    @extend .article-with-hover
-
-    &:hover,&:focus
-      border-color transparent
-      border-top: 1px solid $gray-lighter
-
-    &>*
-      display block
-      margin: 10px auto
-
-    .news-article__photo
-      border-radius: 50%
-      size 135px
-
-    .news-article__title
-      font-size: 15px
-      font-weight: 700
-
-    .news-article__body
-      font-size: 13px
-
-
-  /*------------------------------------*\
-    TYPE: project
-  \*------------------------------------*/
-  &.type-from-partner
-    margin: 20px 0
-
-    .news-article__photo
-      float left
-      size 70px
-      margin-right: 5px
-
-    .news-article__title
-      font-size: 13px
-      margin: 0 0 5px
-
-    .news-article__body
-      font-size: 13px
-
 
   /*------------------------------------*\
     STATE: disabled (base class)
@@ -460,7 +506,6 @@
     absolute right 10px bottom 10px
 
   .news-article__tag
-    @extend .btn
     button-variant($body-bg, rgba(81, 81, 91, .4), $body-bg);
     absolute left 10px top 10px
 
@@ -476,6 +521,21 @@
 
 .news-article__title
   display: block
+
+.news-article__tag
+  @extend .btn
+  button-variant($text-color, rgba(0,0,0,0), $text-color);
+  border-width 1px
+  font-weight: normal
+  padding-left:  4px
+  padding-right: 4px
+  text-transform: uppercase;
+  display inline-block !important
+  font-size: 11px !important;
+
+
+.news-article__counter
+  border $text-color
 
 /*------------------------------------*\
    Comment
@@ -508,3 +568,4 @@
   @extend .arrow-after
   margin-top: 5px
   font-size: 12px
+

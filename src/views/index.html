@@ -30,10 +30,10 @@
 <!--HEADER start-->
 <header class="l-header">
   <div class="container">
-    <div class="row">
+    <div class="row  hidden-sm  hidden-xs">
       <img class="img-responsive" src="http://fakeimg.pl/1000x90/?text=1000x90">
     </div>
-    <section class="news-section">
+    <section class="news-section  type-header-section-1">
       <ul>
         <li>
           <a class="news-article">
@@ -70,19 +70,21 @@
 
     <div class="l-header__main">
       <!--logo-->
-      <a class="logo" href="/" itemprop='url'>
-        <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
-        <span class="text-hide" itemprop="name">УралПолит.ru</span>
-        <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
-      </a>
+      <div class="col-lg-3  col-md-3  col-sm-5  col-xs-10">
+        <a class="logo" href="/" itemprop='url'>
+          <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
+          <span class="text-hide" itemprop="name">УралПолит.ru</span>
+          <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
+        </a>
+      </div>
 
-      <div class="l-header__main__right">
-        <div class="l-header__main__row">
-          <time class="widget-date">14 апреля 2014 года</time>
+      <div class="col-lg-7  col-md-7  col-sm-5  col-xs-10">
+        <div class="l-header__main__row  hidden-xs">
+          <time class="widget-date">14 сентября 2014 года</time>
           <div class="widget-weather">
             <span>Погода:</span>
-            <span class="widget-weather__day">+5°С</span>
-            <span class="widget-weather__night">−3°С</span>
+            <span class="widget-weather__day">+15°С</span>
+            <span class="widget-weather__night">−23°С</span>
           </div>
           <div class="widget-currency">
             <div>
@@ -128,26 +130,30 @@
       </ul>
     </nav>
 
-    <ul class="top-news">
-      <li>
-        <a href="#" class="top-news__article">
-          <img src="http://fakeimg.pl/320x100/666/?text=320x100">
-          <span>Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="top-news__article">
-          <img src="http://fakeimg.pl/320x100/666/?text=320x100">
-          <span>Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="top-news__article">
-          <img src="http://fakeimg.pl/320x100/666/?text=320x100">
-          <span>Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</span>
-        </a>
-      </li>
-    </ul>
+    <section class="news-section  type-header-section-2">
+      <ul>
+        <li>
+          <a href="#" class="news-article">
+            <img class="news-article__photo" src="http://fakeimg.pl/320x100/666/?text=320x100">
+            <h2 class="news-article__title">Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</h2>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="news-article">
+            <img class="news-article__photo" src="http://fakeimg.pl/320x100/666/?text=320x100">
+            <h2 class="news-article__title">Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</h2>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="news-article">
+            <img class="news-article__photo" src="http://fakeimg.pl/320x100/666/?text=320x100">
+            <h2 class="news-article__title">Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</h2>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+
 
     <nav class="project-catalog">
       <ul>
@@ -175,24 +181,28 @@
 
     <div class="l-footer__main">
       <!--logo-->
-      <a class="logo" href="/" itemprop='url'>
-        <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
-        <span class="text-hide" itemprop="name">УралПолит.ru</span>
-        <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
-      </a>
+      <div class="col-lg-3  col-md-3  col-sm-5  col-xs-10">
+        <a class="logo" href="/" itemprop='url'>
+          <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
+          <span class="text-hide" itemprop="name">УралПолит.ru</span>
+          <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
+        </a>
+      </div>
 
-      <nav class="project-nav">
-        <ul>
-          <li><a href="#">О проекте</a></li>
-          <li><a href="#">Реклама</a></li>
-          <li><a href="#">Подписка</a></li>
-          <li><a class="rss" href="#">RSS</a></li>
-          <li><a href="#">Архив</a></li>
-          <li><a href="#">Редакция</a></li>
-          <li><a href="#">PDA</a></li>
-          <li><a href="#">Вакансии</a></li>
-        </ul>
-      </nav>
+      <div class="col-lg-7  col-md-7  col-sm-5  col-xs-10">
+        <nav class="project-nav">
+          <ul>
+            <li><a href="#">О проекте</a></li>
+            <li><a href="#">Реклама</a></li>
+            <li><a href="#">Подписка</a></li>
+            <li><a class="rss" href="#">RSS</a></li>
+            <li><a href="#">Архив</a></li>
+            <li><a href="#">Редакция</a></li>
+            <li><a href="#">PDA</a></li>
+            <li><a href="#">Вакансии</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
 
     <nav class="set-region">
