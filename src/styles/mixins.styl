@@ -1120,3 +1120,13 @@ reset-list()
 pressable($deep = 2px)
   &:active
     transform translateY($deep)
+
+
+
+hide-except($array, $display-type = block)
+  display none
+
+  for $item in $array
+    &:nth-child({$item})
+      display $display-type
+

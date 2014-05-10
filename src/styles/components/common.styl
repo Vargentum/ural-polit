@@ -1,3 +1,7 @@
+body
+  //fix for unexpected scrolling: don't affect content
+  overflow-x hidden
+
 /*------------------------------------*\
     HEADER
 \*------------------------------------*/
@@ -11,15 +15,10 @@
   make-row()
   border-top: 10px solid #51525c
 
-.l-header__main__right
-  make-lg-column(7)
-  padding-left: 30px
-
 
 .l-header__main__row
-  jLine middle
   margin: 12px 0
-
+  make-row()
 
 /*------------------------------------*\
     FOOTER
@@ -32,10 +31,14 @@
 .l-footer__main
   @extend .l-header__main
 
+  +b($media-tablet)
+    margin-bottom: 15px
+
+
 .l-footer__btm
+  make-row()
   position relative
   border-top: 1px solid $gray-light
-  make-row()
   color: $gray-light;
   margin-top: 10px
   padding-top: 15px
@@ -44,6 +47,7 @@
 
   &>*
     make-lg-column(5)
+    make-sm-column(6)
 
   p
     margin: 0
@@ -62,18 +66,6 @@
 \*------------------------------------*/
 .l-main
   position relative
-
-.l-main__column-1
-  make-lg-column(4)
-
-
-.l-main__column-2
-  make-lg-column(3)
-
-
-.l-main__column-3
-  make-lg-column(3)
-
 
 .social-widgets-list
   @extend .l-island
@@ -94,19 +86,30 @@
     COMPONENTS
 \*------------------------------------*/
 .logo
-  make-lg-column(3)
+  display block
+  width: 100%
   margin-top: 10px
+  text-align: center;
+
+  img
+    display inline-block
+    max-width: 100%
+
   &:hover,&:focus
     text-decoration: none;
 
 
 
 .widget-date
+  make-xs-column(5)
+  make-lg-column(2)
   font-size: 11px;
   color: $text-color
 
 
 .widget-weather
+  make-xs-column(5)
+  make-lg-column(2.75)
   hLine()
   font-size: 11px;
   color: $gray-light
@@ -131,6 +134,13 @@ for $item in $weather-types
   hLine()
   color: $gray-light
   font-size: 12px
+  @extend .hidden-xs
+  make-lg-column(5.25)
+  +b($media-tablet)
+    make-row()
+
+  &>*
+    make-xs-column(5)
 
 $available-currencies = dollar $currency-dollar,
                         euro   $currency-euro,
@@ -153,13 +163,12 @@ for $item in $exchange-fluctuations
       position relative
       top -2px
       @extend .caret
-      margin: 0 3px 0 5px
+      margin-left: 5px
       border-left-width  4px
       border-right-width 4px
 
     if $item == up
       color $brand-success
-      margin-right: 20px
       &:before
         transform rotate(180deg)
 
@@ -171,6 +180,7 @@ for $item in $exchange-fluctuations
 .project-nav
   color $gray-light
   font-size: 11px
+  line-height: 30px
   text-transform: uppercase;
 
   ul
@@ -189,42 +199,96 @@ for $item in $exchange-fluctuations
       sprite: $icon-rss
       margin-right: 2px
 
-
+  .l-header &
+    make-sm-column(9)
+    make-lg-column(5)
 
   .l-footer &
-    @extend .l-header__main__right
     position relative
     top 59px
 
+
+  +b($media-max-tablet)
+
+    ul
+      jLine()
+
+    li
+      hide-except(1..5, inline-block)
+      margin: 0
+
+    .l-footer &
+      top 52px
+
+
 .project-search
-  reset-box-model()
+  margin: 0
+  make-sm-column(1)
+  /*make-sm-column-offset(1)*/
+  make-lg-column(5)
   size: 320px 30px
   position relative
 
   &:after
-    pb(left 5px top 50%)
+    pb(left 15px top 50%)
     sprite $icon-search
     transform translateY(-50%)
+    pointer-events: none
 
   input
-    absolute left top
-    size 100%
+    size 100% inherit
     @extend .form-control
     background-color: $body-bg-contrast
     padding: 0 30px
 
   button
-    absolute right 10px top 50%
+    absolute right 20px top 50%
     transform translateY(-50%)
     background-color: transparent
     @extend .text-hide
     sprite $icon-enter
 
+  +b($media-tablet)
+    padding: 0
+    border $gray-light
+    cursor pointer
+
+    &:after
+      left: 50%
+      transform translate(-50%, -50%)
+
+    input
+      width: 0
+      border-width 0
+      padding: 0
+      float: right
+
+    button
+      display none
+
+
+    &.state-active
+      border-color transparent
+      cursor default
+
+      &:after
+        left -320px
+        transform translate(0, -50%)
+
+      input
+        width: 360px
+        padding: 0 30px
+        border-width 1px
+
+      button
+        display block
+        right 10px // because padding removed
+
 
 
 .set-region
   make-row()
-  margin: 0 0 15px
+  margin: 0
   font-weight: 700
   ul
     reset-list()
@@ -232,6 +296,7 @@ for $item in $exchange-fluctuations
   li
     display inline-block
     margin-right: 10px
+    margin-bottom: 15px
 
   a
     pressable()
@@ -242,41 +307,8 @@ for $item in $exchange-fluctuations
     border-radius 1px
 
 
-.top-news
-  reset-list()
-  make-row()
-  margin-bottom: 15px
-
-  li
-    make-lg-column(3.33)
-
-.top-news__article
-  display block
-  height: 100px
-  position relative
-  text-decoration: none;
-  padding: 10px
-  font-size: 15px
-  font-weight: 700
-  color: $body-bg
-  pressable()
-
-  &:hover,&:focus
-    color: $body-bg;
-
-  .flexbox &
-    display flex
-    align-items flex-end
-
-  img
-    absolute left top
-    display block
-    size 100%
-
-  span
-    position relative
-    z-index: 1
-
+  .l-footer &
+    @extend .hidden-sm
 
 .project-catalog
   make-row()
@@ -297,9 +329,9 @@ for $item in $exchange-fluctuations
 
 .web-counters
   reset-list()
-  make-lg-column(6)
+  width: 280px
   padding: 0
-  margin-top: 10px
+  margin: 10px 0
 
   li
     display inline-block

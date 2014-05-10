@@ -1,21 +1,69 @@
 .news-section
   position relative
 
-  .l-header &
-    make-row()
-    margin-top: 20px
-    margin-bottom: 20px
-
-    li
-      make-lg-column(2)
-
-
   ul
     reset-list()
 
   .btn-serv-wrap
     margin-bottom: 20px
     padding: 0 10px
+
+
+
+  /*------------------------------------*\
+    TYPE: header section 1
+  \*------------------------------------*/
+  &.type-header-section-1
+    make-row()
+    @extend .hidden-xs
+    margin-top: 20px
+    margin-bottom: 20px
+
+    li
+      make-lg-column(2)
+
+      +b($media-tablet)
+        make-sm-column(3.33)
+        hide-except(1..3)
+
+
+  /*------------------------------------*\
+    TYPE: header section 2 (banners)
+  \*------------------------------------*/
+  &.type-header-section-2
+    make-row()
+    @extend .hidden-sm
+    @extend .hidden-xs
+    margin-bottom: 15px
+
+    li
+      make-xs-column(3.33)
+
+    .news-article
+      position relative
+      height: 100px
+      padding: 10px
+      text-decoration: none;
+
+      .flexbox &
+        display flex
+        flex-direction column
+        justify-content flex-end
+
+    .news-article__title
+      font-size: 14px
+      font-weight: 700
+      color: $body-bg;
+      position relative
+      margin: 0
+
+    .news-article__photo
+      absolute left top
+      size 100%
+
+
+
+
 
   /*------------------------------------*\
     TYPE: Important
@@ -38,6 +86,11 @@
 
     li
       make-lg-column(2)
+
+      +b($media-tablet)
+        make-sm-column(3.33)
+        hide-except(1..3)
+
 
     .news-article
       @extend .article-with-hover
@@ -74,15 +127,17 @@
       margin: 20px 0
 
       .btn
-        make-lg-column(4)
-        make-lg-column-offset(3)
         font-size: 12px
         border $gray-light
         font-weight: 400
         text-transform: uppercase
         padding: 6px
+        make-lg-column(4)
+        make-lg-column-offset(3)
 
-
+        +b($media-tablet)
+          make-sm-column(6)
+          make-sm-column-offset(2)
 
 
   /*------------------------------------*\
@@ -104,7 +159,10 @@
       make-row()
 
     li
-      make-lg-column(3.3)
+      make-lg-column(3.33)
+      +b($media-tablet)
+        make-sm-column(3.33)
+
 
 
 .news-section__title
