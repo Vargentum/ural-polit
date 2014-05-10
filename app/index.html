@@ -21,11 +21,22 @@
   <!--CSS include-->
   <link href="assets/css/ural-polit-styles.css" rel="stylesheet">
   <!--<link href="assets/css/ural-polit-styles.min.css" rel="stylesheet">-->
-  <!--vk api-->
-  <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
 </head>
 
 <body itemscope itemtype='http://schema.org/WebPage'>
+
+<!--Scripts for social widgets-->
+<script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
 <!--HEADER start-->
 <header class="l-header">
@@ -171,187 +182,203 @@
 <main class="l-main">
 
   <div class="container">
-    <div class="row  reverse-ordering-for-center-column">
-      <!--themes of the day-->
-      <div class="col-lg-4  col-md-4  col-sm-6  col-xs-10">
-        <section class="news-section">
-          <header>
-            <h1 class="news-section__title">Темы дня</h1>
-          </header>
-          <ul>
-            <li>
-              <a href="#" class="news-article  type-preview-large">
-                <aside class="news-article__header">
-                  <img src="http://fakeimg.pl/380x240/666/?text=380x240">
-                  <span class="news-article__tag">Экономика и бизнес</span>
-                  <span class="news-article__counter">123</span>
-                </aside>
-                <header>
-                  <time>14 марта 2014 г., 19:03</time>
-                  <h1 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h1>
-                </header>
-                <div class="news-article__body  arrow-after">
-                  Крупнейшая горно-металлургическая компания «Мечел»
-                  ведет переговоры с Альфа-банком касательно
-                  требований досрочной выплаты кредита на сумму
-                  150 млн долларов
-                </div>
-              </a>
-              <article class="news-article  type-opinion">
-                <aside class="news-article__column-lt">
-                  <img src="http://placekitten.com/g/80/80" alt="Place Kitten" />
-                </aside>
-                <div class="news-article__column-rt">
-                  <header class="l-hLine">
-                    <span class="news-article__tag">Личный взгляд</span>
-                    <span class="news-article__author">Константин Константинопольский</span>
-                  </header>
-                  <div class="news-article__body">
-                    Со дня на день стоит ждать падения
-                    стоимости акций Челябинского
-                    трубопрокатного завода
-                  </div>
-                </div>
-              </article>
-            </li>
-            <li>
-              <a href="#" class="news-article  type-preview-large">
-                <aside class="news-article__header">
-                  <img src="http://fakeimg.pl/380x240/666/?text=380x240">
-                  <span class="news-article__tag">Экономика и бизнес</span>
-                  <span class="news-article__counter">123</span>
-                </aside>
-                <header>
-                  <time>14 марта 2014 г., 19:03</time>
-                  <h1 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h1>
-                </header>
-                <div class="news-article__body  arrow-after">
-                  Крупнейшая горно-металлургическая компания «Мечел»
-                  ведет переговоры с Альфа-банком касательно
-                  требований досрочной выплаты кредита на сумму
-                  150 млн долларов
-                </div>
-              </a>
-              <article class="news-article  type-opinion  state-disabled">
-                <aside class="news-article__column-lt">
-                  <img src="http://placekitten.com/g/80/80" alt="Place Kitten" />
-                </aside>
-                <div class="news-article__column-rt">
-                  <header class="l-hLine">
-                    <span class="news-article__tag">Личный взгляд</span>
-                    <span class="news-article__author">Константин Константинопольский</span>
-                  </header>
-                  <div class="news-article__body">
-                    Со дня на день стоит ждать падения
-                    стоимости акций Челябинского
-                    трубопрокатного завода
-                  </div>
-                </div>
-              </article>
-            </li>
-            <li>
-              <a href="#" class="news-article  type-preview-large  state-disabled">
-                <aside class="news-article__header">
-                  <img src="http://fakeimg.pl/380x240/666/?text=380x240">
-                  <span class="news-article__tag">Экономика и бизнес</span>
-                  <span class="news-article__counter">123</span>
-                </aside>
-                <header>
-                  <time>14 марта 2014 г., 19:03</time>
-                  <h1 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h1>
-                </header>
-                <div class="news-article__body  arrow-after">
-                  Крупнейшая горно-металлургическая компания «Мечел»
-                  ведет переговоры с Альфа-банком касательно
-                  требований досрочной выплаты кредита на сумму
-                  150 млн долларов
-                </div>
-              </a>
-              <article class="news-article  type-opinion  state-attention">
-                <aside class="news-article__column-lt">
-                  <img src="http://placekitten.com/g/80/80" alt="Place Kitten" />
-                </aside>
-                <div class="news-article__column-rt">
-                  <header class="l-hLine">
-                    <span class="news-article__tag">Личный взгляд</span>
-                    <span class="news-article__author">Константин Константинопольский</span>
-                  </header>
-                  <div class="news-article__body">
-                    Со дня на день стоит ждать падения
-                    стоимости акций Челябинского
-                    трубопрокатного завода
-                  </div>
-                </div>
-              </article>
-            </li>
-          </ul>
+    <div class="row">
 
-          <footer class="btn-serv-wrap">
-            <a href="#" class="btn  btn-serv">Все сюжеты</a>
-          </footer>
-        </section>
-      </div>
-      <!--common news-->
-      <div class="col-lg-3  col-md-3  hidden-sm col-xs-10">
-        <section class="news-section">
-          <header>
-            <h1 class="news-section__title">Новости</h1>
-          </header>
+
+      <!--include "templates/main"-->
+      <article class="news-article  type-template">
+        <!--article header-->
+        <header>
+          <time>14 марта 2014 г., 19:03</time>
+          <h1 class="news-article__title">Заголовок. Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h1>
+          <h2 class="news-article__subTitle">Информационный или SEO–подзаголовок. По прогнозам экспертов, единственный способ избежать дефолта для «Мечела» — заручиться господдержкой</h2>
+          <section class="social-widget  type-follow">
+            <ul>
+              <li><a href="https://twitter.com/twitterapi" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @twitterapi</a></li>
+              <li><div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></li>
+            </ul>
+          </section>
+        </header>
+        <!--article main-->
+        <div class="news-article__body">
+          <figure>
+            <img src="http://fakeimg.pl/660x440/666/?text=660x440">
+            <figcaption>Подпись к фотографии. По прогнозам экспертов, единственный способ избежать дефолта для «Мечела» – заручиться господдержкой</figcaption>
+            <small>© Фотография: Фотограф / Название агентства</small>
+          </figure>
+
+          <h2>
+            Вводка (h2). Крупнейшая горно-металлургическая компания «Мечел» ведет
+            переговоры с Альфа-банком касательно требований досрочной выплаты
+            кредита на сумму 150 млн долларов. Возвратить эту сумму банку компания
+            должна была летом текущего года, однако, как сообщают СМИ, кредитная
+            организация потребовала расплатиться досрочно. Аналитики считают,
+            что «Мечел» способен это сделать, но это существенно осложнит ситуацию
+            в компании. По их прогнозам, единственный способ избежать дефолта
+            для компании – договориться, заручиться господдержкой, как два года назад
+            это удалось акционеру ЧТПЗ Андрею Комарову. Подробности — в материале
+            «УралПолит.Ru».
+          </h2>
+
+          <h3>Название главы (h3)</h3>
+
+          <p>
+            <a href="#">«Мечел»</a> может <b>досрочно погасить кредит</b> Альфа-банка, как он того требует, если не получится
+            договориться о выплате в предусмотренные договором сроки (июнь – июль 2014 года). Об этом
+            «УралПолит.Ru» сообщили в пресс-службе компании. Как указано в материалах компании,
+            в августе – сентябре 2013 года группа «Мечел» получила от банка несколько краткосрочных
+            траншей со сроком погашения в июне – июле 2014 года на общую сумму 150 млн долларов
+            под процентную ставку 10,9 % годовых. В качестве обеспечения обязательств заемщика
+            по кредитному договору предоставлено 65 % акций ОАО «Белорецкий металлургический
+            комбинат» (Республика Башкортостан) и 25 % минус одна акция ОАО «Торговый порт Посьет»
+            (Приморский край). Накануне банк потребовал досрочной выплаты кредита.
+          </p>
           <ul>
-            <li>
-              <a class="news-article  type-preview  state-attention">
-                <aside>
-                  <time>16:20</time>
-                  <span class="news-article__counter">123</span>
-                  <span class="attention-label">Срочно в номер</span>
-                </aside>
-                <span class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</span>
-              </a>
-            </li>
-            <li>
-              <a class="news-article  type-preview">
-                <aside>
-                  <time>16:20</time>
-                  <span class="news-article__counter">123</span>
-                </aside>
-                <span class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</span>
-              </a>
-            </li>
-            <li>
-              <a class="news-article  type-preview  state-disabled">
-                <aside>
-                  <time>16:20</time>
-                  <span class="news-article__counter">123</span>
-                </aside>
-                <span class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</span>
-              </a>
-            </li>
-            <li>
-              <a class="news-article  type-preview">
-                <aside>
-                  <time>16:20</time>
-                  <span class="news-article__counter">123</span>
-                </aside>
-                <img class="news-article__photo" src="http://fakeimg.pl/80x60/?text=80x60">
-                <span class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</span>
-              </a>
-            </li>
-            <li>
-              <a class="news-article  type-preview">
-                <aside>
-                  <time>16:20</time>
-                  <span class="news-article__counter">123</span>
-                </aside>
-                <img class="news-article__photo" src="http://fakeimg.pl/80x60/?text=80x60">
-                <span class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</span>
-              </a>
-            </li>
+            <li>«Мы ведем переговоры с Альфа-банком касательно требований досрочной выплаты кредита</li>
+            <li>«Мы ведем переговоры с Альфа-банком касательно требований досрочной выплаты кредита</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aliquid aut consequuntur dolorem, doloribus ea earum et eum fugit neque numquam omnis quae quisquam sapiente similique suscipit ut voluptatibus?</li>
+            <li>«Мы ведем переговоры с Альфа-банком касательно требований досрочной выплаты кредита</li>
+            <li>«Мы ведем переговоры с Альфа-банком касательно требований досрочной выплаты кредита</li>
           </ul>
-          <footer class="btn-serv-wrap">
-            <a href="#" class="btn  btn-serv">Все новости</a>
-          </footer>
-        </section>
-      </div>
+          <p>
+            «Мы ведем переговоры с Альфа-банком касательно требований досрочной выплаты кредита
+            на сумму 150 млн долларов. ОАО «Мечел» является добросовестным заемщиком и обслуживает
+            все кредиты (в том числе и Альфа-банка) своевременно. Если компания не сможет договориться
+            о погашении в предусмотренные кредитным договором сроки (июнь – июль 2014 года), «Мечел»
+            выполнит все обязательства перед Альфа-банком и погасит кредит досрочно, как того требует
+            банк. «Мечел» ведет переговоры с различными финансовыми институтами, в том числе
+            и с Внешэкономбанком, о рефинансировании своих текущих обязательств», – сообщили
+            в компании «Мечел».
+          </p>
+          <ol>
+            <li>«Мы ведем переговоры с Альфа-банком касательно требований досрочной выплаты кредита</li>
+            <li>«Мы ведем переговоры с Альфа-банком касательно требований досрочной выплаты кредита</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aliquid aut consequuntur dolorem, doloribus ea earum et eum fugit neque numquam omnis quae quisquam sapiente similique suscipit ut voluptatibus?</li>
+            <li>«Мы ведем переговоры с Альфа-банком касательно требований досрочной выплаты кредита</li>
+            <li>«Мы ведем переговоры с Альфа-банком касательно требований досрочной выплаты кредита</li>
+          </ol>
+
+          <blockquote>
+            Аналитики отмечают, что текущее состояние компании
+            близко к критическому и несмотря на то, что она сможет
+            выплатить такую сумму, последствия могут быть
+            самыми негативными.
+          </blockquote>
+
+          <p>
+            «Риски для самого «Мечела» становятся все выше, потому что, не расплатившись
+            с Альфа-банком, он спровоцирует дефолты и по другим обязательствам. Стоит помнить о том,
+            что 59 % акций самой компании находится в залоге у банков, не говоря уже о структурах дочерних
+            предприятий. Разговоров о господдержке сейчас нет, владельцы компании не работают в данном
+            направлении, хотя могли бы проработать этот момент еще год назад», – комментирует ситуацию
+            старший аналитик компании «Альпари» Анна Бодрова.
+          </p>
+
+          <p>
+            Аналитик ИК «Русс-Инвест» Семен Немцов считает, что в случае неспособности «Мечела»
+            вернуть всю сумму другие кредиторы также могут потребовать досрочных выплат.
+          </p>
+
+        </div>
+        <!--article footer-->
+        <footer>
+          <!--'read also'  section-->
+          <section class="news-section">
+            <header>
+              <h1 class="news-section__title">Читайте еще материалы по этой теме:</h1>
+            </header>
+            <ul>
+              <li>
+                <a href="#" class="news-article">
+                  <time>14 марта 2014 г., 19:03</time>
+                  <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="news-article">
+                  <time>14 марта 2014 г., 19:03</time>
+                  <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="news-article">
+                  <time>14 марта 2014 г., 19:03</time>
+                  <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+                </a>
+              </li>
+            </ul>
+          </section>
+          <!--tag list-->
+          <section class="tag-list">
+            <div>
+              <h3 class="tag-list__title">Персоны:</h3>
+              <ul>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="tag-list__title">Заголовок:</h3>
+              <ul>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="tag-list__title">Длинный заголовок:</h3>
+              <ul>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+                <li><a href="#">Андрей Шенк</a></li>
+              </ul>
+            </div>
+          </section>
+          <!--social widget-->
+          <section class="social-widget  type-share">
+            <h3 class="social-widget__title">Поделиться:</h3>
+            <ul>
+              <li><a href="https://twitter.com/twitterapi" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @twitterapi</a></li>
+              <li><div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></li>
+            </ul>
+          </section>
+
+          <!--Disqus widget-->
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ural-polit-test'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          <!--Disqus widget END-->
+
+        </footer>
+      </article>
+
+
+
+
       <!--hot news-->
       <div class="col-lg-3  col-md-3  col-sm-4  hidden-xs">
         <!--Hot news section-->
@@ -390,9 +417,9 @@
             <li>
               <article class="news-article  type-top-commented">
                 <aside class="l-jLine--middle">
-                  <div class="btn-group  comments-widget">
-                    <a href="#" class="btn  comments-widget__unit  comments-widget__unit--counter">9 999</a>
-                    <a href="#" class="btn  comments-widget__unit">Обсудить</a>
+                  <div class="btn-group  comment-controls">
+                    <a href="#" class="btn  comment-controls__unit  comment-controls__unit--counter">9 999</a>
+                    <a href="#" class="btn  comment-controls__unit">Обсудить</a>
                   </div>
                   <time>11 марта 2014, 17:54</time>
                 </aside>
@@ -421,9 +448,9 @@
             <li>
               <article class="news-article  type-top-commented">
                 <aside class="l-jLine--middle">
-                  <div class="btn-group  comments-widget">
-                    <a href="#" class="btn  comments-widget__unit  comments-widget__unit--counter">1</a>
-                    <a href="#" class="btn  comments-widget__unit">Обсудить</a>
+                  <div class="btn-group  comment-controls">
+                    <a href="#" class="btn  comment-controls__unit  comment-controls__unit--counter">1</a>
+                    <a href="#" class="btn  comment-controls__unit">Обсудить</a>
                   </div>
                   <time>24 сентября 2014, 17:54</time>
                 </aside>
@@ -719,254 +746,253 @@
     </section>
   </div>
 
-
+  <!--content footer area-->
   <div class="container">
     <div class="row">
       <!--column-->
       <div class="col-lg-7  col-md-7  col-sm-10  col-xs-10">
 
-        <div class="row">
-          <!--encyclopedia-->
-          <div class="col-lg-3  col-md-3  col-sm-3  col-xs-10">
-            <section class="news-section  type-persons">
-              <header>
-                <h1 class="news-section__title">Энциклопедия</h1>
-              </header>
-              <ul>
-                <li>
-                  <a class="news-article" href="#">
-                    <img class="news-article__photo" src="http://fakeimg.pl/110x110/?text=110x110">
-                    <span class="news-article__tag">Персоны</span>
-                    <h2 class="news-article__title">Константинопольский Константин Константинович</h2>
-                    <div class="news-article__body">Прокурор Свердловского района Перми</div>
-                  </a>
-                </li>
-                <li>
-                  <a class="news-article" href="#">
-                    <img class="news-article__photo" src="http://fakeimg.pl/110x110/?text=110x110">
-                    <span class="news-article__tag">Персоны</span>
-                    <h2 class="news-article__title">Бевх Виктор Петрович</h2>
-                    <div class="news-article__body">Прокурор Свердловского района Перми</div>
-                  </a>
-                </li>
-              </ul>
-              <footer class="btn-serv-wrap">
-                <a href="#" class="btn  btn-serv">Вся энциклопедия</a>
-              </footer>
-            </section>
-
-            <div class="bnr-wrap    hidden-sm  hidden-xs">
-              <img src="http://fakeimg.pl/200x300/?text=200x300">
-            </div>
-
-          </div>
-          <!--blogs-->
-          <div class="col-lg-4  col-md-4  col-sm-4  col-xs-10">
-            <section class="news-section">
-              <header>
-                <h1 class="news-section__title">Обзор блогов</h1>
-              </header>
-              <ul>
-                <li>
-                  <a class="news-article  type-preview">
-                    <aside>
-                      <time>16:20</time>
-                      <span class="news-article__counter">123</span>
-                    </aside>
-                    <img class="news-article__photo" src="http://fakeimg.pl/80x60/?text=80x60">
-                    <h2 class="news-article__title">Сон Медведева и «убийство» виноватого в нераскрывшемся кольце Олимпиады</h2>
-                    <div class="news-article__body  arrow-after">
-                      Церемония открытия XXII зимних
-                      Олимпийских игр в Сочи стала одним
-                      из наиболее выдающихся по красоте
-                      и сложности организации мероприятий
-                      последних лет. Однако за торжественным
-                      пафосом пользователи Интернета
-                      обнаружили ряд неловких моментов
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="news-article  type-preview">
-                    <aside>
-                      <time>16:20</time>
-                      <span class="news-article__counter">123</span>
-                    </aside>
-                    <img class="news-article__photo" src="http://fakeimg.pl/80x60/?text=80x60">
-                    <h2 class="news-article__title">Сон Медведева и «убийство» виноватого в нераскрывшемся кольце Олимпиады</h2>
-                    <div class="news-article__body  arrow-after">
-                      Церемония открытия XXII зимних
-                      Олимпийских игр в Сочи стала одним
-                      из наиболее выдающихся по красоте
-                      и сложности организации мероприятий
-                      последних лет. Однако за торжественным
-                      пафосом пользователи Интернета
-                      обнаружили ряд неловких моментов
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="news-article  type-preview">
-                    <aside>
-                      <time>16:20</time>
-                      <span class="news-article__counter">123</span>
-                    </aside>
-                    <img class="news-article__photo" src="http://fakeimg.pl/80x60/?text=80x60">
-                    <h2 class="news-article__title">Cлухи о новом браке Путина и их разоблачение</h2>
-                    <div class="news-article__body  arrow-after">
-                      Церемония открытия XXII зимних
-                      Олимпийских игр в Сочи стала одним
-                      из наиболее выдающихся по красоте
-                      и сложности организации мероприятий
-                      последних лет. Однако за торжественным
-                      пафосом пользователи Интернета
-                      обнаружили ряд неловких моментов
-                    </div>
-                  </a>
-                </li>
-              </ul>
-              <footer class="btn-serv-wrap">
-                <a href="#" class="btn  btn-serv">Все обзоры блогов</a>
-              </footer>
-            </section>
-          </div>
-          <!--projects-->
-          <div class="col-lg-3  col-md-3  col-sm-3  col-xs-10">
-            <section class="news-section  type-projects">
-              <header>
-                <h1 class="news-section__title  type-non-accented">Проекты «УралПолит.Ru»</h1>
-              </header>
-              <ul>
-                <li>
-                  <a class="news-article" href="#">
-                    <img class="news-article__photo" src="http://fakeimg.pl/135x135/?text=135x135">
-                    <span class="news-article__tag">Global City</span>
-                    <h2 class="news-article__title">Владимир Бегунов выступит на виниловой вечеринке</h2>
-                  </a>
-                </li>
-                <li>
-                  <a class="news-article" href="#">
-                    <img class="news-article__photo" src="http://fakeimg.pl/135x135/?text=135x135">
-                    <span class="news-article__tag">Global City</span>
-                    <h2 class="news-article__title">Владимир Бегунов выступит на виниловой вечеринке</h2>
-                  </a>
-                </li>
-                <li>
-                  <a class="news-article" href="#">
-                    <img class="news-article__photo" src="http://fakeimg.pl/135x135/?text=135x135">
-                    <span class="news-article__tag">Global City</span>
-                    <h2 class="news-article__title">Владимир Бегунов выступит на виниловой вечеринке</h2>
-                  </a>
-                </li>
-              </ul>
-            </section>
-          </div>
-        </div>
-
-        <div class="row">
-          <!--news from partners-->
-          <section class="news-section  type-from-partner">
+      <div class="row">
+        <!--encyclopedia-->
+        <div class="col-lg-3  col-md-3  col-sm-3  col-xs-10">
+          <section class="news-section  type-persons">
             <header>
-              <h1 class="news-section__title  type-non-accented">Новости партнеров</h1>
+              <h1 class="news-section__title">Энциклопедия</h1>
             </header>
             <ul>
               <li>
-                <a class="news-article  type-from-partner">
-                  <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
-                  <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
-                  <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+                <a class="news-article" href="#">
+                  <img class="news-article__photo" src="http://fakeimg.pl/110x110/?text=110x110">
+                  <span class="news-article__tag">Персоны</span>
+                  <h2 class="news-article__title">Константинопольский Константин Константинович</h2>
+                  <div class="news-article__body">Прокурор Свердловского района Перми</div>
                 </a>
               </li>
               <li>
-                <a class="news-article  type-from-partner">
-                  <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
-                  <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
-                  <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+                <a class="news-article" href="#">
+                  <img class="news-article__photo" src="http://fakeimg.pl/110x110/?text=110x110">
+                  <span class="news-article__tag">Персоны</span>
+                  <h2 class="news-article__title">Бевх Виктор Петрович</h2>
+                  <div class="news-article__body">Прокурор Свердловского района Перми</div>
+                </a>
+              </li>
+            </ul>
+            <footer class="btn-serv-wrap">
+              <a href="#" class="btn  btn-serv">Вся энциклопедия</a>
+            </footer>
+          </section>
+
+          <div class="bnr-wrap    hidden-sm  hidden-xs">
+            <img src="http://fakeimg.pl/200x300/?text=200x300">
+          </div>
+
+        </div>
+        <!--blogs-->
+        <div class="col-lg-4  col-md-4  col-sm-4  col-xs-10">
+          <section class="news-section">
+            <header>
+              <h1 class="news-section__title">Обзор блогов</h1>
+            </header>
+            <ul>
+              <li>
+                <a class="news-article  type-preview">
+                  <aside>
+                    <time>16:20</time>
+                    <span class="news-article__counter">123</span>
+                  </aside>
+                  <img class="news-article__photo" src="http://fakeimg.pl/80x60/?text=80x60">
+                  <h2 class="news-article__title">Сон Медведева и «убийство» виноватого в нераскрывшемся кольце Олимпиады</h2>
+                  <div class="news-article__body  arrow-after">
+                    Церемония открытия XXII зимних
+                    Олимпийских игр в Сочи стала одним
+                    из наиболее выдающихся по красоте
+                    и сложности организации мероприятий
+                    последних лет. Однако за торжественным
+                    пафосом пользователи Интернета
+                    обнаружили ряд неловких моментов
+                  </div>
                 </a>
               </li>
               <li>
-                <a class="news-article  type-from-partner">
-                  <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
-                  <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
-                  <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+                <a class="news-article  type-preview">
+                  <aside>
+                    <time>16:20</time>
+                    <span class="news-article__counter">123</span>
+                  </aside>
+                  <img class="news-article__photo" src="http://fakeimg.pl/80x60/?text=80x60">
+                  <h2 class="news-article__title">Сон Медведева и «убийство» виноватого в нераскрывшемся кольце Олимпиады</h2>
+                  <div class="news-article__body  arrow-after">
+                    Церемония открытия XXII зимних
+                    Олимпийских игр в Сочи стала одним
+                    из наиболее выдающихся по красоте
+                    и сложности организации мероприятий
+                    последних лет. Однако за торжественным
+                    пафосом пользователи Интернета
+                    обнаружили ряд неловких моментов
+                  </div>
                 </a>
               </li>
               <li>
-                <a class="news-article  type-from-partner">
-                  <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
-                  <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
-                  <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+                <a class="news-article  type-preview">
+                  <aside>
+                    <time>16:20</time>
+                    <span class="news-article__counter">123</span>
+                  </aside>
+                  <img class="news-article__photo" src="http://fakeimg.pl/80x60/?text=80x60">
+                  <h2 class="news-article__title">Cлухи о новом браке Путина и их разоблачение</h2>
+                  <div class="news-article__body  arrow-after">
+                    Церемония открытия XXII зимних
+                    Олимпийских игр в Сочи стала одним
+                    из наиболее выдающихся по красоте
+                    и сложности организации мероприятий
+                    последних лет. Однако за торжественным
+                    пафосом пользователи Интернета
+                    обнаружили ряд неловких моментов
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <footer class="btn-serv-wrap">
+              <a href="#" class="btn  btn-serv">Все обзоры блогов</a>
+            </footer>
+          </section>
+        </div>
+        <!--projects-->
+        <div class="col-lg-3  col-md-3  col-sm-3  col-xs-10">
+          <section class="news-section  type-projects">
+            <header>
+              <h1 class="news-section__title  type-non-accented">Проекты «УралПолит.Ru»</h1>
+            </header>
+            <ul>
+              <li>
+                <a class="news-article" href="#">
+                  <img class="news-article__photo" src="http://fakeimg.pl/135x135/?text=135x135">
+                  <span class="news-article__tag">Global City</span>
+                  <h2 class="news-article__title">Владимир Бегунов выступит на виниловой вечеринке</h2>
                 </a>
               </li>
               <li>
-                <a class="news-article  type-from-partner">
-                  <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
-                  <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
-                  <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+                <a class="news-article" href="#">
+                  <img class="news-article__photo" src="http://fakeimg.pl/135x135/?text=135x135">
+                  <span class="news-article__tag">Global City</span>
+                  <h2 class="news-article__title">Владимир Бегунов выступит на виниловой вечеринке</h2>
                 </a>
               </li>
               <li>
-                <a class="news-article  type-from-partner">
-                  <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
-                  <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
-                  <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-                </a>
-              </li>
-              <li>
-                <a class="news-article  type-from-partner">
-                  <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
-                  <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
-                  <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-                </a>
-              </li>
-              <li>
-                <a class="news-article  type-from-partner">
-                  <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
-                  <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
-                  <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-                </a>
-              </li>
-              <li>
-                <a class="news-article  type-from-partner">
-                  <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
-                  <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
-                  <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+                <a class="news-article" href="#">
+                  <img class="news-article__photo" src="http://fakeimg.pl/135x135/?text=135x135">
+                  <span class="news-article__tag">Global City</span>
+                  <h2 class="news-article__title">Владимир Бегунов выступит на виниловой вечеринке</h2>
                 </a>
               </li>
             </ul>
           </section>
         </div>
-
       </div>
-      <!--social widgets-->
-      <div class="col-lg-3  col-md-3  hidden-sm  hidden-xs">
-        <div class="l-island">
-          <img src="http://fakeimg.pl/240x400/?text=240x400">
-        </div>
 
-        <section class="social-widgets-list">
+      <div class="row">
+        <!--news from partners-->
+        <section class="news-section  type-from-partner">
           <header>
-            <h1 class="social-widgets-list__title">Следите за нами в соцсетях:</h1>
+            <h1 class="news-section__title  type-non-accented">Новости партнеров</h1>
           </header>
-          <ul class="reset-list">
+          <ul>
             <li>
-              <div id="vk_groups"></div>
-              <script type="text/javascript">
-                VK.Widgets.Group("vk_groups", {mode: 0, width: "240", height: "290"}, 1);
-              </script>
+              <a class="news-article  type-from-partner">
+                <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
+                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+                <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+              </a>
             </li>
             <li>
-              <div id="ultraorange"></div>
-              <script type="text/javascript">
-                VK.Widgets.Group("ultraorange", {mode: 0, width: "240", height: "290"}, 1);
-              </script>
+              <a class="news-article  type-from-partner">
+                <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
+                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+                <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+              </a>
+            </li>
+            <li>
+              <a class="news-article  type-from-partner">
+                <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
+                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+                <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+              </a>
+            </li>
+            <li>
+              <a class="news-article  type-from-partner">
+                <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
+                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+                <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+              </a>
+            </li>
+            <li>
+              <a class="news-article  type-from-partner">
+                <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
+                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+                <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+              </a>
+            </li>
+            <li>
+              <a class="news-article  type-from-partner">
+                <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
+                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+                <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+              </a>
+            </li>
+            <li>
+              <a class="news-article  type-from-partner">
+                <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
+                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+                <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+              </a>
+            </li>
+            <li>
+              <a class="news-article  type-from-partner">
+                <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
+                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+                <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+              </a>
+            </li>
+            <li>
+              <a class="news-article  type-from-partner">
+                <img class="news-article__photo" src="http://fakeimg.pl/70x70/?text=70x70">
+                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+                <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
+              </a>
             </li>
           </ul>
         </section>
       </div>
+
+    </div>
+    <!--social widgets-->
+    <div class="col-lg-3  col-md-3  hidden-sm  hidden-xs">
+      <div class="l-island">
+        <img src="http://fakeimg.pl/240x400/?text=240x400">
+      </div>
+
+      <section class="social-widget  type-group-widget">
+        <header>
+          <h1 class="social-widget__title">Следите за нами в соцсетях:</h1>
+        </header>
+        <ul class="reset-list">
+          <li>
+            <div id="vk_groups"></div>
+            <script type="text/javascript">
+              VK.Widgets.Group("vk_groups", {mode: 0, width: "240", height: "290"}, 1);
+            </script>
+          </li>
+          <li>
+            <div id="ultraorange"></div>
+            <script type="text/javascript">
+              VK.Widgets.Group("ultraorange", {mode: 0, width: "240", height: "290"}, 1);
+            </script>
+          </li>
+        </ul>
+      </section>
     </div>
   </div>
-
+</div>
 
 </main>
 <!--MAIN end-->

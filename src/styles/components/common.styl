@@ -50,8 +50,8 @@ body
   line-height: 1.2;
 
   &>*
-    make-lg-column(5)
     make-sm-column(6)
+    make-lg-column(5)
 
   p
     margin: 0
@@ -70,21 +70,6 @@ body
 \*------------------------------------*/
 .l-main
   position relative
-
-.social-widgets-list
-  @extend .l-island
-  border none
-
-  li
-    margin: 20px 0
-    &:last-child
-      margin-bottom: 0
-
-.social-widgets-list__title
-  font-size: 14px
-  font-weight: bold
-  margin: 0 0 15px
-
 
 /*------------------------------------*\
     COMPONENTS
@@ -378,3 +363,147 @@ for $item in $exchange-fluctuations
 
   img
     img-responsive()
+
+
+
+/*------------------------------------*\
+  Comment
+\*------------------------------------*/
+.comment-article
+  @extend .l-island--fence
+  @extend .link-emulate-article
+  margin: 5px 0
+
+  time
+    color $gray-light
+    font-size: 10px
+
+  &:hover,&:focus
+    .comment-article__body
+      text-decoration: underline
+
+
+.comment-article__author
+  color $gray-light
+  font-size: 10px
+  &:before
+    pi middle
+    sprite $icon-user
+    margin-right: 5px
+    transform translateY(-2px)
+
+
+.comment-article__body
+  @extend .arrow-after
+  margin-top: 5px
+  font-size: 12px
+
+
+/*------------------------------------*\
+  Tag list
+\*------------------------------------*/
+.tag-list
+  margin: 30px 0 20px
+  font: 12px $font-family-secondary
+  color: #c5cacc
+  // emulate table
+  display table
+  &>*
+    display table-row
+    &>*
+      display table-cell
+
+  ul
+    reset-list()
+    hLine()
+    padding-bottom: 10px
+
+  a
+    display block
+    padding: 2px 5px
+    border @color
+    color  $gray-light
+    margin-left:   5px
+    margin-bottom: 5px
+
+  .tag-list__title
+    text-align: right;
+    font-size: 12px
+    font-weight: 400
+    padding-right: 15px
+    color @color
+    width: 100px
+
+
+
+/*------------------------------------*\
+  Tag list
+\*------------------------------------*/
+.social-widget
+  &.type-share,
+  &.type-follow
+    margin-bottom: 15px
+
+    ul
+      reset-box-model()
+      margin: 0 0 -10px -20px;
+
+    li
+      display inline-block
+      vertical-align: middle;
+      margin: 0 0 10px 20px
+
+    .social-widget__title
+      font-weight: 700
+      font-size: 15px
+
+
+  &.type-share
+    display table
+
+    &>*
+      display table-cell
+
+    .social-widget__title
+      transform translateY(-3px)
+      text-align: right;
+      min-width: 85px
+
+
+  &.type-group
+
+    @extend .l-island
+    border none
+
+    li
+      margin: 20px 0
+      &:last-child
+        margin-bottom: 0
+
+    .social-widget__title
+      font-size: 14px
+      margin: 0 0 15px
+
+
+
+
+/*------------------------------------*\
+  Comment controls
+\*------------------------------------*/
+.comment-controls
+  @extend .btn-group
+  color $text-color
+  font-weight: 700
+  font-size: 12px
+  text-transform: uppercase;
+
+.comment-controls__unit
+  @extend .btn
+  @extend .btn-default
+  padding: 3px 20px
+
+.comment-controls__unit--counter
+  font-size: 16px
+  padding: 1px 0 3px
+  width 70px
+  text-align: center;
