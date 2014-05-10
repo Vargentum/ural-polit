@@ -1,3 +1,6 @@
+/*------------------------------------*\
+  NEWS SECTION: header section 2 (banners)
+\*------------------------------------*/
 .news-section
   position relative
 
@@ -28,7 +31,7 @@
 
 
   /*------------------------------------*\
-    TYPE: header section 2 (banners)
+    NEWS SECTION TYPE: header section 2 (banners)
   \*------------------------------------*/
   &.type-header-section-2
     make-row()
@@ -43,7 +46,7 @@
       position relative
       height: 100px
       padding: 10px
-      text-decoration: none;
+
 
       .flexbox &
         display flex
@@ -66,7 +69,7 @@
 
 
   /*------------------------------------*\
-    TYPE: Important
+    NEWS SECTION TYPE: Important
   \*------------------------------------*/
   &.type-important
     @extend .l-island
@@ -135,7 +138,7 @@
 
 
   /*------------------------------------*\
-    TYPE: person
+    NEWS SECTION TYPE: person
   \*------------------------------------*/
   &.type-persons
     text-align: center;
@@ -171,7 +174,7 @@
         make-xs-column(5)
 
   /*------------------------------------*\
-    TYPE: project
+    NEWS SECTION TYPE: project
   \*------------------------------------*/
   &.type-projects
     text-align: center;
@@ -208,7 +211,7 @@
 
 
   /*------------------------------------*\
-    TYPE: news from partners
+    NEWS SECTION TYPE: news from partners
   \*------------------------------------*/
   &.type-from-partner
     make-lg-column(10)
@@ -243,7 +246,9 @@
 
 
 
-
+/*------------------------------------*\
+  NEWS SECTION components
+\*------------------------------------*/
 .news-section__title
   margin: 0
   font-size: 18px
@@ -257,15 +262,26 @@
     padding-top: 19px
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*------------------------------------*\
-  Base class for news article instance
+  NEWS ARTICLE
 \*------------------------------------*/
 .news-article
   @extend .link-emulate-article
   @extend .article-with-hover
   color $text-color
   clearfix()
-
+  padding: 5px 10px
 
   time
     color: $brand-info;
@@ -277,38 +293,12 @@
     color: $brand-primary;
 
 
-  .comments-widget
-    @extend .btn-group
-    color $text-color
-    font-weight: 700
-    font-size: 12px
-    text-transform: uppercase;
-
-
-  .comments-widget__unit
-    @extend .btn
-    @extend .btn-default
-    padding: 3px 20px
-
-  .comments-widget__unit--counter
-    font-size: 16px
-    padding: 1px 0 3px
-    width 70px
-    text-align: center;
-
-
-
-  .l-header &
-    &:hover,&:focus
-      .news-article__title
-        text-decoration: underline
-
-
   /*------------------------------------*\
-    TYPE: preview
+    NEWS ARTICLE TYPE: preview
   \*------------------------------------*/
   &.type-preview
-    padding: 15px 10px
+    padding-top: 15px
+    padding-bottom: 15px
     position relative
     font-size: 15px
 
@@ -346,19 +336,19 @@
 
 
   /*------------------------------------*\
-    TYPE: preview short
+    NEWS ARTICLE TYPE: preview short
   \*------------------------------------*/
   &.type-preview-short
     @extend .arrow-after
     font-weight: 700
-    padding: 5px 10px
 
 
   /*------------------------------------*\
-    TYPE: preview large
+    NEWS ARTICLE TYPE: preview large
   \*------------------------------------*/
   &.type-preview-large
-    padding: 10px
+    padding-top: 10px
+    padding-bottom: 10px
 
     time
       display block
@@ -369,11 +359,12 @@
       margin: 0 0 15px
 
   /*------------------------------------*\
-    TYPE: opinion
+    NEWS ARTICLE TYPE: opinion
   \*------------------------------------*/
   &.type-opinion
     @extend .l-island--fence
-    padding: 10px
+    padding-top: 10px
+    padding-bottom: 10px
     jLine middle
 
     $author-photo-size = 80px
@@ -420,10 +411,11 @@
       background-color: #c5cacc
 
   /*------------------------------------*\
-    TYPE: top commented
+    NEWS ARTICLE TYPE: top commented
   \*------------------------------------*/
   &.type-top-commented
-    padding: 0 10px
+    padding-top: 0
+    padding-bottom: 0
     margin-bottom: 20px
 
     time
@@ -436,7 +428,7 @@
 
 
   /*------------------------------------*\
-    TYPE: poll
+    NEWS ARTICLE TYPE: poll
   \*------------------------------------*/
   &.type-poll
 
@@ -457,7 +449,98 @@
 
 
   /*------------------------------------*\
-    STATE: disabled (base class)
+    NEWS ARTICLE TYPE: template
+  \*------------------------------------*/
+  &.type-template
+    make-xs-column(10)
+    make-sm-column(6)
+    make-md-column(7)
+    padding-top: 15px
+    padding-bottom: 15px
+
+    time
+      display block
+      margin-bottom: 5px
+
+    .news-article__title
+      font-size: $font-size-h1
+      margin: 0 0 15px
+
+    .news-article__subTitle
+      font-size: $font-size-h2
+      color: $gray-light;
+      margin: 0 0 15px
+
+    .news-article__body
+      font-family: $font-family-secondary;
+
+      h2
+        line-height: 1.3;
+
+      h3
+        margin-top:    20px
+        margin-bottom: 10px
+        
+      a
+        color: $brand-primary;
+
+      blockquote
+        font-family: $font-family-base;
+
+    figure
+      position relative
+      margin-bottom: 30px
+
+      img
+        size: 100% auto
+
+      figcaption
+        position absolute
+
+        .csscalc &
+          bottom 10px
+          left 10px
+          width: calc(100% \- 20px)
+
+        .no-csscalc &
+          bottom 0
+          left 0
+          width: 100%
+
+        display block
+        color: $body-bg;
+        padding: 5px 10px
+        background-color: rgb(0,0,0)
+        background-color: rgba(0,0,0, .6)
+
+
+
+      small
+        absolute left top 100%
+        margin-top: 3px
+        color $gray-light
+        font-size: 10px
+
+
+
+    .news-section
+      @extend .l-island
+
+      .news-article__title
+        font-size: 15px
+        font-weight: 700
+
+    .news-section__title
+      font-weight: 400;
+      font-size: 15px
+
+
+
+
+
+
+  /*------------------------------------*\
+    NEWS ARTICLE STATE: disabled (base class)
   \*------------------------------------*/
   &.state-disabled
     &,
@@ -476,7 +559,7 @@
 
 
 /*------------------------------------*\
-  News article components
+  NEWS ARTICLE components
 \*------------------------------------*/
 .news-article__body
   display block
@@ -536,36 +619,3 @@
 
 .news-article__counter
   border $text-color
-
-/*------------------------------------*\
-   Comment
- \*------------------------------------*/
-.comment-article
-  @extend .l-island--fence
-  @extend .link-emulate-article
-  margin: 5px 0
-
-  time
-    color $gray-light
-    font-size: 10px
-
-  &:hover,&:focus
-    .comment-article__body
-      text-decoration: underline
-
-
-.comment-article__author
-  color $gray-light
-  font-size: 10px
-  &:before
-    pi middle
-    sprite $icon-user
-    margin-right: 5px
-    transform translateY(-2px)
-
-
-.comment-article__body
-  @extend .arrow-after
-  margin-top: 5px
-  font-size: 12px
-

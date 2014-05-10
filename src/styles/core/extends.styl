@@ -61,15 +61,18 @@ for $i in bottom middle top float
 
 
 .article-with-hover
-  border 1px solid transparent
-  transition background-color $transition-duration, border-color $transition-duration
-  margin-bottom: -1px
+  a&
+    border 1px solid transparent
+    transition background-color $transition-duration, border-color $transition-duration
+    margin-bottom: -1px
+    text-decoration: none;
 
-  &:hover,&:focus
-    background-color: $body-bg-contrast
-    border-color $gray-lighter
-
-  &.state-disabled
     &:hover,&:focus
-      background-color: transparent
-      border-color transparent
+      background-color: $body-bg-contrast
+      border-color $gray-lighter
+      text-decoration: none;
+
+    &.state-disabled
+      &:hover,&:focus
+        background-color: transparent
+        border-color transparent
