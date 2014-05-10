@@ -23,10 +23,10 @@
     margin-bottom: 20px
 
     li
-      make-lg-column(2)
+      make-sm-column(3.33)
+      make-md-column(2)
 
       +b($media-tablet)
-        make-sm-column(3.33)
         hide-except(1..3)
 
 
@@ -90,7 +90,7 @@
     li
       make-xs-column(5)
       make-sm-column(3.33)
-      make-lg-column(2)
+      make-md-column(2)
 
       +b($media-tablet)
         hide-except(1..3)
@@ -133,7 +133,7 @@
         padding: 6px
         make-xs-column(8)
         make-sm-column(6)
-        make-lg-column(4)
+        make-md-column(4)
         center-block()
 
 
@@ -214,7 +214,7 @@
     NEWS SECTION TYPE: news from partners
   \*------------------------------------*/
   &.type-from-partner
-    make-lg-column(10)
+    make-md-column(10)
     @extend .hidden-xs
     border-top: 1px solid $gray-lighter
     margin: 20px 0
@@ -225,7 +225,7 @@
 
     li
       make-sm-column(3.33)
-      make-lg-column(3.33)
+      make-md-column(3.33)
 
 
     .news-article
@@ -293,10 +293,19 @@
     color: $brand-primary;
 
 
+
   /*------------------------------------*\
-    NEWS ARTICLE TYPE: preview
+    NEWS ARTICLE TYPE: preview Short
   \*------------------------------------*/
-  &.type-preview
+  &.type-preview-S
+    @extend .arrow-after
+    font-weight: 700
+
+
+  /*------------------------------------*\
+    NEWS ARTICLE TYPE: preview Middle
+  \*------------------------------------*/
+  &.type-preview-M
     padding-top: 15px
     padding-bottom: 15px
     position relative
@@ -334,19 +343,10 @@
         border-color $gray-lighter
 
 
-
   /*------------------------------------*\
-    NEWS ARTICLE TYPE: preview short
+    NEWS ARTICLE TYPE: preview Large
   \*------------------------------------*/
-  &.type-preview-short
-    @extend .arrow-after
-    font-weight: 700
-
-
-  /*------------------------------------*\
-    NEWS ARTICLE TYPE: preview large
-  \*------------------------------------*/
-  &.type-preview-large
+  &.type-preview-L
     padding-top: 10px
     padding-bottom: 10px
 
@@ -357,6 +357,42 @@
     .news-article__title
       font-size: 18px
       margin: 0 0 15px
+
+
+  /*------------------------------------*\
+    NEWS ARTICLE TYPE: preview XLarge
+  \*------------------------------------*/
+  &.type-preview-XL
+    position relative
+    color $body-bg
+    padding: 0
+
+    .news-article__header
+      absolute bottom left
+      width: 100%;
+      padding: 10px
+
+    time
+      color: $body-bg;
+
+    .news-article__title
+      font-size: 28px
+      //remove inheritances from default news-aritcle__header
+      margin: 0
+      position static
+      background none
+      padding: 0
+
+    .news-article__tag
+      button-variant($body-bg, rgba(81, 81, 91, .4), $body-bg);
+      absolute left 10px top 10px
+
+    .news-article__counter
+      display inline-block
+      vertical-align: middle;
+      //remove inheritances from default news-aritcle__header
+      position static
+
 
   /*------------------------------------*\
     NEWS ARTICLE TYPE: opinion
@@ -375,7 +411,7 @@
       border-radius 50%
       overflow hidden
 
-      img
+      .news-article__photo
         size $author-photo-size
 
 
@@ -580,9 +616,8 @@
     color: inherit
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
 
-  img
+  .news-article__photo
     size 100% auto
-    @extend .img-responsive
 
   .news-article__counter
     border @color
@@ -591,7 +626,6 @@
   .news-article__tag
     button-variant($body-bg, rgba(81, 81, 91, .4), $body-bg);
     absolute left 10px top 10px
-
 
 
 .news-article__counter
@@ -619,3 +653,7 @@
 
 .news-article__counter
   border $text-color
+
+.news-article__photo
+  display block
+  @extend .img-responsive
