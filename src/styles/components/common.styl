@@ -76,9 +76,11 @@ body
 \*------------------------------------*/
 .logo
   display block
-  width: 100%
   margin-top: 10px
   text-align: center;
+  make-xs-column(10)
+  make-sm-column(5)
+  make-md-column(3)
 
   img
     display inline-block
@@ -91,14 +93,14 @@ body
 
 .widget-date
   make-xs-column(5)
-  make-lg-column(2)
+  make-md-column(2)
   font-size: 11px;
   color: $text-color
 
 
 .widget-weather
   make-xs-column(5)
-  make-lg-column(2.75)
+  make-md-column(2.75)
   hLine()
   font-size: 11px;
   color: $gray-light
@@ -124,7 +126,8 @@ for $item in $weather-types
   color: $gray-light
   font-size: 12px
   @extend .hidden-xs
-  make-lg-column(5.25)
+  make-md-column(5.25)
+
   +b($media-tablet)
     make-row()
 
@@ -189,9 +192,9 @@ for $item in $exchange-fluctuations
       margin-right: 2px
 
   .l-header &
-    make-sm-column(9)
-    make-lg-column(5)
     @extend .hidden-xs
+    make-sm-column(9)
+    make-md-column(5)
 
   .l-footer &
     position relative
@@ -227,7 +230,7 @@ for $item in $exchange-fluctuations
 .project-search
   margin: 0
   make-sm-column(1)
-  make-lg-column(5)
+  make-md-column(5)
   size: 320px 30px
   position relative
 
@@ -507,3 +510,18 @@ for $item in $exchange-fluctuations
   padding: 1px 0 3px
   width 70px
   text-align: center;
+
+
+/*------------------------------------*\
+  Project page section
+\*------------------------------------*/
+.project-page
+  make-xs-column(10)
+  make-sm-column(6)
+  make-md-column(7)
+
+.project-page__title
+  font-size: 36px
+  margin: 20px 0
+  padding-bottom: 10px
+  border-bottom: 5px solid $text-color

@@ -81,15 +81,13 @@
 
     <div class="l-header__main">
       <!--logo-->
-      <div class="col-lg-3  col-md-3  col-sm-5  col-xs-10">
-        <a class="logo" href="/" itemprop='url'>
-          <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
-          <span class="text-hide" itemprop="name">УралПолит.ru</span>
-          <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
-        </a>
-      </div>
+      <a class="logo" href="/" itemprop='url'>
+        <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
+        <span class="text-hide" itemprop="name">УралПолит.ru</span>
+        <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
+      </a>
 
-      <div class="col-lg-7  col-md-7  col-sm-5  col-xs-10">
+      <div class="col-xs-10  col-sm-5  col-md-7">
         <div class="l-header__main__row  hidden-xs">
           <time class="widget-date">14 сентября 2014 года</time>
           <div class="widget-weather">
@@ -184,13 +182,16 @@
   <div class="container">
     <div class="row">
 
+      <section class="project-page">
+        <!--include "templates/main"-->
+      </section>
 
-      <!--include "templates/main"-->
-      include "templates/article"
+      <!--include "templates/article"-->
+      include "templates/section"
 
 
       <!--hot news-->
-      <div class="col-lg-3  col-md-3  col-sm-4  hidden-xs">
+      <div class="hidden-xs  col-sm-4  col-md-3">
         <!--Hot news section-->
         <section class="news-section">
           <header>
@@ -198,19 +199,19 @@
           </header>
           <ul>
             <li>
-              <a href="#" class="news-article  type-preview-short">Борьба с коррупцией: задержан бизнесмен Комаров</a>
+              <a href="#" class="news-article  type-preview-S">Борьба с коррупцией: задержан бизнесмен Комаров</a>
             </li>
             <li>
-              <a href="#" class="news-article  type-preview-short">ЧП: в Сургуте рухнуло здание</a>
+              <a href="#" class="news-article  type-preview-S">ЧП: в Сургуте рухнуло здание</a>
             </li>
             <li>
-              <a href="#" class="news-article  type-preview-short">Борьба с коррупцией: задержан бизнесмен Комаров</a>
+              <a href="#" class="news-article  type-preview-S">Борьба с коррупцией: задержан бизнесмен Комаров</a>
             </li>
             <li>
-              <a href="#" class="news-article  type-preview-short">ЧП: в Сургуте рухнуло здание</a>
+              <a href="#" class="news-article  type-preview-S">ЧП: в Сургуте рухнуло здание</a>
             </li>
             <li>
-              <a href="#" class="news-article  type-preview-short">Борьба с коррупцией: задержан бизнесмен Комаров</a>
+              <a href="#" class="news-article  type-preview-S">Борьба с коррупцией: задержан бизнесмен Комаров</a>
             </li>
           </ul>
         </section>
@@ -292,7 +293,7 @@
           <header class="news-article__header">
             <span class="news-article__tag">Опрос</span>
             <h1 class="news-article__title">Как вы считаете, войдет ли Крым в состав России?</h1>
-            <img src="http://fakeimg.pl/350x200/666/?text=Hello">
+            <img src="http://fakeimg.pl/280x180/666/?text=280x180">
           </header>
           <div class="news-article__body">
             <ul class="reset-list">
@@ -344,7 +345,7 @@
         <li>
           <a href="#" class="news-article">
             <aside class="news-article__header">
-              <img src="http://fakeimg.pl/180x180/666/?text=180x180">
+              <img class="news-article__photo" src="http://fakeimg.pl/180x180/666/?text=180x180">
               <span class="news-article__tag">Экология</span>
               <span class="news-article__counter">123</span>
             </aside>
@@ -364,7 +365,7 @@
         <li>
           <a href="#" class="news-article  state-disabled">
             <aside class="news-article__header">
-              <img src="http://fakeimg.pl/180x180/666/?text=180x180">
+              <img class="news-article__photo" src="http://fakeimg.pl/180x180/666/?text=180x180">
               <span class="news-article__tag">Экология</span>
               <span class="news-article__counter">123</span>
             </aside>
@@ -384,7 +385,7 @@
         <li>
           <a href="#" class="news-article">
             <aside class="news-article__header">
-              <img src="http://fakeimg.pl/180x180/666/?text=180x180">
+              <img class="news-article__photo" src="http://fakeimg.pl/180x180/666/?text=180x180">
               <span class="news-article__tag">Экология</span>
               <span class="news-article__counter">123</span>
             </aside>
@@ -404,7 +405,7 @@
         <li>
           <a href="#" class="news-article">
             <aside class="news-article__header">
-              <img src="http://fakeimg.pl/180x180/666/?text=180x180">
+              <img class="news-article__photo" src="http://fakeimg.pl/180x180/666/?text=180x180">
               <span class="news-article__tag">Экология</span>
               <span class="news-article__counter">123</span>
             </aside>
@@ -424,7 +425,7 @@
         <li>
           <a href="#" class="news-article">
             <aside class="news-article__header">
-              <img src="http://fakeimg.pl/180x180/666/?text=180x180">
+              <img class="news-article__photo" src="http://fakeimg.pl/180x180/666/?text=180x180">
               <span class="news-article__tag">Экология</span>
               <span class="news-article__counter">123</span>
             </aside>
@@ -451,7 +452,7 @@
         <li>
           <a href="#" class="news-article">
             <aside class="news-article__header">
-              <img src="http://fakeimg.pl/180x180/666/?text=180x180">
+              <img class="news-article__photo" src="http://fakeimg.pl/180x180/666/?text=180x180">
               <span class="news-article__tag">Экология</span>
               <span class="news-article__counter">123</span>
             </aside>
@@ -471,7 +472,7 @@
         <li>
           <a href="#" class="news-article  state-disabled">
             <aside class="news-article__header">
-              <img src="http://fakeimg.pl/180x180/666/?text=180x180">
+              <img class="news-article__photo" src="http://fakeimg.pl/180x180/666/?text=180x180">
               <span class="news-article__tag">Экология</span>
               <span class="news-article__counter">123</span>
             </aside>
@@ -491,7 +492,7 @@
         <li>
           <a href="#" class="news-article">
             <aside class="news-article__header">
-              <img src="http://fakeimg.pl/180x180/666/?text=180x180">
+              <img class="news-article__photo" src="http://fakeimg.pl/180x180/666/?text=180x180">
               <span class="news-article__tag">Экология</span>
               <span class="news-article__counter">123</span>
             </aside>
@@ -511,7 +512,7 @@
         <li>
           <a href="#" class="news-article">
             <aside class="news-article__header">
-              <img src="http://fakeimg.pl/180x180/666/?text=180x180">
+              <img class="news-article__photo" src="http://fakeimg.pl/180x180/666/?text=180x180">
               <span class="news-article__tag">Экология</span>
               <span class="news-article__counter">123</span>
             </aside>
@@ -531,7 +532,7 @@
         <li>
           <a href="#" class="news-article">
             <aside class="news-article__header">
-              <img src="http://fakeimg.pl/180x180/666/?text=180x180">
+              <img class="news-article__photo" src="http://fakeimg.pl/180x180/666/?text=180x180">
               <span class="news-article__tag">Экология</span>
               <span class="news-article__counter">123</span>
             </aside>
@@ -560,11 +561,11 @@
   <div class="container">
     <div class="row">
       <!--column-->
-      <div class="col-lg-7  col-md-7  col-sm-10  col-xs-10">
+      <div class="col-xs-10  col-md-7">
 
       <div class="row">
         <!--encyclopedia-->
-        <div class="col-lg-3  col-md-3  col-sm-3  col-xs-10">
+        <div class="col-xs-10  col-sm-3">
           <section class="news-section  type-persons">
             <header>
               <h1 class="news-section__title">Энциклопедия</h1>
@@ -598,14 +599,14 @@
 
         </div>
         <!--blogs-->
-        <div class="col-lg-4  col-md-4  col-sm-4  col-xs-10">
+        <div class="col-xs-10  col-sm-4">
           <section class="news-section">
             <header>
               <h1 class="news-section__title">Обзор блогов</h1>
             </header>
             <ul>
               <li>
-                <a class="news-article  type-preview">
+                <a class="news-article  type-preview-M">
                   <aside>
                     <time>16:20</time>
                     <span class="news-article__counter">123</span>
@@ -624,7 +625,7 @@
                 </a>
               </li>
               <li>
-                <a class="news-article  type-preview">
+                <a class="news-article  type-preview-M">
                   <aside>
                     <time>16:20</time>
                     <span class="news-article__counter">123</span>
@@ -643,7 +644,7 @@
                 </a>
               </li>
               <li>
-                <a class="news-article  type-preview">
+                <a class="news-article  type-preview-M">
                   <aside>
                     <time>16:20</time>
                     <span class="news-article__counter">123</span>
@@ -668,7 +669,7 @@
           </section>
         </div>
         <!--projects-->
-        <div class="col-lg-3  col-md-3  col-sm-3  col-xs-10">
+        <div class="col-xs-10  col-sm-3">
           <section class="news-section  type-projects">
             <header>
               <h1 class="news-section__title  type-non-accented">Проекты «УралПолит.Ru»</h1>
@@ -776,7 +777,7 @@
 
     </div>
     <!--social widgets-->
-    <div class="col-lg-3  col-md-3  hidden-sm  hidden-xs">
+    <div class="hidden-xs  hidden-sm  col-md-3">
       <div class="l-island">
         <img src="http://fakeimg.pl/240x400/?text=240x400">
       </div>
@@ -813,15 +814,13 @@
 
     <div class="l-footer__main">
       <!--logo-->
-      <div class="col-lg-3  col-md-3  col-sm-5  col-xs-10">
-        <a class="logo" href="/" itemprop='url'>
-          <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
-          <span class="text-hide" itemprop="name">УралПолит.ru</span>
-          <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
-        </a>
-      </div>
+      <a class="logo" href="/" itemprop='url'>
+        <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
+        <span class="text-hide" itemprop="name">УралПолит.ru</span>
+        <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
+      </a>
 
-      <div class="col-lg-7  col-md-7  col-sm-5  col-xs-10">
+      <div class="col-xs-10  col-sm-5  col-md-7">
         <nav class="project-nav">
           <ul>
             <li><a href="#">О проекте</a></li>
