@@ -15,6 +15,9 @@ body
   make-row()
   border-top: 10px solid #51525c
 
+  +b($media-max-phone)
+    border-top none
+
 
 .l-header__main__row
   margin: 12px 0
@@ -29,7 +32,8 @@ body
   margin-top: 20px
 
 .l-footer__main
-  @extend .l-header__main
+  make-row()
+  border-top: 10px solid #51525c
 
   +b($media-tablet)
     margin-bottom: 15px
@@ -202,13 +206,14 @@ for $item in $exchange-fluctuations
   .l-header &
     make-sm-column(9)
     make-lg-column(5)
+    @extend .hidden-xs
 
   .l-footer &
     position relative
     top 59px
 
 
-  +b($media-max-tablet)
+  +b($media-tablet)
 
     ul
       jLine()
@@ -221,10 +226,22 @@ for $item in $exchange-fluctuations
       top 52px
 
 
+  +b($media-max-phone)
+
+    .l-footer &
+      top 0
+
+      ul
+        text-align: center;
+
+      li
+        hide-except(1..5, inline-block)
+        margin: 0 10px
+
+
 .project-search
   margin: 0
   make-sm-column(1)
-  /*make-sm-column-offset(1)*/
   make-lg-column(5)
   size: 320px 30px
   position relative
@@ -284,6 +301,11 @@ for $item in $exchange-fluctuations
         display block
         right 10px // because padding removed
 
+  +b($media-max-phone)
+    width: 320px
+    margin: 0 auto
+
+
 
 
 .set-region
@@ -309,6 +331,8 @@ for $item in $exchange-fluctuations
 
   .l-footer &
     @extend .hidden-sm
+    @extend .hidden-xs
+
 
 .project-catalog
   make-row()
@@ -327,6 +351,16 @@ for $item in $exchange-fluctuations
   a
     color: inherit;
 
+
+  +b($media-max-phone)
+
+    .l-footer &
+
+      li
+        hide-except(1..2, inline-block)
+
+
+
 .web-counters
   reset-list()
   width: 280px
@@ -341,3 +375,6 @@ for $item in $exchange-fluctuations
 .bnr-wrap
   margin: 20px 0
   make-row()
+
+  img
+    img-responsive()
