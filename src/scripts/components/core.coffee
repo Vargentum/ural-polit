@@ -27,3 +27,25 @@ $ ->
       input.blur =>
         $(@).removeClass('state-active')
   )
+
+
+# encyclopedia section toggler
+$ ->
+  body = '.encyclopedia-section'
+  toggler = '.encyclopedia-section__toggler-state'
+
+
+  labelDefault = 'Развернуть'
+  labelActive = 'Свернуть'
+
+  toggleState = (el) ->
+    el.toggleClass('state-active')
+
+  $(toggler).click ->
+    toggleState $(@)
+    toggleState $(@).closest(body)
+    if !( $(@).hasClass('state-active') )
+      $(@).html(labelDefault)
+    else
+      $(@).html(labelActive)
+
