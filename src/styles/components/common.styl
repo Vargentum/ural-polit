@@ -105,17 +105,19 @@ body
   font-size: 11px;
   color: $gray-light
 
-$weather-types = day $weather-day,
-                 night $weather-night
+.widget-weather__unit
+  color: $text-color;
+  &:before
+    pi middle
+    position relative
+    top -3px
+    margin: 0 2px 0 5px
 
-for $item in $weather-types
-  .widget-weather__{$item[0]}
-    color: $text-color;
-    &:before
-      pi middle
-      position relative
-      top -3px
-      margin: 0 2px 0 5px
+  $weather-unit-states = day $weather-day,
+                         night $weather-night
+
+  for $item in $weather-unit-states
+    &.state-{$item[0]}:before
       sprite $item[1]
 
 
@@ -369,13 +371,33 @@ for $item in $exchange-fluctuations
 
 
 
+.btn-show-menu
+  @extend .hidden-md
+  @extend .hidden-lg
+  @extend .text-hide
+  display block
+  sprite $btn-show-menu
+
 /*------------------------------------*\
   Comment
 \*------------------------------------*/
 .comment-article
   @extend .l-island--fence
-  @extend .link-emulate-article
   margin: 5px 0
+  display block
+  text-decoration: none;
+
+  &:hover,&:focus
+    text-decoration: none;
+
+    .comment-article__body
+      text-decoration: underline;
+
+  &.state-disabled
+
+    .comment-article__body
+      @extend .reset-link-defaults
+
 
   time
     color $gray-light
@@ -503,14 +525,22 @@ for $item in $exchange-fluctuations
 .comment-controls__unit
   @extend .btn
   @extend .btn-default
-  padding: 3px 20px
+  height: 30px
+  padding: 0 20px
+  .flexbox &
+    display inline-flex
+    align-items center
+    justify-content center
+
+  .no-flexbox &
+    line-height: 28px
+    text-align: center;
 
 .comment-controls__unit--counter
   font-size: 16px
-  padding: 1px 0 3px
+  padding: 0
   width 70px
-  text-align: center;
-
+  arrow-bottom($text-color, 7px)
 
 /*------------------------------------*\
   Project page section
@@ -525,3 +555,118 @@ for $item in $exchange-fluctuations
   margin: 20px 0
   padding-bottom: 10px
   border-bottom: 5px solid $text-color
+
+
+/*------------------------------------*\
+  Encyclopedia section
+\*------------------------------------*/
+.encyclopedia-section__title
+  font-size: 38px
+  margin: 0
+
+.encyclopedia-section
+  @extend .l-island
+  border none
+  margin-left: 10px
+  margin-right: 10px
+  position relative
+  //border emulate
+  &:before,&:after
+    pb(bottom left)
+    size 100% 1px
+    background-color: $gray-light
+    .csstransforms &
+      transform translateX(-10px)
+      width: calc(100% \+ 20px)
+
+  &:before
+    top 0
+
+  header
+    jLine()
+    padding: 15px 0
+    h3
+      margin: 0
+
+  h3, dt
+    font-size: 18px
+
+  h3, dl
+    margin: 20px 0 15px
+
+  dl.line
+    hLine()
+    dt
+      margin-right: 20px
+
+  .encyclopedia-section__body
+    display none
+
+
+  &.state-active
+
+    .encyclopedia-section__body
+      display block
+
+
+
+.encyclopedia-section__toggler-state
+  font-size: 12px
+  text-transform: uppercase;
+  border $gray-light
+  padding: 3px 10px
+  background-color: transparent
+  //make arrow
+  .csstransforms &
+    position relative
+    padding-right: 60px
+    &:before
+      pb(right 10px top 50%)
+      sprite $arrow-toggle
+      trans transform
+      transform rotate(-180deg) translateY(50%)
+
+    &.state-active:before
+      transform rotate(0) translateY(-50%)
+
+
+/*------------------------------------*\
+  Pagination
+\*------------------------------------*/
+.pagination
+  position relative
+  border-top: 1px solid $gray-light
+  border-bottom: 1px solid $gray-light
+  margin: 0
+  padding: 40px 15px
+
+  a
+    margin: 0 20px
+    trans all
+
+  li:first-child
+    a
+      margin-left: 0
+
+  li:last-child
+    a
+      margin-right: 0
+
+  .active
+    transform scale(1.25)
+
+  .flexbox &
+    display flex
+    justify-content space-between
+
+
+.pagination__ellipsis
+  &>*
+    background-color: transparent !important
+    border-color: transparent !important
+    text-align: center;
+    &,&:hover,&:focus,&:active
+      color $text-color !important
+
+  .flexbox &
+    flex: 1;

@@ -1131,3 +1131,13 @@ hide-except($array, $display-type = block)
     &:nth-child({$item})
       display $display-type
 
+
+arrow-bottom($color = text-color, $base = 4px)
+  position relative
+  &:after
+    pb(left 50% top 100%)
+    border-top   $base solid $color
+    border-left  ($base + 1) solid transparent
+    border-right @border-left
+    margin-left: -($base)
+

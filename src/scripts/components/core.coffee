@@ -27,3 +27,28 @@ $ ->
       input.blur =>
         $(@).removeClass('state-active')
   )
+
+# header navigation mobile logic
+$ ->
+  trigger = $('.btn-show-menu')
+  elems = [$('.set-region'), $('.project-catalog')]
+  win = $(window)
+
+  checkElemsState = ->
+    if win.width() <= 780
+      elems.forEach (e) ->
+        e.slideUp()
+    else
+      elems.forEach (e) ->
+        e.slideDown()
+
+
+  win.load ->
+    checkElemsState()
+
+  win.resize ->
+    checkElemsState()
+
+  trigger.click ->
+    elems.forEach (e) ->
+      e.slideToggle()
