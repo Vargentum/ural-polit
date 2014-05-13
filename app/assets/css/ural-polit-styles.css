@@ -6932,6 +6932,7 @@ body {
 }
 @media (max-width:767px) {
   .l-header .set-region {
+    display: none;
     width: 50%;
     float: left;
   }
@@ -6964,6 +6965,7 @@ body {
 }
 @media (max-width:767px) {
   .l-header .project-catalog {
+    display: none;
     width: 50%;
     float: right;
   }
