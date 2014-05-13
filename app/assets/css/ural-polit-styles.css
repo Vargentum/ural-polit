@@ -5993,21 +5993,27 @@ a.list-group-item-danger.active:focus {
 .visible-xs,
 .visible-sm,
 .visible-md,
-.visible-lg {
+.visible-lg,
+.btn-show-menu {
   display: none !important;
 }
 @media (max-width:767px) {
-  .visible-xs {
+  .visible-xs,
+  .btn-show-menu {
     display: block !important;
   }
-  table.visible-xs {
+  table.visible-xs,
+  table.btn-show-menu {
     display: table;
   }
-  tr.visible-xs {
+  tr.visible-xs,
+  tr.btn-show-menu {
     display: table-row !important;
   }
   th.visible-xs,
-  td.visible-xs {
+  th.btn-show-menu,
+  td.visible-xs,
+  td.btn-show-menu {
     display: table-cell !important;
   }
 }
@@ -6076,14 +6082,12 @@ a.list-group-item-danger.active:focus {
   }
 }
 @media (min-width:1024px) and (max-width:1023px) {
-  .hidden-md,
-  .btn-show-menu {
+  .hidden-md {
     display: none !important;
   }
 }
 @media (min-width:1024px) {
-  .hidden-lg,
-  .btn-show-menu {
+  .hidden-lg {
     display: none !important;
   }
 }
@@ -6353,6 +6357,9 @@ body {
   background-color: #f6f6f7;
   border-bottom: 1px solid #999;
   padding: 10px 0 15px;
+}
+.l-header .container {
+  position: relative;
 }
 .l-header__main {
   margin-left: -10px;
@@ -6923,6 +6930,16 @@ body {
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
+@media (max-width:767px) {
+  .l-header .set-region {
+    width: 50%;
+    float: left;
+  }
+  .l-header .set-region li {
+    display: block;
+    text-align: center;
+  }
+}
 .project-catalog {
   margin-left: -10px;
   margin-right: -10px;
@@ -6946,6 +6963,14 @@ body {
   color: inherit;
 }
 @media (max-width:767px) {
+  .l-header .project-catalog {
+    width: 50%;
+    float: right;
+  }
+  .l-header .project-catalog li {
+    display: block;
+    text-align: right;
+  }
   .l-footer .project-catalog li {
     display: none;
   }
@@ -6988,6 +7013,16 @@ body {
   background-position: 0px 0px;
   width: 33px;
   height: 29px;
+  position: absolute;
+  right: 20px;
+  bottom: 12.5px;
+  clear: both;
+}
+@media screen and (max-width: 450px) {
+  .btn-show-menu {
+    position: static;
+    margin: 0 auto;
+  }
 }
 /*------------------------------------*   Comment
 \*------------------------------------*/

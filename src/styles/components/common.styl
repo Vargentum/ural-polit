@@ -10,6 +10,9 @@ body
   border-bottom: 1px solid $gray-light
   padding: 10px 0 15px
 
+  .container
+    position relative
+
 
 .l-header__main
   make-row()
@@ -323,6 +326,17 @@ for $item in $exchange-fluctuations
     @extend .hidden-sm
     @extend .hidden-xs
 
+  +b($media-max-phone)
+
+    .l-header &
+      width: 50%
+      float: left
+
+      li
+        display block
+        text-align: center;
+
+
 
 .project-catalog
   make-row()
@@ -343,6 +357,15 @@ for $item in $exchange-fluctuations
 
 
   +b($media-max-phone)
+
+    .l-header &
+      width: 50%
+      float: right
+
+      li
+        display block
+        text-align: right
+
 
     .l-footer &
 
@@ -372,11 +395,16 @@ for $item in $exchange-fluctuations
 
 
 .btn-show-menu
-  @extend .hidden-md
-  @extend .hidden-lg
+  @extend .visible-xs
   @extend .text-hide
   display block
   sprite $btn-show-menu
+  absolute right 20px bottom 12.5px
+  clear: both
+
+  +b('screen and (max-width: 450px)')
+    position static
+    margin: 0 auto
 
 /*------------------------------------*\
   Comment
