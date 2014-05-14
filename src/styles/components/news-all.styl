@@ -377,6 +377,9 @@
       font-size: 18px
       margin: 0 0 15px
 
+    .news-article__tag
+      font-weight: 700
+      border-width: 2px
 
   /*------------------------------------*\
     NEWS ARTICLE TYPE: preview XLarge
@@ -405,6 +408,8 @@
     .news-article__tag
       button-variant($body-bg, rgba(81, 81, 91, .4), $body-bg);
       absolute left 10px top 10px
+      font-weight: 700
+      border-width: 2px
 
     .news-article__counter
       display inline-block
@@ -504,6 +509,55 @@
       margin-bottom: 10px
 
 
+
+  /*------------------------------------*\
+   NEWS ARTICLE TYPE: Carousel
+ \*------------------------------------*/
+  &.type-carousel
+    position relative
+    padding: 0
+    background-color: #18181b
+
+    .carousel-inner
+      position relative
+      padding: 0 0 110px;
+
+    .carousel-caption
+      absolute top 100% left
+      padding: 15px 20px
+      width 100%
+      color: $body-bg;
+      font-size: 16px
+      font-weight: 700
+      text-align: left;
+
+
+    .carousel-indicators
+      bottom 0
+      li
+        size 10px
+        border none
+        background-color: #8c959a
+        margin: 0 7px
+        &.active
+          background-color: #fff
+          transform scale(1.25)
+
+    .news-article__tag
+      absolute left 10px top 10px
+      button-variant($body-bg, rgba(81, 81, 91, .4), $body-bg);
+      font-weight: 700
+      border-width: 2px
+
+    .news-article__counter
+      absolute top 185px right 10px
+      color $body-bg
+      border-color $body-bg
+      &:after
+        border-top-color $body-bg
+
+    .news-article__photo-total
+      absolute top 186px left 10px
 
 
   /*------------------------------------*\
@@ -698,3 +752,29 @@
   &, img
     @extend .img-responsive
 
+.news-article__photo-total
+  @extend .reset-link-defaults
+  display block
+  font-size: 11px
+  width: 22px
+  height: 16px;
+  line-height: @height;
+  text-align: center;
+  border 1px solid $body-bg
+  border-radius 0 1px 1px 0
+  background-color: rgb(0,0,0)
+  background-color: rgba(0,0,0,.5)
+  margin-left: 25px
+  //icon
+  &:after
+    pb(right 100% bottom -1px)
+    sprite $icon-photo
+  //bg for icon
+  &:before
+    pb(right 100% bottom -1px)
+    background-color: rgb(0,0,0)
+    background-color: rgba(0,0,0,.5)
+    size: 25px 16px;
+
+  &,&:hover,&:focus
+    color $body-bg

@@ -1170,6 +1170,7 @@ a.news-article__title,
 a.news-article__tag,
 .news-article__counter a,
 a.news-article__counter,
+.news-article__photo-total,
 .reset-link-defaults:hover,
 .comment-article.state-disabled .comment-article__body:hover,
 .news-article.state-disabled *:hover,
@@ -1179,6 +1180,7 @@ a.news-article__title:hover,
 a.news-article__tag:hover,
 .news-article__counter a:hover,
 a.news-article__counter:hover,
+.news-article__photo-total:hover,
 .reset-link-defaults:focus,
 .comment-article.state-disabled .comment-article__body:focus,
 .news-article.state-disabled *:focus,
@@ -1187,7 +1189,8 @@ a.news-article__title:focus,
 .news-article__tag a:focus,
 a.news-article__tag:focus,
 .news-article__counter a:focus,
-a.news-article__counter:focus {
+a.news-article__counter:focus,
+.news-article__photo-total:focus {
   color: inherit;
   text-decoration: none;
 }
@@ -6540,7 +6543,7 @@ body {
 }
 .widget-weather__unit.state-day:before {
   background-image: url("../img/ural-polit-icons.png");
-  background-position: 0px -53px;
+  background-position: -27px -53px;
   width: 18px;
   height: 17px;
 }
@@ -6589,7 +6592,7 @@ body {
   position: relative;
   top: -1px;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -51px -53px;
+  background-position: -79px 0px;
   width: 12px;
   height: 12px;
 }
@@ -6600,7 +6603,7 @@ body {
   position: relative;
   top: -1px;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -37px -53px;
+  background-position: -64px -53px;
   width: 12px;
   height: 12px;
 }
@@ -6611,7 +6614,7 @@ body {
   position: relative;
   top: -1px;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -65px -53px;
+  background-position: -79px -14px;
   width: 12px;
   height: 12px;
 }
@@ -6671,7 +6674,7 @@ body {
   display: inline-block;
   vertical-align: auto;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -79px -14px;
+  background-position: -79px -42px;
   width: 9px;
   height: 9px;
   margin-right: 2px;
@@ -6849,7 +6852,7 @@ body {
   transform: translateY(-50%);
   background-color: transparent;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -20px -53px;
+  background-position: -47px -53px;
   width: 15px;
   height: 14px;
 }
@@ -7058,7 +7061,7 @@ body {
   display: inline-block;
   vertical-align: middle;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -79px 0px;
+  background-position: -79px -28px;
   width: 12px;
   height: 12px;
   margin-right: 5px;
@@ -7846,6 +7849,8 @@ body {
   \*------------------------------------*/
 /*------------------------------------*     NEWS ARTICLE TYPE: poll
   \*------------------------------------*/
+/*------------------------------------*    NEWS ARTICLE TYPE: Carousel
+ \*------------------------------------*/
 /*------------------------------------*     NEWS ARTICLE TYPE: template
   \*------------------------------------*/
 /*------------------------------------*     NEWS ARTICLE STATE: disabled (base class)
@@ -7952,6 +7957,10 @@ a.news-article.state-disabled:focus {
   font-size: 18px;
   margin: 0 0 15px;
 }
+.news-article.type-preview-L .news-article__tag {
+  font-weight: 700;
+  border-width: 2px;
+}
 .news-article.type-preview-XL {
   position: relative;
   color: #fff;
@@ -7981,6 +7990,8 @@ a.news-article.state-disabled:focus {
   position: absolute;
   left: 10px;
   top: 10px;
+  font-weight: 700;
+  border-width: 2px;
 }
 .news-article.type-preview-XL .news-article__tag:hover,
 .news-article.type-preview-XL .news-article__tag:focus,
@@ -8222,6 +8233,103 @@ fieldset[disabled] .news-article.type-opinion.state-disabled .news-article__tag.
 }
 .news-article.type-poll li {
   margin-bottom: 10px;
+}
+.news-article.type-carousel {
+  position: relative;
+  padding: 0;
+  background-color: #18181b;
+}
+.news-article.type-carousel .carousel-inner {
+  position: relative;
+  padding: 0 0 110px;
+}
+.news-article.type-carousel .carousel-caption {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 15px 20px;
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+}
+.news-article.type-carousel .carousel-indicators {
+  bottom: 0;
+}
+.news-article.type-carousel .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border: none;
+  background-color: #8c959a;
+  margin: 0 7px;
+}
+.news-article.type-carousel .carousel-indicators li.active {
+  background-color: #fff;
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+.news-article.type-carousel .news-article__tag {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #fff;
+  background-color: rgba(81,81,91,0.4);
+  border-color: #fff;
+  font-weight: 700;
+  border-width: 2px;
+}
+.news-article.type-carousel .news-article__tag:hover,
+.news-article.type-carousel .news-article__tag:focus,
+.news-article.type-carousel .news-article__tag:active,
+.news-article.type-carousel .news-article__tag.active,
+.open .dropdown-toggle.news-article.type-carousel .news-article__tag {
+  color: #fff;
+  background-color: rgba(75,75,84,0.4);
+  border-color: #e0e0e0;
+}
+.news-article.type-carousel .news-article__tag:active,
+.news-article.type-carousel .news-article__tag.active,
+.open .dropdown-toggle.news-article.type-carousel .news-article__tag {
+  background-image: none;
+}
+.news-article.type-carousel .news-article__tag.disabled,
+.news-article.type-carousel .news-article__tag[disabled],
+fieldset[disabled] .news-article.type-carousel .news-article__tag,
+.news-article.type-carousel .news-article__tag.disabled:hover,
+.news-article.type-carousel .news-article__tag[disabled]:hover,
+fieldset[disabled] .news-article.type-carousel .news-article__tag:hover,
+.news-article.type-carousel .news-article__tag.disabled:focus,
+.news-article.type-carousel .news-article__tag[disabled]:focus,
+fieldset[disabled] .news-article.type-carousel .news-article__tag:focus,
+.news-article.type-carousel .news-article__tag.disabled:active,
+.news-article.type-carousel .news-article__tag[disabled]:active,
+fieldset[disabled] .news-article.type-carousel .news-article__tag:active,
+.news-article.type-carousel .news-article__tag.disabled.active,
+.news-article.type-carousel .news-article__tag[disabled].active,
+fieldset[disabled] .news-article.type-carousel .news-article__tag.active {
+  background-color: rgba(81,81,91,0.4);
+  border-color: #fff;
+}
+.news-article.type-carousel .news-article__tag .badge {
+  color: rgba(81,81,91,0.4);
+  background-color: #fff;
+}
+.news-article.type-carousel .news-article__counter {
+  position: absolute;
+  top: 185px;
+  right: 10px;
+  color: #fff;
+  border-color: #fff;
+}
+.news-article.type-carousel .news-article__counter:after {
+  border-top-color: #fff;
+}
+.news-article.type-carousel .news-article__photo-total {
+  position: absolute;
+  top: 186px;
+  left: 10px;
 }
 .news-article.type-template {
   position: relative;
@@ -8511,6 +8619,46 @@ fieldset[disabled] .news-article__tag.active {
 }
 .news-article__photo {
   display: block;
+}
+.news-article__photo-total {
+  display: block;
+  font-size: 11px;
+  width: 22px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 0 1px 1px 0;
+  background-color: #000;
+  background-color: rgba(0,0,0,0.5);
+  margin-left: 25px;
+}
+.news-article__photo-total:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 100%;
+  bottom: -1px;
+  background-image: url("../img/ural-polit-icons.png");
+  background-position: 0px -53px;
+  width: 25px;
+  height: 18px;
+}
+.news-article__photo-total:before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 100%;
+  bottom: -1px;
+  background-color: #000;
+  background-color: rgba(0,0,0,0.5);
+  width: 25px;
+  height: 16px;
+}
+.news-article__photo-total,
+.news-article__photo-total:hover,
+.news-article__photo-total:focus {
+  color: #fff;
 }
 @-webkit-keyframes progress-bar-stripes {
   0% {
