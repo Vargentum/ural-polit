@@ -8444,6 +8444,10 @@ fieldset[disabled] .news-article.type-carousel .news-article__tag.active {
   color: inherit !important;
   cursor: default;
 }
+.news-article.state-disabled .news-article__header .news-article__tag,
+.news-article.state-disabled .news-article__header .news-article__counter {
+  color: #fff !important;
+}
 /*------------------------------------*   NEWS ARTICLE components
 \*------------------------------------*/
 .news-article__body {
