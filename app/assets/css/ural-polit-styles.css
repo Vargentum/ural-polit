@@ -1107,7 +1107,7 @@ pre code {
 .l-island,
 .l-island--fence,
 .comment-article,
-.social-widget.type-group,
+.social-widget.type-group-widget,
 .encyclopedia-section,
 .news-section.type-important,
 .news-article.type-opinion,
@@ -7153,16 +7153,16 @@ body {
   text-align: right;
   min-width: 85px;
 }
-.social-widget.type-group {
+.social-widget.type-group-widget {
   border: none;
 }
-.social-widget.type-group li {
+.social-widget.type-group-widget li {
   margin: 20px 0;
 }
-.social-widget.type-group li:last-child {
+.social-widget.type-group-widget li:last-child {
   margin-bottom: 0;
 }
-.social-widget.type-group .social-widget__title {
+.social-widget.type-group-widget .social-widget__title {
   font-size: 14px;
   margin: 0 0 15px;
 }
