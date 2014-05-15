@@ -341,7 +341,6 @@ for $item in $exchange-fluctuations
 
 .project-catalog
   make-row()
-  padding: 5px 0
   text-transform: uppercase;
   font-size: 17px
   font-weight: 700
@@ -350,11 +349,18 @@ for $item in $exchange-fluctuations
     reset-list()
 
   li
-    margin-left: 25px
     display inline-block
+    margin-left: 10px
 
   a
+    display block
     color: inherit;
+    @extend .reset-link-defaults
+    border 2px solid transparent
+    trans border-color
+    padding: 5px 10px
+    &:hover,&.active
+      border-color $text-color
 
 
   +b($media-max-phone)
@@ -423,7 +429,7 @@ for $item in $exchange-fluctuations
     .comment-article__body
       text-decoration: underline;
 
-  &.state-disabled
+  &.state-visited
 
     .comment-article__body
       @extend .reset-link-defaults

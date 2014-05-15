@@ -133,7 +133,9 @@
       padding: 10px 0
 
       &,&:hover,&:focus
-        border-top-color: $gray-lighter
+        border none
+        border-top: 1px solid $gray-lighter
+        background-color transparent
 
       &>*
         display block
@@ -171,7 +173,9 @@
       padding: 10px 0
 
       &,&:hover,&:focus
-        border-top-color: $gray-lighter
+        border none
+        border-top: 1px solid $gray-lighter
+        background-color transparent
 
       &>*
         display block
@@ -274,25 +278,24 @@
   color $text-color
   padding: 5px 10px
   display block
+  border 1px solid transparent
+  transition background-color $transition-duration, border-color $transition-duration
   clearfix()
 
-  a&
-    border 1px solid transparent
-    transition background-color $transition-duration, border-color $transition-duration
-    margin-bottom: -1px
-    text-decoration: none;
-    cursor pointer
+  &:hover,&:focus
+    border: $gray-lighter
+    background-color: $body-bg-contrast
 
-    &:hover,&:focus
+  margin-bottom: -1px
+  text-decoration: none;
+  cursor pointer
+
+  &:hover,&:focus
+    &,&.state-visited
       background-color: $body-bg-contrast
       border-color $gray-lighter
-      text-decoration: none;
-
-    &.state-disabled
-
-      &:hover,&:focus
-        background-color: transparent
-        border-color transparent
+      &,*
+        text-decoration: none !important
 
 
   time
@@ -342,9 +345,6 @@
       padding: 1px 3px
 
 
-
-
-
     aside
       margin-bottom: 5px
       hLine()
@@ -354,12 +354,6 @@
 
       .news-article__title
         font-weight: 700
-
-    &.state-disabled
-
-      .news-article__counter
-        border-color $gray-lighter
-        arrow-bottom $gray-lighter
 
 
   /*------------------------------------*\
@@ -434,6 +428,7 @@
       position relative
       border-radius 50%
       overflow hidden
+      border none
 
       .news-article__photo
         size $author-photo-size
@@ -455,9 +450,13 @@
     .news-article__tag
       font-size: 10px !important
 
+
+    &:hover,&:focus
+      border none
+      background-color: #c5cacc
+
     
-    &.state-disabled
-      background-color transparent
+    &.state-visited
 
       .news-article__tag
         button-variant($gray-lighter, rgba(0,0,0,0), $gray-lighter);
@@ -469,14 +468,13 @@
           size 100%
           background-color: rgba(200,200,200,.75)
 
-      
-    &.state-attention
-      background-color: #c5cacc
 
   /*------------------------------------*\
     NEWS ARTICLE TYPE: top commented
   \*------------------------------------*/
   &.type-top-commented
+    @extend .disable-article-hovers
+
     padding-top: 0
     padding-bottom: 0
     margin-bottom: 20px
@@ -494,6 +492,7 @@
     NEWS ARTICLE TYPE: poll
   \*------------------------------------*/
   &.type-poll
+    @extend .disable-article-hovers
 
     .news-article__body
       @extend .l-island
@@ -551,10 +550,6 @@
 
     .news-article__counter
       absolute top 185px right 10px
-      color $body-bg
-      border-color $body-bg
-      &:after
-        border-top-color $body-bg
 
     .news-article__photo-total
       absolute top 186px left 10px
@@ -653,25 +648,13 @@
   /*------------------------------------*\
     NEWS ARTICLE STATE: disabled (base class)
   \*------------------------------------*/
-  &.state-disabled
-    &,
-    &:hover,
-    &:focus
-      color: $gray-lighter
-      background-color: transparent
-      cursor default !important
+  &.state-visited
+    color: $gray-lighter
+    background-color: transparent
 
     *
-      color: inherit !important
-      @extend .reset-link-defaults
-      cursor default
+      color: inherit
 
-
-    .news-article__header
-
-      .news-article__tag,
-      .news-article__counter
-        color $body-bg !important
 
 
 /*------------------------------------*\
@@ -706,8 +689,6 @@
     size 100% auto
 
   .news-article__counter
-    border: @color
-    arrow-bottom: @color
     absolute right 10px bottom 10px
 
 
@@ -717,11 +698,26 @@
 
 
 .news-article__counter
+  position relative
   font-family: $font-family-secondary;
   font-size: 10px
   padding: 1px 3px
   margin: 0 5px
   clear both
+  &,&:hover,&:focus
+    text-decoration: none;
+
+  //color palette
+  color $body-bg
+  background-color  $text-color
+  arrow-bottom $text-color
+
+  &.type-inverted-colors,
+  .news-article__header &
+    color $text-color
+    background-color: $body-bg;
+    arrow-bottom: $body-bg;
+
 
 
 .news-article__title
@@ -744,12 +740,6 @@
   a,a&
     @extend .reset-link-defaults
 
-
-.news-article__counter
-  border $text-color
-  arrow-bottom $text-color
-  a,a&
-    @extend .reset-link-defaults
 
 .news-article__photo
   display block
