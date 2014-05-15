@@ -6773,7 +6773,7 @@ body {
 }
 .l-footer .project-nav {
   position: relative;
-  top: 59px;
+  top: 52px;
 }
 @media (min-width:768px) and (max-width:1023px) {
   .flexbox .project-nav ul {
@@ -6836,7 +6836,7 @@ body {
     display: inline-block;
   }
   .l-footer .project-nav {
-    top: 52px;
+    top: 47px;
   }
 }
 @media (max-width:767px) {
@@ -7002,6 +7002,9 @@ body {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
+}
+.l-footer .set-region li {
+  margin-top: 15px;
 }
 @media (max-width:767px) {
   .l-header .set-region {
