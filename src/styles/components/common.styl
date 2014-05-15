@@ -55,6 +55,16 @@ body
     .project-nav
       top 5px
 
+    .btn-show-menu
+      bottom 4px
+
+
+  +b($media-max-tablet)
+    &.state-S
+      .project-search
+        display block
+
+
 .l-header__main
   make-row()
   border-top: 10px solid #51525c
@@ -418,9 +428,11 @@ for $item in $exchange-fluctuations
       display none //hide on initial
       width: 50%
       float: right
+      top 10px
 
       li
         display block
+        margin-bottom: -2px
         text-align: right
 
 

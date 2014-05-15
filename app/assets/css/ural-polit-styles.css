@@ -6416,6 +6416,14 @@ body {
 .l-header.state-S .project-nav {
   top: 5px;
 }
+.l-header.state-S .btn-show-menu {
+  bottom: 4px;
+}
+@media (max-width:1023px) {
+  .l-header.state-S .project-search {
+    display: block;
+  }
+}
 .l-header__main {
   margin-left: -10px;
   margin-right: -10px;
@@ -7064,9 +7072,11 @@ body {
     display: none;
     width: 50%;
     float: right;
+    top: 10px;
   }
   .l-header .project-catalog li {
     display: block;
+    margin-bottom: -2px;
     text-align: right;
   }
   .l-footer .project-catalog li {
