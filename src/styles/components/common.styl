@@ -24,13 +24,10 @@ body
 
 
   &.state-M,&.state-S
-
+    padding-top: 0
     .bnr-wrap,
     .news-section
       display none
-
-    .l-header__main
-      border-top: none
 
 
   &.state-S
@@ -40,12 +37,23 @@ body
     .project-search
       display none
 
+    .l-header__main
+      border-top: none
+
+    .l-header__main__row
+      margin: 6px 0
+
+    .set-region
+      li
+        margin-top: 10px
+        margin-bottom: 10px
+
     .logo
       img('logo-short.png')
       height: 41
 
     .project-nav
-      top -7px
+      top 5px
 
 .l-header__main
   make-row()
