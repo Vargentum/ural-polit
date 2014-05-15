@@ -9,10 +9,43 @@ body
   background-color: $body-bg-contrast
   border-bottom: 1px solid $gray-light
   padding: 10px 0 15px
+  fixed left top
+  width: 100%;
+  z-index: 1000
 
   .container
     position relative
 
+  .bnr-wrap
+    @extend .hidden-xs
+    @extend .hidden-sm
+    margin-top: 0
+    margin-bottom: 0
+
+
+  &.state-M,&.state-S
+
+    .bnr-wrap,
+    .news-section
+      display none
+
+    .l-header__main
+      border-top: none
+
+
+  &.state-S
+    .widget-date,
+    .widget-weather,
+    .widget-currency,
+    .project-search
+      display none
+
+    .logo
+      img('logo-short.png')
+      height: 41
+
+    .project-nav
+      top -7px
 
 .l-header__main
   make-row()
@@ -20,6 +53,14 @@ body
 
   +b($media-max-phone)
     border-top none
+
+
+.l-header__main__right
+  make-xs-column(10)
+  make-sm-column(5)
+  make-md-column(7)
+  padding-left: 30px
+
 
 
 .l-header__main__row
@@ -80,14 +121,11 @@ body
 .logo
   display block
   margin-top: 10px
-  text-align: center;
+  img('logo.png')
+  height: 68px
   make-xs-column(10)
   make-sm-column(5)
   make-md-column(3)
-
-  img
-    display inline-block
-    max-width: 100%
 
   &:hover,&:focus
     text-decoration: none;
