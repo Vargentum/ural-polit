@@ -8192,6 +8192,9 @@ fieldset[disabled] .news-article.type-preview-XL .news-article__tag.active {
   width: -webkit-calc(100% - 80px - 10px);
   width: calc(100% - 80px - 10px);
 }
+.no-csscalc .news-article.type-opinion .news-article__column-rt {
+  width: 260px;
+}
 .news-article.type-opinion .news-article__author {
   font-size: 11px;
 }
@@ -8265,6 +8268,7 @@ fieldset[disabled] .news-article.type-opinion.state-visited .news-article__tag.a
 }
 .news-article.type-top-commented time {
   width: 70px;
+  font-size: 12px;
 }
 .news-article.type-top-commented .news-article__body {
   font-weight: 700;
