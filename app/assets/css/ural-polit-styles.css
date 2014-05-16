@@ -8016,7 +8016,6 @@ body {
   transition: background-color 400ms, border-color 400ms;
   margin-bottom: -1px;
   text-decoration: none;
-  cursor: pointer;
 /*------------------------------------*     NEWS ARTICLE TYPE: preview Short
   \*------------------------------------*/
 /*------------------------------------*     NEWS ARTICLE TYPE: preview Middle
@@ -8256,10 +8255,6 @@ fieldset[disabled] .news-article.type-preview-XL .news-article__tag.active {
   font-size: 14px;
   line-height: 1.428571429;
 }
-.news-article.type-opinion a:hover,
-.news-article.type-opinion a:focus {
-  text-decoration: underline !important;
-}
 .news-article.type-opinion .news-article__column-lt {
   width: 80px;
   height: 80px;
@@ -8288,6 +8283,8 @@ fieldset[disabled] .news-article.type-preview-XL .news-article__tag.active {
 }
 .news-article.type-opinion .news-article__tag {
   font-size: 10px !important;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 .news-article.type-opinion:hover,
 .news-article.type-opinion:focus {
@@ -8415,10 +8412,6 @@ fieldset[disabled] .news-article.type-opinion.state-visited .news-article__tag.a
 }
 .news-article.type-poll li {
   margin-bottom: 10px;
-}
-.news-article.type-poll .custom-choise-input:hover,
-.news-article.type-poll .custom-choise-input:focus {
-  text-decoration: underline !important;
 }
 .news-article.type-carousel {
   position: relative;
