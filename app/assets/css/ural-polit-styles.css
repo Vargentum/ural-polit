@@ -6436,11 +6436,9 @@ body {
   background-color: #f6f6f7;
   border-bottom: 1px solid #999;
   padding: 10px 0 15px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+/*fixed left top*/
+/*width: 100%;*/
+/*z-index: 1000*/
 }
 .l-header .container {
   position: relative;
@@ -7763,6 +7761,10 @@ body {
     display: block;
   }
 }
+.news-section.type-important .news-article:hover,
+.news-section.type-important .news-article:focus {
+  background-color: #dcdce0;
+}
 .news-section.type-important time {
   display: block;
   margin: 5px 0;
@@ -7817,6 +7819,10 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
 }
 @media (min-width:768px) {
   .news-section.type-important .news-section__footer .btn {
@@ -7830,6 +7836,10 @@ body {
     width: 40%;
   }
 }
+.news-section.type-important .news-section__footer .btn:hover,
+.news-section.type-important .news-section__footer .btn:focus {
+  background-color: #dcdce0;
+}
 .news-section.type-persons {
   text-align: center;
 }
@@ -7839,9 +7849,7 @@ body {
 .news-section.type-persons .news-article,
 .news-section.type-persons .news-article:hover,
 .news-section.type-persons .news-article:focus {
-  border: none;
   border-top: 1px solid #a6a6a6;
-  background-color: transparent;
 }
 .news-section.type-persons .news-article>* {
   display: block;
@@ -7883,9 +7891,7 @@ body {
 .news-section.type-projects .news-article,
 .news-section.type-projects .news-article:hover,
 .news-section.type-projects .news-article:focus {
-  border: none;
   border-top: 1px solid #a6a6a6;
-  background-color: transparent;
 }
 .news-section.type-projects .news-article>* {
   display: block;
@@ -8698,6 +8704,8 @@ fieldset[disabled] .news-article__header .news-article__tag.active {
 }
 .news-article__counter {
   position: relative;
+  min-width: 25px;
+  text-align: center;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 10px;
   padding: 1px 3px;

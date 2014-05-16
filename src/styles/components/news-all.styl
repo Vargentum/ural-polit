@@ -84,6 +84,9 @@
       +b($media-max-phone)
         hide-except(1..2)
 
+    .news-article
+      &:hover,&:focus
+        background-color darken($body-bg-contrast, 10%)
 
     time
       display block
@@ -121,6 +124,10 @@
         make-sm-column(6)
         make-md-column(4)
         center-block()
+        trans background-color
+
+        &:hover,&:focus
+          background-color darken($body-bg-contrast, 10%)
 
 
   /*------------------------------------*\
@@ -133,9 +140,7 @@
       padding: 10px 0
 
       &,&:hover,&:focus
-        border none
         border-top: 1px solid $gray-lighter
-        background-color transparent
 
       &>*
         display block
@@ -173,9 +178,7 @@
       padding: 10px 0
 
       &,&:hover,&:focus
-        border none
         border-top: 1px solid $gray-lighter
-        background-color transparent
 
       &>*
         display block
@@ -713,6 +716,8 @@
 
 .news-article__counter
   position relative
+  min-width 25px
+  text-align: center
   font-family: $font-family-secondary;
   font-size: 10px
   padding: 1px 3px
