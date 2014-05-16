@@ -54,7 +54,9 @@ $ ->
       e.slideToggle()
 
 
-# header logic
+
+###
+# change header when scrolling (disabled)
 $ ->
   root = $('body')
   el = $('.l-header')
@@ -92,3 +94,4 @@ $ ->
 
   win.scroll ->
     checkHeaderState()
+###
