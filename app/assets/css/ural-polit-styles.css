@@ -758,6 +758,77 @@ fieldset[disabled] .btn-serv.active {
   color: #51515b;
   background-color: #fff;
 }
+.btn-serv:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+.btn-serv:hover,
+.btn-serv:focus {
+  color: #fff;
+  background-color: #696976;
+  border-color: #696976;
+}
+.btn-serv:hover:hover,
+.btn-serv:focus:hover,
+.btn-serv:hover:focus,
+.btn-serv:focus:focus,
+.btn-serv:hover:active,
+.btn-serv:focus:active,
+.btn-serv:hover.active,
+.btn-serv:focus.active,
+.open .dropdown-toggle.btn-serv:hover,
+.open .dropdown-toggle.btn-serv:focus {
+  color: #fff;
+  background-color: #61616d;
+  border-color: #5c5c68;
+}
+.btn-serv:hover:active,
+.btn-serv:focus:active,
+.btn-serv:hover.active,
+.btn-serv:focus.active,
+.open .dropdown-toggle.btn-serv:hover,
+.open .dropdown-toggle.btn-serv:focus {
+  background-image: none;
+}
+.btn-serv:hover.disabled,
+.btn-serv:focus.disabled,
+.btn-serv:hover[disabled],
+.btn-serv:focus[disabled],
+fieldset[disabled] .btn-serv:hover,
+fieldset[disabled] .btn-serv:focus,
+.btn-serv:hover.disabled:hover,
+.btn-serv:focus.disabled:hover,
+.btn-serv:hover[disabled]:hover,
+.btn-serv:focus[disabled]:hover,
+fieldset[disabled] .btn-serv:hover:hover,
+fieldset[disabled] .btn-serv:focus:hover,
+.btn-serv:hover.disabled:focus,
+.btn-serv:focus.disabled:focus,
+.btn-serv:hover[disabled]:focus,
+.btn-serv:focus[disabled]:focus,
+fieldset[disabled] .btn-serv:hover:focus,
+fieldset[disabled] .btn-serv:focus:focus,
+.btn-serv:hover.disabled:active,
+.btn-serv:focus.disabled:active,
+.btn-serv:hover[disabled]:active,
+.btn-serv:focus[disabled]:active,
+fieldset[disabled] .btn-serv:hover:active,
+fieldset[disabled] .btn-serv:focus:active,
+.btn-serv:hover.disabled.active,
+.btn-serv:focus.disabled.active,
+.btn-serv:hover[disabled].active,
+.btn-serv:focus[disabled].active,
+fieldset[disabled] .btn-serv:hover.active,
+fieldset[disabled] .btn-serv:focus.active {
+  background-color: #696976;
+  border-color: #696976;
+}
+.btn-serv:hover .badge,
+.btn-serv:focus .badge {
+  color: #696976;
+  background-color: #fff;
+}
 .btn-link {
   color: #51515b;
   font-weight: normal;
@@ -1163,7 +1234,6 @@ pre code {
 }
 .reset-link-defaults,
 .project-catalog a,
-.comment-article.state-visited .comment-article__body,
 .news-article__title a,
 a.news-article__title,
 .news-article__tag a,
@@ -1171,7 +1241,6 @@ a.news-article__tag,
 .news-article__photo-total,
 .reset-link-defaults:hover,
 .project-catalog a:hover,
-.comment-article.state-visited .comment-article__body:hover,
 .news-article__title a:hover,
 a.news-article__title:hover,
 .news-article__tag a:hover,
@@ -1179,7 +1248,6 @@ a.news-article__tag:hover,
 .news-article__photo-total:hover,
 .reset-link-defaults:focus,
 .project-catalog a:focus,
-.comment-article.state-visited .comment-article__body:focus,
 .news-article__title a:focus,
 a.news-article__title:focus,
 .news-article__tag a:focus,
@@ -7145,15 +7213,11 @@ body {
 }
 .comment-article:hover .comment-article__body,
 .comment-article:focus .comment-article__body {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 .comment-article time {
   color: #999;
   font-size: 10px;
-}
-.comment-article:hover .comment-article__body,
-.comment-article:focus .comment-article__body {
-  text-decoration: underline;
 }
 .comment-article__author {
   color: #999;
@@ -8186,6 +8250,10 @@ fieldset[disabled] .news-article.type-preview-XL .news-article__tag.active {
   font-size: 14px;
   line-height: 1.428571429;
 }
+.news-article.type-opinion a:hover,
+.news-article.type-opinion a:focus {
+  text-decoration: underline !important;
+}
 .news-article.type-opinion .news-article__column-lt {
   width: 80px;
   height: 80px;
@@ -8283,6 +8351,10 @@ fieldset[disabled] .news-article.type-opinion.state-visited .news-article__tag.a
 .news-article.type-top-commented .news-article__body {
   font-weight: 700;
 }
+.news-article.type-top-commented .news-article__body:hover,
+.news-article.type-top-commented .news-article__body:focus {
+  text-decoration: underline !important;
+}
 .news-article.type-poll .news-article__body {
   margin: 0;
   padding-left: 10px;
@@ -8337,6 +8409,10 @@ fieldset[disabled] .news-article.type-opinion.state-visited .news-article__tag.a
 }
 .news-article.type-poll li {
   margin-bottom: 10px;
+}
+.news-article.type-poll .custom-choise-input:hover,
+.news-article.type-poll .custom-choise-input:focus {
+  text-decoration: underline !important;
 }
 .news-article.type-carousel {
   position: relative;
@@ -8627,13 +8703,9 @@ fieldset[disabled] .news-article__header .news-article__tag.active {
   padding: 1px 3px;
   margin: 0 5px;
   clear: both;
+  text-decoration: none;
   color: #fff;
   background-color: #51515b;
-}
-.news-article__counter,
-.news-article__counter:hover,
-.news-article__counter:focus {
-  text-decoration: none;
 }
 .news-article__counter:after {
   content: '';
@@ -8646,10 +8718,28 @@ fieldset[disabled] .news-article__header .news-article__tag.active {
   border-right: 5px solid transparent;
   margin-left: -4px;
 }
+.news-article__counter:hover,
+.news-article__counter:focus {
+  text-decoration: none;
+  color: #fff;
+  background-color: #696976;
+}
+.news-article__counter:hover:after,
+.news-article__counter:focus:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  border-top: 4px solid #696976;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin-left: -4px;
+}
 .news-article__counter.type-inverted-colors,
 .news-article__header .news-article__counter {
-  color: #51515b;
   background-color: #fff;
+  color: #51515b;
 }
 .news-article__counter.type-inverted-colors:after,
 .news-article__header .news-article__counter:after {
@@ -8659,6 +8749,26 @@ fieldset[disabled] .news-article__header .news-article__tag.active {
   left: 50%;
   top: 100%;
   border-top: 4px solid #fff;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin-left: -4px;
+}
+.news-article__counter.type-inverted-colors:hover,
+.news-article__header .news-article__counter:hover,
+.news-article__counter.type-inverted-colors:focus,
+.news-article__header .news-article__counter:focus {
+  background-color: #e6e6e6;
+}
+.news-article__counter.type-inverted-colors:hover:after,
+.news-article__header .news-article__counter:hover:after,
+.news-article__counter.type-inverted-colors:focus:after,
+.news-article__header .news-article__counter:focus:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  border-top: 4px solid #e6e6e6;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   margin-left: -4px;

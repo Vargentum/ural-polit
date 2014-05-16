@@ -82,6 +82,10 @@
   text-transform: uppercase;
   padding: ($padding-base-vertical / 3)  ($padding-base-horizontal / 3)
   font-weight: 400
+  pressable()
+  &:hover,&:focus
+    $hover-color = lighten($text-color, 15%)
+    button-variant($body-bg, $hover-color, $hover-color);
 
 
 // Link buttons

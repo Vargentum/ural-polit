@@ -421,6 +421,10 @@
     padding-bottom: 10px
     jLine middle
 
+    a
+      &:hover,&:focus
+        text-decoration: underline !important
+
     $author-photo-size = 80px
 
     .news-article__column-lt
@@ -489,6 +493,8 @@
 
     .news-article__body
       font-weight: 700
+      &:hover,&:focus
+        text-decoration: underline !important;
 
 
 
@@ -510,6 +516,10 @@
 
     li
       margin-bottom: 10px
+
+    .custom-choise-input
+      &:hover,&:focus
+        text-decoration: underline !important
 
 
 
@@ -708,19 +718,29 @@
   padding: 1px 3px
   margin: 0 5px
   clear both
-  &,&:hover,&:focus
-    text-decoration: none;
-
+  text-decoration: none;
   //color palette
   color $body-bg
   background-color  $text-color
   arrow-bottom $text-color
 
+  &:hover,&:focus
+    $hover-color =    lighten($text-color, 15%)
+    text-decoration: none;
+    color $body-bg
+    background-color: $hover-color
+    arrow-bottom $hover-color
+
   &.type-inverted-colors,
   .news-article__header &
-    color $text-color
     background-color: $body-bg;
     arrow-bottom: $body-bg;
+    color $text-color
+
+    &:hover,&:focus
+      $hover-color = darken($body-bg, 10%)
+      background-color: $hover-color
+      arrow-bottom $hover-color
 
 
 

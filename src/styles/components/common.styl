@@ -488,21 +488,11 @@ for $item in $exchange-fluctuations
     text-decoration: none;
 
     .comment-article__body
-      text-decoration: underline;
-
-  &.state-visited
-
-    .comment-article__body
-      @extend .reset-link-defaults
-
+      text-decoration: underline !important;
 
   time
     color $gray-light
     font-size: 10px
-
-  &:hover,&:focus
-    .comment-article__body
-      text-decoration: underline
 
 
 .comment-article__author
