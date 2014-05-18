@@ -84,6 +84,9 @@
       +b($media-max-phone)
         hide-except(1..2)
 
+    .news-article
+      &:hover,&:focus
+        background-color darken($body-bg-contrast, 10%)
 
     time
       display block
@@ -121,6 +124,10 @@
         make-sm-column(6)
         make-md-column(4)
         center-block()
+        trans background-color
+
+        &:hover,&:focus
+          background-color darken($body-bg-contrast, 10%)
 
 
   /*------------------------------------*\
@@ -133,13 +140,14 @@
       padding: 10px 0
 
       &,&:hover,&:focus
-        border-top-color: $gray-lighter
+        border-top: 1px solid $gray-lighter
 
       &>*
         display block
         margin: 5px auto
 
     .news-article__photo
+      overflow hidden
       border-radius: 50%
       size 110px
 
@@ -170,7 +178,7 @@
       padding: 10px 0
 
       &,&:hover,&:focus
-        border-top-color: $gray-lighter
+        border-top: 1px solid $gray-lighter
 
       &>*
         display block
@@ -178,6 +186,7 @@
 
     .news-article__photo
       border-radius: 50%
+      overflow hidden
       size 135px
 
     .news-article__title
@@ -224,7 +233,9 @@
       margin-right: 5px
 
     .news-article__title
+      display block
       font-size: 13px
+      font-weight: 700
       margin: 0 0 5px
 
     .news-article__body
@@ -251,8 +262,8 @@
   color: $brand-primary;
   padding: 15px 10px
 
-  a,a&
-   @extend .reset-link-defaults
+  a
+   color inherit
 
   &.type-non-accented
     color: $text-color;
@@ -263,38 +274,30 @@
 
 
 
-
-
-
-
-
-
-
-
 /*------------------------------------*\
   NEWS ARTICLE
 \*------------------------------------*/
 .news-article
-  display block
   color $text-color
   padding: 5px 10px
+  display block
+  border 1px solid transparent
+  transition background-color $transition-duration, border-color $transition-duration
   clearfix()
 
-  a&
-    border 1px solid transparent
-    transition background-color $transition-duration, border-color $transition-duration
-    margin-bottom: -1px
-    text-decoration: none;
+  &:hover,&:focus
+    border: $gray-lighter
+    background-color: $body-bg-contrast
 
-    &:hover,&:focus
+  margin-bottom: -1px
+  text-decoration: none;
+
+  &:hover,&:focus
+    &,&.state-visited
       background-color: $body-bg-contrast
       border-color $gray-lighter
-      text-decoration: none;
-
-    &.state-disabled
-      &:hover,&:focus
-        background-color: transparent
-        border-color transparent
+      &,*
+        text-decoration: none !important
 
 
   time
@@ -324,9 +327,7 @@
     padding-bottom: 15px
     position relative
     font-size: 15px
-
-    &,&:hover,&:focus
-      border-top-color: $gray-lighter
+    border-top: 1px solid $gray-light
 
     .news-article__photo
       size 80px 60px
@@ -347,8 +348,6 @@
 
 
 
-
-
     aside
       margin-bottom: 5px
       hLine()
@@ -359,11 +358,6 @@
       .news-article__title
         font-weight: 700
 
-    &.state-disabled
-
-      .news-article__counter
-        border-color $gray-lighter
-        arrow-bottom $gray-lighter
 
 
   /*------------------------------------*\
@@ -381,6 +375,9 @@
       font-size: 18px
       margin: 0 0 15px
 
+    .news-article__tag
+      font-weight: 700
+      border-width: 2px
 
   /*------------------------------------*\
     NEWS ARTICLE TYPE: preview XLarge
@@ -409,6 +406,8 @@
     .news-article__tag
       button-variant($body-bg, rgba(81, 81, 91, .4), $body-bg);
       absolute left 10px top 10px
+      font-weight: 700
+      border-width: 2px
 
     .news-article__counter
       display inline-block
@@ -433,6 +432,7 @@
       position relative
       border-radius 50%
       overflow hidden
+      border none
 
       .news-article__photo
         size $author-photo-size
@@ -442,6 +442,9 @@
       .csscalc &
         width s('calc(100% - %s - 10px)', $author-photo-size)
 
+      .no-csscalc &
+        width: 260px
+
 
 
     .news-article__author
@@ -450,10 +453,19 @@
     .news-article__body
       font-weight: 700
       font-size: 16px
-      
+
+    .news-article__tag
+      font-size: 10px !important
+      padding-left: 3px
+      padding-right: 3px
+
+
+    &:hover,&:focus
+      border none
+      background-color: #c5cacc
+
     
-    &.state-disabled
-      background-color transparent
+    &.state-visited
 
       .news-article__tag
         button-variant($gray-lighter, rgba(0,0,0,0), $gray-lighter);
@@ -465,24 +477,26 @@
           size 100%
           background-color: rgba(200,200,200,.75)
 
-      
-    &.state-attention
-      background-color: #c5cacc
 
   /*------------------------------------*\
     NEWS ARTICLE TYPE: top commented
   \*------------------------------------*/
   &.type-top-commented
+    @extend .disable-article-hovers
+
     padding-top: 0
     padding-bottom: 0
     margin-bottom: 20px
 
     time
       width: 70px
+      font-size: 12px
 
 
     .news-article__body
       font-weight: 700
+      &:hover,&:focus
+        text-decoration: underline !important;
 
 
 
@@ -490,6 +504,7 @@
     NEWS ARTICLE TYPE: poll
   \*------------------------------------*/
   &.type-poll
+    @extend .disable-article-hovers
 
     .news-article__body
       @extend .l-island
@@ -505,6 +520,51 @@
       margin-bottom: 10px
 
 
+
+  /*------------------------------------*\
+   NEWS ARTICLE TYPE: Carousel
+ \*------------------------------------*/
+  &.type-carousel
+    position relative
+    padding: 0
+    background-color: #18181b
+
+    .carousel-inner
+      position relative
+      padding: 0 0 110px;
+
+    .carousel-caption
+      absolute top 100% left
+      padding: 15px 20px
+      width 100%
+      color: $body-bg;
+      font-size: 16px
+      font-weight: 700
+      text-align: left;
+
+
+    .carousel-indicators
+      bottom 0
+      li
+        size 10px
+        border none
+        background-color: #8c959a
+        margin: 0 7px
+        &.active
+          background-color: #fff
+          transform scale(1.25)
+
+    .news-article__tag
+      absolute left 10px top 10px
+      button-variant($body-bg, rgba(81, 81, 91, .4), $body-bg);
+      font-weight: 700
+      border-width: 2px
+
+    .news-article__counter
+      absolute top 185px right 10px
+
+    .news-article__photo-total
+      absolute top 186px left 10px
 
 
   /*------------------------------------*\
@@ -600,19 +660,12 @@
   /*------------------------------------*\
     NEWS ARTICLE STATE: disabled (base class)
   \*------------------------------------*/
-  &.state-disabled
-    &,
-    &:hover,
-    &:focus
-      color: $gray-lighter
-      background-color: transparent
-      cursor default !important
+  &.state-visited
+    color: $gray-lighter
+    background-color: transparent
 
-    .news-article__title,
-    .news-article__theme,
-    .news-article__body
-      color: $gray-lighter
-
+    *
+      color: inherit
 
 
 
@@ -648,8 +701,6 @@
     size 100% auto
 
   .news-article__counter
-    border: @color
-    arrow-bottom: @color
     absolute right 10px bottom 10px
 
 
@@ -659,17 +710,46 @@
 
 
 .news-article__counter
+  position relative
+  min-width 25px
+  text-align: center
   font-family: $font-family-secondary;
   font-size: 10px
   padding: 1px 3px
   margin: 0 5px
   clear both
+  text-decoration: none;
+  //color palette
+  color $body-bg
+  background-color  $text-color
+  arrow-bottom $text-color
+
+  &:hover,&:focus
+    $hover-color =    lighten($text-color, 15%)
+    text-decoration: none;
+    color $body-bg
+    background-color: $hover-color
+    arrow-bottom $hover-color
+
+  &.type-inverted-colors,
+  .news-article__header &
+    background-color: $body-bg;
+    arrow-bottom: $body-bg;
+    color $text-color
+
+    &:hover,&:focus
+      $hover-color = darken($body-bg, 10%)
+      background-color: $hover-color
+      arrow-bottom $hover-color
+
 
 
 .news-article__title
   display: block
   a,a&
     @extend .reset-link-defaults
+    &:hover,&:focus
+      text-decoration: underline;
 
 .news-article__tag
   @extend .btn
@@ -685,12 +765,34 @@
     @extend .reset-link-defaults
 
 
-.news-article__counter
-  border $text-color
-  arrow-bottom $text-color
-  a,a&
-    @extend .reset-link-defaults
-
 .news-article__photo
   display block
-  @extend .img-responsive
+  &, img
+    @extend .img-responsive
+
+.news-article__photo-total
+  @extend .reset-link-defaults
+  display block
+  font-size: 11px
+  width: 22px
+  height: 16px;
+  line-height: @height;
+  text-align: center;
+  border 1px solid $body-bg
+  border-radius 0 1px 1px 0
+  background-color: rgb(0,0,0)
+  background-color: rgba(0,0,0,.5)
+  margin-left: 25px
+  //icon
+  &:after
+    pb(right 100% bottom -1px)
+    sprite $icon-photo
+  //bg for icon
+  &:before
+    pb(right 100% bottom -1px)
+    background-color: rgb(0,0,0)
+    background-color: rgba(0,0,0,.5)
+    size: 25px 16px;
+
+  &,&:hover,&:focus
+    color $body-bg

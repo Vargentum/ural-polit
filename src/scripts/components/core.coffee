@@ -49,3 +49,44 @@ $ ->
     else
       $(@).html(labelActive)
 
+
+###
+# change header when scrolling (disabled)
+$ ->
+  root = $('body')
+  el = $('.l-header')
+  state1 = 'state-M'
+  state2 = 'state-S'
+  win = $(window)
+
+  handleHeaderHeight = ->
+    root.css(
+      paddingTop: el.height() + 40
+    )
+
+  checkHeaderState = ->
+    currentScrollPos = win.scrollTop()
+
+    if currentScrollPos > 0 and currentScrollPos < screen.height
+      el.addClass state1
+      handleHeaderHeight()
+      console.log 1
+
+
+    else if currentScrollPos >= screen.height
+      el.addClass state2
+      handleHeaderHeight()
+      console.log '2'
+
+    else if currentScrollPos == 0
+      el.removeClass(state1).removeClass(state2)
+      handleHeaderHeight()
+      console.log '3'
+
+
+  win.load ->
+    checkHeaderState()
+
+  win.scroll ->
+    checkHeaderState()
+###

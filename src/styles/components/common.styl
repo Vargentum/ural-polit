@@ -9,6 +9,60 @@ body
   background-color: $body-bg-contrast
   border-bottom: 1px solid $gray-light
   padding: 10px 0 15px
+  /*fixed left top*/
+  /*width: 100%;*/
+  /*z-index: 1000*/
+
+  .container
+    position relative
+
+  .bnr-wrap
+    @extend .hidden-xs
+    @extend .hidden-sm
+    margin-top: 0
+    margin-bottom: 0
+
+
+  &.state-M,&.state-S
+    padding-top: 0
+    .bnr-wrap,
+    .news-section
+      display none
+
+
+  &.state-S
+    .widget-date,
+    .widget-weather,
+    .widget-currency,
+    .project-search
+      display none
+
+    .l-header__main
+      border-top: none
+
+    .l-header__main__row
+      margin: 6px 0
+
+    .set-region
+      li
+        margin-top: 10px
+        margin-bottom: 10px
+
+    .logo
+      img('logo-short.png')
+      height: 41
+
+    .project-nav
+      top 5px
+
+    .btn-show-menu
+      bottom 4px
+
+
+  +b($media-max-tablet)
+    &.state-S
+      .project-search
+        display block
 
 
 .l-header__main
@@ -17,6 +71,14 @@ body
 
   +b($media-max-phone)
     border-top none
+
+
+.l-header__main__right
+  make-xs-column(10)
+  make-sm-column(5)
+  make-md-column(7)
+  padding-left: 30px
+
 
 
 .l-header__main__row
@@ -77,14 +139,11 @@ body
 .logo
   display block
   margin-top: 10px
-  text-align: center;
+  img('logo.png')
+  height: 68px
   make-xs-column(10)
   make-sm-column(5)
   make-md-column(3)
-
-  img
-    display inline-block
-    max-width: 100%
 
   &:hover,&:focus
     text-decoration: none;
@@ -200,7 +259,7 @@ for $item in $exchange-fluctuations
 
   .l-footer &
     position relative
-    top 59px
+    top 52px
 
 
   +b($media-tablet)
@@ -213,7 +272,7 @@ for $item in $exchange-fluctuations
       margin: 0
 
     .l-footer &
-      top 52px
+      top 47px
 
 
   +b($media-max-phone)
@@ -323,10 +382,24 @@ for $item in $exchange-fluctuations
     @extend .hidden-sm
     @extend .hidden-xs
 
+    li
+      margin-top: 15px
+
+  +b($media-max-phone)
+
+    .l-header &
+      display none //hide on initial
+      width: 50%
+      float: left
+
+      li
+        display block
+        text-align: center;
+
+
 
 .project-catalog
   make-row()
-  padding: 5px 0
   text-transform: uppercase;
   font-size: 17px
   font-weight: 700
@@ -335,14 +408,33 @@ for $item in $exchange-fluctuations
     reset-list()
 
   li
-    margin-left: 25px
     display inline-block
+    margin-left: 10px
 
   a
+    display block
     color: inherit;
+    @extend .reset-link-defaults
+    border 2px solid transparent
+    trans border-color
+    padding: 5px 10px
+    &:hover,&.active
+      border-color $text-color
 
 
   +b($media-max-phone)
+
+    .l-header &
+      display none //hide on initial
+      width: 50%
+      float: right
+      top 10px
+
+      li
+        display block
+        margin-bottom: -2px
+        text-align: right
+
 
     .l-footer &
 
@@ -371,12 +463,32 @@ for $item in $exchange-fluctuations
 
 
 
+.btn-show-menu
+  @extend .visible-xs
+  @extend .text-hide
+  display block
+  sprite $btn-show-menu
+  absolute right 20px bottom 12.5px
+  clear: both
+
+  +b('screen and (max-width: 450px)')
+    position static
+    margin: 0 auto
+
 /*------------------------------------*\
   Comment
 \*------------------------------------*/
 .comment-article
   @extend .l-island--fence
   margin: 5px 0
+  display block
+  text-decoration: none;
+
+  &:hover,&:focus
+    text-decoration: none;
+
+    .comment-article__body
+      text-decoration: underline !important;
 
   a&
     display block
@@ -399,10 +511,6 @@ for $item in $exchange-fluctuations
   time
     color $gray-light
     font-size: 10px
-
-  &:hover,&:focus
-    .comment-article__body
-      text-decoration: underline
 
 
 .comment-article__author
@@ -492,7 +600,7 @@ for $item in $exchange-fluctuations
       min-width: 85px
 
 
-  &.type-group
+  &.type-group-widget
 
     @extend .l-island
     border none
@@ -522,14 +630,22 @@ for $item in $exchange-fluctuations
 .comment-controls__unit
   @extend .btn
   @extend .btn-default
-  padding: 3px 20px
+  height: 30px
+  padding: 0 20px
+  .flexbox &
+    display inline-flex
+    align-items center
+    justify-content center
+
+  .no-flexbox &
+    line-height: 28px
+    text-align: center;
 
 .comment-controls__unit--counter
   font-size: 16px
-  padding: 1px 0 3px
+  padding: 0
   width 70px
-  text-align: center;
-
+  arrow-bottom($text-color, 7px)
 
 /*------------------------------------*\
   Project page section

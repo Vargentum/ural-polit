@@ -1132,12 +1132,11 @@ hide-except($array, $display-type = block)
       display $display-type
 
 
-arrow-bottom($color)
-  position relative
+
+arrow-bottom($color = text-color, $base = 4px)
   &:after
     pb(left 50% top 100%)
-    border-top   4px solid $color
-    border-left  5px solid transparent
-    border-right 5px solid transparent
-    margin-left: -4px
-
+    border-top   $base solid $color
+    border-left  ($base + 1) solid transparent
+    border-right @border-left
+    margin-left: -($base)

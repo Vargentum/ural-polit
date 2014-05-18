@@ -21,6 +21,11 @@
   <!--CSS include-->
   <link href="assets/css/ural-polit-styles.css" rel="stylesheet">
   <!--<link href="assets/css/ural-polit-styles.min.css" rel="stylesheet">-->
+
+  <!--[if lt IE 9]>
+  <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  <![endif]-->
 </head>
 
 <body itemscope itemtype='http://schema.org/WebPage'>
@@ -41,8 +46,8 @@
 <!--HEADER start-->
 <header class="l-header">
   <div class="container">
-    <div class="row  hidden-sm  hidden-xs">
-      <img class="img-responsive" src="http://placekitten.com/1000/90">
+    <div class="bnr-wrap">
+      <img src="http://lorempixel.com/1000/90/business">
     </div>
     <section class="news-section  type-header-section-1">
       <ul>
@@ -82,12 +87,11 @@
     <div class="l-header__main">
       <!--logo-->
       <a class="logo" href="/" itemprop='url'>
-        <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
         <span class="text-hide" itemprop="name">УралПолит.ru</span>
         <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
       </a>
 
-      <div class="col-xs-10  col-sm-5  col-md-7">
+      <div class="l-header__main__right">
         <div class="l-header__main__row  hidden-xs">
           <time class="widget-date">14 сентября 2014 года</time>
           <div class="widget-weather">
@@ -126,6 +130,7 @@
           </form>
         </div>
       </div>
+
     </div>
 
     <nav class="set-region">
@@ -143,35 +148,36 @@
       <ul>
         <li>
           <a href="#" class="news-article__header">
-            <img class="news-article__photo" src="http://placekitten.com/320/100">
+            <img class="news-article__photo" src="http://lorempixel.com/320/100/business/1">
             <h2 class="news-article__title">Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</h2>
           </a>
         </li>
         <li>
           <a href="#" class="news-article__header">
-            <img class="news-article__photo" src="http://placekitten.com/320/100">
+            <img class="news-article__photo" src="http://lorempixel.com/320/100/business/4">
             <h2 class="news-article__title">Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</h2>
           </a>
         </li>
         <li>
           <a href="#" class="news-article__header">
-            <img class="news-article__photo" src="http://placekitten.com/320/100">
+            <img class="news-article__photo" src="http://lorempixel.com/320/100/business/2">
             <h2 class="news-article__title">Следствие просит арестовать совладельца ЧТПЗ Андрея Комарова и его адвоката</h2>
           </a>
         </li>
       </ul>
     </section>
 
-
-
     <nav class="project-catalog">
       <ul>
-        <li><a href="#">Личный взгляд</a></li>
+        <li><a href="#" class="active">Личный взгляд</a></li>
         <li><a href="#">Спецпроекты</a></li>
         <li><a href="#">Слухи</a></li>
         <li><a href="#">Фоторепортаж</a></li>
       </ul>
     </nav>
+
+    <button class="btn-show-menu">Show menu</button>
+
   </div>
 </header>
 <!--HEADER end-->
@@ -191,9 +197,9 @@
             </header>
             <ul>
               <li>
-                <a href="#" class="news-article  type-preview-L">
+                <article class="news-article  type-preview-L">
                   <aside class="news-article__header">
-                    <img class="news-article__photo" src="http://placekitten.com/380/240">
+                    <a href="#"><img class="news-article__photo" src="http://lorempixel.com/380/240/business/1"></a>
                     <a href="#" class="news-article__tag">Экономика и бизнес</a>
                     <a href="#" class="news-article__counter">123</a>
                   </aside>
@@ -207,28 +213,28 @@
                     требований досрочной выплаты кредита на сумму
                     150 млн долларов
                   </div>
-                </a>
+                </article>
                 <article class="news-article  type-opinion">
                   <aside class="news-article__column-lt">
-                    <img class="news-article__photo" src="http://placekitten.com/g/80/80" alt="Place Kitten" />
+                    <a href="#"><img class="news-article__photo" src="http://lorempixel.com/g/80/80/people/3" alt="Place Kitten" /></a>
                   </aside>
                   <div class="news-article__column-rt">
                     <header class="l-hLine">
                       <a href="#" class="news-article__tag">Личный взгляд</a>
-                      <span class="news-article__author">Константин Константинопольский</span>
+                      <a href="#" class="news-article__author">Константин Константинопольский</a>
                     </header>
-                    <div class="news-article__body">
+                    <a href="#" class="news-article__body">
                       Со дня на день стоит ждать падения
                       стоимости акций Челябинского
                       трубопрокатного завода
-                    </div>
+                    </a>
                   </div>
                 </article>
               </li>
               <li>
-                <a href="#" class="news-article  type-preview-L">
+                <article class="news-article  type-preview-L">
                   <aside class="news-article__header">
-                    <img class="news-article__photo" src="http://placekitten.com/380/240">
+                    <a href="#"><img class="news-article__photo" src="http://lorempixel.com/380/240/business/2"></a>
                     <a href="#" class="news-article__tag">Экономика и бизнес</a>
                     <a href="#" class="news-article__counter">123</a>
                   </aside>
@@ -242,28 +248,28 @@
                     требований досрочной выплаты кредита на сумму
                     150 млн долларов
                   </div>
-                </a>
-                <article class="news-article  type-opinion  state-disabled">
+                </article>
+                <article class="news-article  type-opinion  state-visited">
                   <aside class="news-article__column-lt">
-                    <img class="news-article__photo" src="http://placekitten.com/g/80/80" alt="Place Kitten" />
+                    <a href="#"><img class="news-article__photo" src="http://lorempixel.com/g/80/80/people/6" alt="Place Kitten" /></a>
                   </aside>
                   <div class="news-article__column-rt">
                     <header class="l-hLine">
                       <a href="#" class="news-article__tag">Личный взгляд</a>
-                      <span class="news-article__author">Константин Константинопольский</span>
+                      <a href="#" class="news-article__author">Константин Константинопольский</a>
                     </header>
-                    <div class="news-article__body">
+                    <a href="#" class="news-article__body">
                       Со дня на день стоит ждать падения
                       стоимости акций Челябинского
                       трубопрокатного завода
-                    </div>
+                    </a>
                   </div>
                 </article>
               </li>
               <li>
-                <a href="#" class="news-article  type-preview-L  state-disabled">
+                <article class="news-article  type-preview-L  state-visited">
                   <aside class="news-article__header">
-                    <img class="news-article__photo" src="http://placekitten.com/380/240">
+                    <a href="#"><img class="news-article__photo" src="http://lorempixel.com/380/240/business/6"></a>
                     <a href="#" class="news-article__tag">Экономика и бизнес</a>
                     <a href="#" class="news-article__counter">123</a>
                   </aside>
@@ -277,21 +283,21 @@
                     требований досрочной выплаты кредита на сумму
                     150 млн долларов
                   </div>
-                </a>
+                </article>
                 <article class="news-article  type-opinion  state-attention">
                   <aside class="news-article__column-lt">
-                    <img src="http://placekitten.com/g/80/80" alt="Place Kitten" />
+                    <a href="#"><img class="news-article__photo" src="http://lorempixel.com/g/80/80/people/7" alt="Place Kitten" /></a>
                   </aside>
                   <div class="news-article__column-rt">
                     <header class="l-hLine">
                       <a href="#" class="news-article__tag">Личный взгляд</a>
-                      <span class="news-article__author">Константин Константинопольский</span>
+                      <a href="#" class="news-article__author">Константин Константинопольский</a>
                     </header>
-                    <div class="news-article__body">
+                    <a href="#" class="news-article__body">
                       Со дня на день стоит ждать падения
                       стоимости акций Челябинского
                       трубопрокатного завода
-                    </div>
+                    </a>
                   </div>
                 </article>
               </li>
@@ -310,52 +316,152 @@
             </header>
             <ul>
               <li>
-                <a class="news-article  type-preview-M  state-attention">
+                <article class="news-article  type-preview-M  state-attention">
+                  <aside>
+                    <time>16:20</time>
+                    <a href="#" class="news-article__counter">23</a>
+                    <span class="attention-label">Срочно в номер</span>
+                  </aside>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
+              </li>
+              <li>
+                <article class="news-article  type-preview-M  state-visited">
+                  <aside>
+                    <time>16:20</time>
+                    <a href="#" class="news-article__counter">123</a>
+                  </aside>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
+              </li>
+              <li>
+                <article class="news-article  type-preview-M">
+                  <aside>
+                    <time>16:20</time>
+                    <a href="#" class="news-article__counter">123</a>
+                  </aside>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/business/2"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
+              </li>
+              <li>
+                <article class="news-article  type-preview-M">
+                  <aside>
+                    <time>16:20</time>
+                    <a href="#" class="news-article__counter">123</a>
+                  </aside>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/business/6"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
+              </li>
+              <li>
+                <article class="news-article  type-preview-M">
+                  <aside>
+                    <time>16:20</time>
+                    <a href="#" class="news-article__counter">123</a>
+                  </aside>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/people/2"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
+              </li>
+              <li>
+                <article class="news-article  type-preview-M  state-attention">
                   <aside>
                     <time>16:20</time>
                     <a href="#" class="news-article__counter">123</a>
                     <span class="attention-label">Срочно в номер</span>
                   </aside>
-                  <span class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</span>
-                </a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
               </li>
               <li>
-                <a class="news-article  type-preview-M">
+                <article class="news-article  type-preview-M  state-visited">
                   <aside>
                     <time>16:20</time>
                     <a href="#" class="news-article__counter">123</a>
                   </aside>
-                  <span class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</span>
-                </a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
               </li>
               <li>
-                <a class="news-article  type-preview-M  state-disabled">
+                <article class="news-article  type-preview-M">
                   <aside>
                     <time>16:20</time>
                     <a href="#" class="news-article__counter">123</a>
                   </aside>
-                  <span class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</span>
-                </a>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/business/2"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
               </li>
               <li>
-                <a class="news-article  type-preview-M">
+                <article class="news-article  type-preview-M">
                   <aside>
                     <time>16:20</time>
                     <a href="#" class="news-article__counter">123</a>
                   </aside>
-                  <img class="news-article__photo" src="http://placekitten.com/80/60">
-                  <span class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</span>
-                </a>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/business/6"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
               </li>
               <li>
-                <a class="news-article  type-preview-M">
+                <article class="news-article  type-preview-M">
                   <aside>
                     <time>16:20</time>
                     <a href="#" class="news-article__counter">123</a>
                   </aside>
-                  <img class="news-article__photo" src="http://placekitten.com/80/60">
-                  <span class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</span>
-                </a>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/people/2"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
+              </li>
+              <li>
+                <article class="news-article  type-preview-M">
+                  <aside>
+                    <time>16:20</time>
+                    <a href="#" class="news-article__counter">123</a>
+                  </aside>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/people/2"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
+              </li>
+              <li>
+                <article class="news-article  type-preview-M">
+                  <aside>
+                    <time>16:20</time>
+                    <a href="#" class="news-article__counter">123</a>
+                  </aside>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/people/2"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
+              </li>
+              <li>
+                <article class="news-article  type-preview-M">
+                  <aside>
+                    <time>16:20</time>
+                    <a href="#" class="news-article__counter">123</a>
+                  </aside>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/people/2"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
+              </li>
+              <li>
+                <article class="news-article  type-preview-M">
+                  <aside>
+                    <time>16:20</time>
+                    <a href="#" class="news-article__counter">123</a>
+                  </aside>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/people/2"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
+              </li>
+              <li>
+                <article class="news-article  type-preview-M">
+                  <aside>
+                    <time>16:20</time>
+                    <a href="#" class="news-article__counter">123</a>
+                  </aside>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/people/2"></a>
+                  <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
+                </article>
               </li>
             </ul>
             <footer class="btn-serv-wrap">
@@ -387,7 +493,7 @@
         <!--Hot news section-->
         <section class="news-section">
           <header>
-            <h2 class="news-section__title">Горячие темы</h2>
+            <h2 class="news-section__title"><a href="#">Горячие темы</a></h2>
           </header>
           <ul>
             <li>
@@ -409,12 +515,57 @@
         </section>
         <!--banner-->
         <div class="l-island">
-          <img src="http://placekitten.com/240/400">
+          <img src="http://lorempixel.com/240/400/business">
         </div>
+        <!--photo gallery-->
+        <article class="news-article  type-carousel  carousel slide" id="photo-report-preview"  data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+
+            <div class="item active">
+              <a href="#"><img src="http://lorempixel.com/280/210/business/2"></a>
+              <a href="#" class="carousel-caption">
+                Как гуляли уральские спасатели в центре Екатеринбурга
+              </a>
+            </div>
+            <div class="item">
+              <a href="#"><img src="http://lorempixel.com/280/210/business/3"></a>
+              <a href="#" class="carousel-caption">
+                Как гуляли уральские спасатели в центре Екатеринбурга
+              </a>
+            </div>
+            <div class="item">
+              <a href="#"><img src="http://lorempixel.com/280/210/business/6"></a>
+              <a href="#" class="carousel-caption">
+                Как гуляли уральские спасатели в центре Екатеринбурга
+              </a>
+            </div>
+            <div class="item">
+              <a href="#"><img src="http://lorempixel.com/280/210/business/5"></a>
+              <a href="#" class="carousel-caption">
+                Как гуляли уральские спасатели в центре Екатеринбурга
+              </a>
+            </div>
+          </div>
+
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#photo-report-preview" data-slide-to="0" class="active"></li>
+            <li data-target="#photo-report-preview" data-slide-to="1"></li>
+            <li data-target="#photo-report-preview" data-slide-to="2"></li>
+            <li data-target="#photo-report-preview" data-slide-to="3"></li>
+          </ol>
+
+          <footer>
+            <a href="#" class="news-article__tag">Фоторепортаж</a>
+            <a href="#" class="news-article__counter">123</a>
+            <a href="#" class="news-article__photo-total">14</a>
+          </footer>
+        </article>
         <!--top commented materials-->
         <section class="news-section">
           <header>
-            <h2 class="news-section__title">Комментарии читателей в самых обсуждаемых материалах</h2>
+            <h2 class="news-section__title"><a href="#">Комментарии читателей в самых обсуждаемых материалах</a></h2>
           </header>
           <ul>
             <li>
@@ -426,11 +577,11 @@
                   </div>
                   <time>11 марта 2014, 17:54</time>
                 </aside>
-                <div class="news-article__body">
+                <a href="#" class="news-article__body">
                   Заселение скандального дома
                   на Фрезеровщиков откладывается.
                   Будущие жильцы вновь перессорились
-                </div>
+                </a>
                 <footer>
                   <a class="comment-article" href="#">
                     <aside>
@@ -457,11 +608,11 @@
                   </div>
                   <time>24 сентября 2014, 17:54</time>
                 </aside>
-                <div class="news-article__body">
+                <a href="#" class="news-article__body">
                   Заселение скандального дома
                   на Фрезеровщиков откладывается.
                   Будущие жильцы вновь перессорились
-                </div>
+                </a>
                 <footer>
                   <a class="comment-article" href="#"><aside>
                     <span class="comment-article__author">Иван</span>
@@ -483,9 +634,9 @@
         <!--poll-->
         <article class="news-article  type-poll">
           <header class="news-article__header">
-            <a href="#" class="news-article__tag">Опрос</span>
-            <h2 class="news-article__title">Как вы считаете, войдет ли Крым в состав России?</h2>
-            <img src="http://placekitten.com/260/180">
+            <h2 class="news-article__title"><a href="#">Как вы считаете, войдет ли Крым в состав России?</a></h2>
+            <a href="#" class="news-article__tag">Опрос</a>
+            <a href="#"><img src="http://lorempixel.com/260/180/business/1"></a>
           </header>
           <div class="news-article__body">
             <ul class="reset-list">
@@ -530,21 +681,21 @@
     <section class="container">
 
       <header>
-        <h2 class="news-section__title">Читайте также другие важные темы:</h2>
+        <h2 class="news-section__title"><a href="#">Читайте также другие важные темы:</a></h2>
       </header>
 
       <ul>
         <li>
-          <a href="#" class="news-article">
+          <article class="news-article">
             <aside class="news-article__header">
-              <img class="news-article__photo" src="http://placekitten.com/180/180">
+              <a href="#"><img class="news-article__photo" src="http://lorempixel.com/180/180/business/9"></a>
               <a href="#" class="news-article__tag">Экология</a>
               <a href="#" class="news-article__counter">123</a>
             </aside>
             <header>
               <time>14 марта 2014 г., 19:03</time>
-              <h2 class="news-article__theme">Экология</h2>
-              <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+              <h2 class="news-article__theme"><a href="#">Экология</a></h2>
+              <h2 class="news-article__title"><a href="#">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</a></h2>
             </header>
             <div class="news-article__body  arrow-after">
               Крупнейшая горно-металлургическая компания «Мечел»
@@ -552,19 +703,19 @@
               требований досрочной выплаты кредита на сумму
               150 млн долларов
             </div>
-          </a>
+          </article>
         </li>
         <li>
-          <a href="#" class="news-article  state-disabled">
+          <article class="news-article  state-visited">
             <aside class="news-article__header">
-              <img class="news-article__photo" src="http://placekitten.com/180/180">
-              <a href="#" class="news-article__tag">Экология</span>
+              <a href="#"><img class="news-article__photo" src="http://lorempixel.com/180/180/business/7"></a>
+              <a href="#" class="news-article__tag">Экология</a>
               <a href="#" class="news-article__counter">123</a>
             </aside>
             <header>
               <time>14 марта 2014 г., 19:03</time>
-              <h2 class="news-article__theme">Экология</h2>
-              <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+              <h2 class="news-article__theme"><a href="#">Экология</a></h2>
+              <h2 class="news-article__title"><a href="#">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</a></h2>
             </header>
             <div class="news-article__body  arrow-after">
               Крупнейшая горно-металлургическая компания «Мечел»
@@ -572,19 +723,19 @@
               требований досрочной выплаты кредита на сумму
               150 млн долларов
             </div>
-          </a>
+          </article>
         </li>
         <li>
-          <a href="#" class="news-article">
+          <article class="news-article">
             <aside class="news-article__header">
-              <img class="news-article__photo" src="http://placekitten.com/180/180">
-              <a href="#" class="news-article__tag">Экология</span>
+              <a href="#"><img class="news-article__photo" src="http://lorempixel.com/180/180/business/6"></a>
+              <a href="#" class="news-article__tag">Экология</a>
               <a href="#" class="news-article__counter">123</a>
             </aside>
             <header>
               <time>14 марта 2014 г., 19:03</time>
-              <h2 class="news-article__theme">Экология</h2>
-              <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+              <h2 class="news-article__theme"><a href="#">Экология</a></h2>
+              <h2 class="news-article__title"><a href="#">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</a></h2>
             </header>
             <div class="news-article__body  arrow-after">
               Крупнейшая горно-металлургическая компания «Мечел»
@@ -592,19 +743,19 @@
               требований досрочной выплаты кредита на сумму
               150 млн долларов
             </div>
-          </a>
+          </article>
         </li>
         <li>
-          <a href="#" class="news-article">
+          <article class="news-article">
             <aside class="news-article__header">
-              <img class="news-article__photo" src="http://placekitten.com/180/180">
-              <a href="#" class="news-article__tag">Экология</span>
+              <a href="#"><img class="news-article__photo" src="http://lorempixel.com/180/180/business/8"></a>
+              <a href="#" class="news-article__tag">Экология</a>
               <a href="#" class="news-article__counter">123</a>
             </aside>
             <header>
               <time>14 марта 2014 г., 19:03</time>
-              <h2 class="news-article__theme">Экология</h2>
-              <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+              <h2 class="news-article__theme"><a href="#">Экология</a></h2>
+              <h2 class="news-article__title"><a href="#">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</a></h2>
             </header>
             <div class="news-article__body  arrow-after">
               Крупнейшая горно-металлургическая компания «Мечел»
@@ -612,19 +763,19 @@
               требований досрочной выплаты кредита на сумму
               150 млн долларов
             </div>
-          </a>
+          </article>
         </li>
         <li>
-          <a href="#" class="news-article">
+          <article class="news-article">
             <aside class="news-article__header">
-              <img class="news-article__photo" src="http://placekitten.com/180/180">
-              <a href="#" class="news-article__tag">Экология</span>
+              <a href="#"><img class="news-article__photo" src="http://lorempixel.com/180/180/business/1"></a>
+              <a href="#" class="news-article__tag">Экология</a>
               <a href="#" class="news-article__counter">123</a>
             </aside>
             <header>
               <time>14 марта 2014 г., 19:03</time>
-              <h2 class="news-article__theme">Экология</h2>
-              <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+              <h2 class="news-article__theme"><a href="#">Экология</a></h2>
+              <h2 class="news-article__title"><a href="#">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</a></h2>
             </header>
             <div class="news-article__body  arrow-after">
               Крупнейшая горно-металлургическая компания «Мечел»
@@ -632,46 +783,26 @@
               требований досрочной выплаты кредита на сумму
               150 млн долларов
             </div>
-          </a>
+          </article>
         </li>
       </ul>
 
       <div class="bnr-wrap">
-        <img src="http://placekitten.com/730/90">
+        <img src="http://lorempixel.com/730/90/business">
       </div>
 
       <ul>
         <li>
-          <a href="#" class="news-article">
+          <article class="news-article">
             <aside class="news-article__header">
-              <img class="news-article__photo" src="http://placekitten.com/180/180">
-              <a href="#" class="news-article__tag">Экология</span>
-              <a href="#" class="news-article__counter">123</a>
-            </aside>
-            <header>
-              <time>14 марта 2014 г., 19:03</time>
-              <h2 class="news-article__theme">Экология</h2>
-              <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
-            </header>
-            <div class="news-article__body  arrow-after">
-              Крупнейшая горно-металлургическая компания «Мечел»
-              ведет переговоры с Альфа-банком касательно
-              требований досрочной выплаты кредита на сумму
-              150 млн долларов
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="news-article  state-disabled">
-            <aside class="news-article__header">
-              <img class="news-article__photo" src="http://placekitten.com/180/180">
+              <a href="#"><img class="news-article__photo" src="http://lorempixel.com/180/180/business/2"></a>
               <a href="#" class="news-article__tag">Экология</a>
               <a href="#" class="news-article__counter">123</a>
             </aside>
             <header>
               <time>14 марта 2014 г., 19:03</time>
-              <h2 class="news-article__theme">Экология</h2>
-              <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+              <h2 class="news-article__theme"><a href="#">Экология</a></h2>
+              <h2 class="news-article__title"><a href="#">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</a></h2>
             </header>
             <div class="news-article__body  arrow-after">
               Крупнейшая горно-металлургическая компания «Мечел»
@@ -679,19 +810,19 @@
               требований досрочной выплаты кредита на сумму
               150 млн долларов
             </div>
-          </a>
+          </article>
         </li>
         <li>
-          <a href="#" class="news-article">
+          <article class="news-article  state-visited">
             <aside class="news-article__header">
-              <img class="news-article__photo" src="http://placekitten.com/180/180">
+              <a href="#"><img class="news-article__photo" src="http://lorempixel.com/180/180/business/5"></a>
               <a href="#" class="news-article__tag">Экология</a>
               <a href="#" class="news-article__counter">123</a>
             </aside>
             <header>
               <time>14 марта 2014 г., 19:03</time>
-              <h2 class="news-article__theme">Экология</h2>
-              <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+              <h2 class="news-article__theme"><a href="#">Экология</a></h2>
+              <h2 class="news-article__title"><a href="#">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</a></h2>
             </header>
             <div class="news-article__body  arrow-after">
               Крупнейшая горно-металлургическая компания «Мечел»
@@ -699,19 +830,19 @@
               требований досрочной выплаты кредита на сумму
               150 млн долларов
             </div>
-          </a>
+          </article>
         </li>
         <li>
-          <a href="#" class="news-article">
+          <article class="news-article">
             <aside class="news-article__header">
-              <img class="news-article__photo" src="http://placekitten.com/180/180">
+              <a href="#"><img class="news-article__photo" src="http://lorempixel.com/180/180/business/2"></a>
               <a href="#" class="news-article__tag">Экология</a>
               <a href="#" class="news-article__counter">123</a>
             </aside>
             <header>
               <time>14 марта 2014 г., 19:03</time>
-              <h2 class="news-article__theme">Экология</h2>
-              <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+              <h2 class="news-article__theme"><a href="#">Экология</a></h2>
+              <h2 class="news-article__title"><a href="#">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</a></h2>
             </header>
             <div class="news-article__body  arrow-after">
               Крупнейшая горно-металлургическая компания «Мечел»
@@ -719,19 +850,19 @@
               требований досрочной выплаты кредита на сумму
               150 млн долларов
             </div>
-          </a>
+          </article>
         </li>
         <li>
-          <a href="#" class="news-article">
+          <article class="news-article">
             <aside class="news-article__header">
-              <img class="news-article__photo" src="http://placekitten.com/180/180">
+              <a href="#"><img class="news-article__photo" src="http://lorempixel.com/180/180/business/6"></a>
               <a href="#" class="news-article__tag">Экология</a>
               <a href="#" class="news-article__counter">123</a>
             </aside>
             <header>
               <time>14 марта 2014 г., 19:03</time>
-              <h2 class="news-article__theme">Экология</h2>
-              <h2 class="news-article__title">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</h2>
+              <h2 class="news-article__theme"><a href="#">Экология</a></h2>
+              <h2 class="news-article__title"><a href="#">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</a></h2>
             </header>
             <div class="news-article__body  arrow-after">
               Крупнейшая горно-металлургическая компания «Мечел»
@@ -739,7 +870,27 @@
               требований досрочной выплаты кредита на сумму
               150 млн долларов
             </div>
-          </a>
+          </article>
+        </li>
+        <li>
+          <article class="news-article">
+            <aside class="news-article__header">
+              <a href="#"><img class="news-article__photo" src="http://lorempixel.com/180/180/business/4"></a>
+              <a href="#" class="news-article__tag">Экология</a>
+              <a href="#" class="news-article__counter">123</a>
+            </aside>
+            <header>
+              <time>14 марта 2014 г., 19:03</time>
+              <h2 class="news-article__theme"><a href="#">Экология</a></h2>
+              <h2 class="news-article__title"><a href="#">Банки готовятся к кризису? «Мечел» рискует быть атакованным кредитными организациями</a></h2>
+            </header>
+            <div class="news-article__body  arrow-after">
+              Крупнейшая горно-металлургическая компания «Мечел»
+              ведет переговоры с Альфа-банком касательно
+              требований досрочной выплаты кредита на сумму
+              150 млн долларов
+            </div>
+          </article>
         </li>
       </ul>
 
@@ -760,24 +911,24 @@
         <div class="col-xs-10  col-sm-3">
           <section class="news-section  type-persons">
             <header>
-              <h2 class="news-section__title">Энциклопедия</h2>
+              <h2 class="news-section__title"><a href="#">Энциклопедия</a></h2>
             </header>
             <ul>
               <li>
-                <a class="news-article" href="#">
-                  <img class="news-article__photo" src="http://placekitten.com/110/110">
+                <article class="news-article" href="#">
+                  <a class="news-article__photo" href="#"><img src="http://lorempixel.com/110/110/people/7"></a>
                   <a href="#" class="news-article__tag">Персоны</a>
-                  <h2 class="news-article__title">Константинопольский Константин Константинович</h2>
+                  <h2 class="news-article__title"><a href="#">Бевх Виктор Петрович</a></h2>
                   <div class="news-article__body">Прокурор Свердловского района Перми</div>
-                </a>
+                </article>
               </li>
               <li>
-                <a class="news-article" href="#">
-                  <img class="news-article__photo" src="http://placekitten.com/110/110">
+                <article class="news-article" href="#">
+                  <a class="news-article__photo" href="#"><img src="http://lorempixel.com/110/110/people/9"></a>
                   <a href="#" class="news-article__tag">Персоны</a>
-                  <h2 class="news-article__title">Бевх Виктор Петрович</h2>
+                  <h2 class="news-article__title"><a href="#">Бевх Виктор Петрович</a></h2>
                   <div class="news-article__body">Прокурор Свердловского района Перми</div>
-                </a>
+                </article>
               </li>
             </ul>
             <footer class="btn-serv-wrap">
@@ -786,7 +937,7 @@
           </section>
 
           <div class="bnr-wrap    hidden-sm  hidden-xs">
-            <img src="http://placekitten.com/200/300">
+            <img src="http://lorempixel.com/200/300">
           </div>
 
         </div>
@@ -794,7 +945,7 @@
         <div class="col-xs-10  col-sm-4">
           <section class="news-section">
             <header>
-              <h2 class="news-section__title">Обзор блогов</h2>
+              <h2 class="news-section__title"><a href="#">Обзор блогов</a></h2>
             </header>
             <ul>
               <li>
@@ -803,8 +954,8 @@
                     <time>16:20</time>
                     <a href="#" class="news-article__counter">123</a>
                   </aside>
-                  <img class="news-article__photo" src="http://placekitten.com/80/60">
-                  <h2 class="news-article__title">Сон Медведева и «убийство» виноватого в нераскрывшемся кольце Олимпиады</h2>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/business/1"></a>
+                  <h2 class="news-article__title"><a href="#">Сон Медведева и «убийство» виноватого в нераскрывшемся кольце Олимпиады</a></h2>
                   <div class="news-article__body  arrow-after">
                     Церемония открытия XXII зимних
                     Олимпийских игр в Сочи стала одним
@@ -817,13 +968,13 @@
                 </article>
               </li>
               <li>
-                <a class="news-article  type-preview-M">
+                <article class="news-article  type-preview-M">
                   <aside>
                     <time>16:20</time>
                     <a href="#" class="news-article__counter">123</a>
                   </aside>
-                  <img class="news-article__photo" src="http://placekitten.com/80/60">
-                  <h2 class="news-article__title">Сон Медведева и «убийство» виноватого в нераскрывшемся кольце Олимпиады</h2>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/business/2"></a>
+                  <h2 class="news-article__title"><a href="#">Сон Медведева и «убийство» виноватого в нераскрывшемся кольце Олимпиады</a></h2>
                   <div class="news-article__body  arrow-after">
                     Церемония открытия XXII зимних
                     Олимпийских игр в Сочи стала одним
@@ -833,16 +984,16 @@
                     пафосом пользователи Интернета
                     обнаружили ряд неловких моментов
                   </div>
-                </a>
+                </article>
               </li>
               <li>
-                <a class="news-article  type-preview-M">
+                <article class="news-article  type-preview-M">
                   <aside>
                     <time>16:20</time>
                     <a href="#" class="news-article__counter">123</a>
                   </aside>
-                  <img class="news-article__photo" src="http://placekitten.com/80/60">
-                  <h2 class="news-article__title">Cлухи о новом браке Путина и их разоблачение</h2>
+                  <a href="#"><img class="news-article__photo" src="http://lorempixel.com/80/60/business/4"></a>
+                  <h2 class="news-article__title"><a href="#">Сон Медведева и «убийство» виноватого в нераскрывшемся кольце Олимпиады</a></h2>
                   <div class="news-article__body  arrow-after">
                     Церемония открытия XXII зимних
                     Олимпийских игр в Сочи стала одним
@@ -852,7 +1003,7 @@
                     пафосом пользователи Интернета
                     обнаружили ряд неловких моментов
                   </div>
-                </a>
+                </article>
               </li>
             </ul>
             <footer class="btn-serv-wrap">
@@ -864,29 +1015,29 @@
         <div class="col-xs-10  col-sm-3">
           <section class="news-section  type-projects">
             <header>
-              <h2 class="news-section__title  type-non-accented">Проекты «УралПолит.Ru»</h2>
+              <h2 class="news-section__title  type-non-accented"><a href="#">Проекты «УралПолит.Ru»</a></h2>
             </header>
             <ul>
               <li>
-                <a class="news-article" href="#">
-                  <img class="news-article__photo" src="http://placekitten.com/135/135">
+                <article class="news-article">
+                  <a class="news-article__photo" href="#"><img src="http://lorempixel.com/135/135/people/3"></a>
                   <a href="#" class="news-article__tag">Global City</a>
-                  <h2 class="news-article__title">Владимир Бегунов выступит на виниловой вечеринке</h2>
-                </a>
+                  <h2 class="news-article__title"><a href="#">Владимир Бегунов выступит на виниловой вечеринке</a></h2>
+                </article>
               </li>
               <li>
-                <a class="news-article" href="#">
-                  <img class="news-article__photo" src="http://placekitten.com/135/135">
+                <article class="news-article">
+                  <a class="news-article__photo" href="#"><img src="http://lorempixel.com/135/135/people/5"></a>
                   <a href="#" class="news-article__tag">Global City</a>
-                  <h2 class="news-article__title">Владимир Бегунов выступит на виниловой вечеринке</h2>
-                </a>
+                  <h2 class="news-article__title"><a href="#">Владимир Бегунов выступит на виниловой вечеринке</a></h2>
+                </article>
               </li>
               <li>
-                <a class="news-article" href="#">
-                  <img class="news-article__photo" src="http://placekitten.com/135/135">
+                <article class="news-article">
+                  <a class="news-article__photo" href="#"><img src="http://lorempixel.com/135/135/people/6"></a>
                   <a href="#" class="news-article__tag">Global City</a>
-                  <h2 class="news-article__title">Владимир Бегунов выступит на виниловой вечеринке</h2>
-                </a>
+                  <h2 class="news-article__title"><a href="#">Владимир Бегунов выступит на виниловой вечеринке</a></h2>
+                </article>
               </li>
             </ul>
           </section>
@@ -897,71 +1048,71 @@
         <!--news from partners-->
         <section class="news-section  type-from-partner">
           <header>
-            <h2 class="news-section__title  type-non-accented">Новости партнеров</h2>
+            <h2 class="news-section__title  type-non-accented"><a href="#">Новости партнеров</a></h2>
           </header>
           <ul>
             <li>
-              <a class="news-article  type-from-partner">
-                <img class="news-article__photo" src="http://placekitten.com/70/70">
-                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+              <article class="news-article  type-from-partner">
+                <a href="#"><img class="news-article__photo" src="http://lorempixel.com/70/70/people/1"></a>
+                <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
                 <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-              </a>
+              </article>
             </li>
             <li>
-              <a class="news-article  type-from-partner">
-                <img class="news-article__photo" src="http://placekitten.com/70/70">
-                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+              <article class="news-article  type-from-partner">
+                <a href="#"><img class="news-article__photo" src="http://lorempixel.com/70/70/people/2"></a>
+                <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
                 <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-              </a>
+              </article>
             </li>
             <li>
-              <a class="news-article  type-from-partner">
-                <img class="news-article__photo" src="http://placekitten.com/70/70">
-                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+              <article class="news-article  type-from-partner">
+                <a href="#"><img class="news-article__photo" src="http://lorempixel.com/70/70/people/3"></a>
+                <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
                 <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-              </a>
+              </article>
             </li>
             <li>
-              <a class="news-article  type-from-partner">
-                <img class="news-article__photo" src="http://placekitten.com/70/70">
-                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+              <article class="news-article  type-from-partner">
+                <a href="#"><img class="news-article__photo" src="http://lorempixel.com/70/70/people/4"></a>
+                <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
                 <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-              </a>
+              </article>
             </li>
             <li>
-              <a class="news-article  type-from-partner">
-                <img class="news-article__photo" src="http://placekitten.com/70/70">
-                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+              <article class="news-article  type-from-partner">
+                <a href="#"><img class="news-article__photo" src="http://lorempixel.com/70/70/people/5"></a>
+                <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
                 <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-              </a>
+              </article>
             </li>
             <li>
-              <a class="news-article  type-from-partner">
-                <img class="news-article__photo" src="http://placekitten.com/70/70">
-                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+              <article class="news-article  type-from-partner">
+                <a href="#"><img class="news-article__photo" src="http://lorempixel.com/70/70/people/6"></a>
+                <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
                 <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-              </a>
+              </article>
             </li>
             <li>
-              <a class="news-article  type-from-partner">
-                <img class="news-article__photo" src="http://placekitten.com/70/70">
-                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+              <article class="news-article  type-from-partner">
+                <a href="#"><img class="news-article__photo" src="http://lorempixel.com/70/70/people/7"></a>
+                <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
                 <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-              </a>
+              </article>
             </li>
             <li>
-              <a class="news-article  type-from-partner">
-                <img class="news-article__photo" src="http://placekitten.com/70/70">
-                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+              <article class="news-article  type-from-partner">
+                <a href="#"><img class="news-article__photo" src="http://lorempixel.com/70/70/people/8"></a>
+                <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
                 <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-              </a>
+              </article>
             </li>
             <li>
-              <a class="news-article  type-from-partner">
-                <img class="news-article__photo" src="http://placekitten.com/70/70">
-                <h2 class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</h2>
+              <article class="news-article  type-from-partner">
+                <a href="#"><img class="news-article__photo" src="http://lorempixel.com/70/70/people/9"></a>
+                <a href="#" class="news-article__title">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</a>
                 <div class="news-article__body">Чуров приедет на Южный Урал ради выборов губернатора [BreakingNews]</div>
-              </a>
+              </article>
             </li>
           </ul>
         </section>
@@ -971,7 +1122,7 @@
     <!--social widgets-->
     <div class="hidden-xs  hidden-sm  col-md-3">
       <div class="l-island">
-        <img src="http://placekitten.com/240/400">
+        <img src="http://lorempixel.com/240/400">
       </div>
 
       <section class="social-widget  type-group-widget">
@@ -1007,12 +1158,11 @@
     <div class="l-footer__main">
       <!--logo-->
       <a class="logo" href="/" itemprop='url'>
-        <img src="assets/img/logo.png" alt="" itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
         <span class="text-hide" itemprop="name">УралПолит.ru</span>
         <span class="text-hide" itemprop="description">Экспертный информационный канал</span>
       </a>
 
-      <div class="col-xs-10  col-sm-5  col-md-7">
+      <div class="l-header__main__right">
         <nav class="project-nav">
           <ul>
             <li><a href="#">О проекте</a></li>
