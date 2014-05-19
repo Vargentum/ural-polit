@@ -448,6 +448,7 @@
     .news-article__author
       font-size: 11px
 
+
     .news-article__body
       font-weight: 700
       font-size: 16px
@@ -456,6 +457,11 @@
       font-size: 10px !important
       padding-left: 3px
       padding-right: 3px
+
+    .news-article__tag,
+    .news-article__author
+      &:hover,&:focus
+        text-decoration: underline !important
 
 
     &:hover,&:focus
@@ -781,6 +787,7 @@
   background-color: rgb(0,0,0)
   background-color: rgba(0,0,0,.5)
   margin-left: 25px
+  color $body-bg
   //icon
   &:after
     pb(right 100% bottom -1px)
@@ -792,5 +799,8 @@
     background-color: rgba(0,0,0,.5)
     size: 25px 16px;
 
-  &,&:hover,&:focus
+  &:hover,&:focus
     color $body-bg
+    background-color: rgba(0,0,0,.8)
+    &:before
+      background-color @background-color
