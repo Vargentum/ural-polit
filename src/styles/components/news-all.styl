@@ -520,9 +520,43 @@
       jLine bottom
       margin-top: 20px
 
+    ul
+      @extend .reset-list
+
     li
       margin-bottom: 10px
 
+    .poll-item
+      position relative
+      margin: 0 10px 15px 35px
+      border-left 1px solid #212121
+      padding: 7px 0
+
+    .poll-item-label
+      display block
+      padding: 5px 10px
+
+    .poll-item-scale
+      display block
+      height: 30px
+      img('poll-scale-bg.png')
+      background-repeat repeat-x
+
+    
+    .poll-item-scale-label
+      absolute right 100% top 15px
+      margin-right: 5px
+
+
+
+    .poll-party-counter
+      display block
+      width: 50%
+
+      b
+        display block
+        font-size: 14px
+        font-weight: 700
 
 
   /*------------------------------------*\

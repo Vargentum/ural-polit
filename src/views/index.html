@@ -365,8 +365,8 @@
             <a href="#" class="news-article__tag">Опрос</a>
             <a href="#"><img src="http://lorempixel.com/260/180/business/1"></a>
           </header>
-          <div class="news-article__body">
-            <ul class="reset-list">
+          <div class="news-article__body  is-hidden">
+            <ul>
               <li>
                 <label class="custom-choise-input">
                   <input type="checkbox"/>
@@ -395,6 +395,36 @@
 
             <footer class="news-article__footer">
               <a href="#" class="btn  btn-default">Проголосовать</a>
+              <a href="#" class="btn  btn-serv">Архив опросов</a>
+            </footer>
+          </div>
+          <div class="news-article__body  is-shown">
+
+            <ul class="">
+              <li class="poll-item">
+                <span class="poll-item-scale-label">50%</span>
+                <span class="poll-item-scale" style="width: 50%"></span>
+                <span class="poll-item-label">Да, большинство населения выступает за воссоединение с Россией и против нынешней власти на Украине</span>
+              </li>
+              <li class="poll-item">
+                <span class="poll-item-scale-label">100%</span>
+                <span class="poll-item-scale" style="width: 100%"></span>
+                <span class="poll-item-label">Нет</span>
+              </li>
+              <li class="poll-item">
+                <span class="poll-item-scale-label">0%</span>
+                <span class="poll-item-scale" style="width: 0%"></span>
+                <span class="poll-item-label">Затрудняюсь ответить</span>
+              </li>
+              <li class="poll-item">
+                <span class="poll-item-scale-label">100%</span>
+                <span class="poll-item-scale" style="width: 33%"></span>
+                <span class="poll-item-label">Другой вариант</span>
+              </li>
+            </ul>
+
+            <footer class="news-article__footer">
+              <span class="poll-party-counter">Приняли участие: <b>2 250 чел.</b></span>
               <a href="#" class="btn  btn-serv">Архив опросов</a>
             </footer>
           </div>
