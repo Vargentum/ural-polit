@@ -377,6 +377,7 @@ th {
 .btn,
 .tag,
 .comment-controls__unit,
+.btn-subject-show-more,
 .expert-full .expert-full__label,
 .news-article__tag {
   display: inline-block;
@@ -400,16 +401,19 @@ th {
 .btn:focus,
 .tag:focus,
 .comment-controls__unit:focus,
+.btn-subject-show-more:focus,
 .expert-full .expert-full__label:focus,
 .news-article__tag:focus,
 .btn:active:focus,
 .tag:active:focus,
 .comment-controls__unit:active:focus,
+.btn-subject-show-more:active:focus,
 .expert-full .expert-full__label:active:focus,
 .news-article__tag:active:focus,
 .btn.active:focus,
 .tag.active:focus,
 .comment-controls__unit.active:focus,
+.btn-subject-show-more.active:focus,
 .expert-full .expert-full__label.active:focus,
 .news-article__tag.active:focus {
   outline: thin dotted;
@@ -419,11 +423,13 @@ th {
 .btn:hover,
 .tag:hover,
 .comment-controls__unit:hover,
+.btn-subject-show-more:hover,
 .expert-full .expert-full__label:hover,
 .news-article__tag:hover,
 .btn:focus,
 .tag:focus,
 .comment-controls__unit:focus,
+.btn-subject-show-more:focus,
 .expert-full .expert-full__label:focus,
 .news-article__tag:focus {
   color: #51515b;
@@ -432,11 +438,13 @@ th {
 .btn:active,
 .tag:active,
 .comment-controls__unit:active,
+.btn-subject-show-more:active,
 .expert-full .expert-full__label:active,
 .news-article__tag:active,
 .btn.active,
 .tag.active,
 .comment-controls__unit.active,
+.btn-subject-show-more.active,
 .expert-full .expert-full__label.active,
 .news-article__tag.active {
   outline: 0;
@@ -446,16 +454,19 @@ th {
 .btn.disabled,
 .tag.disabled,
 .comment-controls__unit.disabled,
+.btn-subject-show-more.disabled,
 .expert-full .expert-full__label.disabled,
 .news-article__tag.disabled,
 .btn[disabled],
 .tag[disabled],
 .comment-controls__unit[disabled],
+.btn-subject-show-more[disabled],
 .expert-full .expert-full__label[disabled],
 .news-article__tag[disabled],
 fieldset[disabled] .btn,
 fieldset[disabled] .tag,
 fieldset[disabled] .comment-controls__unit,
+fieldset[disabled] .btn-subject-show-more,
 fieldset[disabled] .expert-full .expert-full__label,
 fieldset[disabled] .news-article__tag {
   cursor: not-allowed;
@@ -1202,6 +1213,7 @@ pre code {
 .comment-article,
 .social-widget.type-group-widget,
 .encyclopedia-section,
+.btn-subject-show-more,
 .expert-full .expert-full__section,
 .news-section.type-important,
 .news-article.type-opinion,
@@ -6107,6 +6119,7 @@ a.list-group-item-danger.active:focus {
   .btn > .caret,
   .dropup > .btn > .caret,
   .comment-controls__unit > .caret,
+  .btn-subject-show-more > .caret,
   .expert-full .expert-full__label > .caret,
   .news-article__tag > .caret {
     border-top-color: #000 !important;
@@ -6505,7 +6518,8 @@ a.thumbnail.active {
 .news-section.type-from-partner ul:after {
   clear: both;
 }
-.center-block {
+.center-block,
+.btn-subject-show-more {
   float: none !important;
   display: block;
   margin-left: auto;
@@ -7764,6 +7778,32 @@ a.comment-article.state-disabled:focus {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+/*------------------------------------*   Subject elements
+\*------------------------------------*/
+.btn-subject-show-more {
+  position: relative;
+  float: left;
+  width: 70%;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 400;
+  border-width: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+.btn-subject-show-more:hover,
+.btn-subject-show-more:focus {
+  background-color: #dcdce0;
 }
 .expert-full {
   text-align: center;
