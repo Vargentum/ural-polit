@@ -450,6 +450,7 @@
     .news-article__author
       font-size: 11px
 
+
     .news-article__body
       font-weight: 700
       font-size: 16px
@@ -458,6 +459,11 @@
       font-size: 10px !important
       padding-left: 3px
       padding-right: 3px
+
+    .news-article__tag,
+    .news-article__author
+      &:hover,&:focus
+        text-decoration: underline !important
 
 
     &:hover,&:focus
@@ -516,9 +522,43 @@
       jLine bottom
       margin-top: 20px
 
+    ul
+      @extend .reset-list
+
     li
       margin-bottom: 10px
 
+    .poll-item
+      position relative
+      margin: 0 10px 15px 35px
+      border-left 1px solid #212121
+      padding: 7px 0
+
+    .poll-item-label
+      display block
+      padding: 5px 10px
+
+    .poll-item-scale
+      display block
+      height: 30px
+      img('poll-scale-bg.png')
+      background-repeat repeat-x
+
+    
+    .poll-item-scale-label
+      absolute right 100% top 15px
+      margin-right: 5px
+
+
+
+    .poll-party-counter
+      display block
+      width: 50%
+
+      b
+        display block
+        font-size: 14px
+        font-weight: 700
 
 
   /*------------------------------------*\
@@ -783,6 +823,7 @@
   background-color: rgb(0,0,0)
   background-color: rgba(0,0,0,.5)
   margin-left: 25px
+  color $body-bg
   //icon
   &:after
     pb(right 100% bottom -1px)
@@ -794,5 +835,10 @@
     background-color: rgba(0,0,0,.5)
     size: 25px 16px;
 
-  &,&:hover,&:focus
+
+  &:hover,&:focus
     color $body-bg
+    background-color: rgba(0,0,0,.8)
+    &:before
+      background-color @background-color
+
