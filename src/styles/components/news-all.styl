@@ -616,6 +616,7 @@
     make-md-column(7)
     padding-top: 15px
     padding-bottom: 15px
+    @extend .disable-article-hovers
 
     time
       display block
@@ -792,17 +793,9 @@
       text-decoration: underline;
 
 .news-article__tag
-  @extend .btn
-  button-variant($text-color, rgba(0,0,0,0), $text-color);
-  border-width 1px
-  font-weight: normal
+  @extend .tag
   padding-left:  4px
   padding-right: 4px
-  text-transform: uppercase;
-  display inline-block !important
-  font-size: 11px !important;
-  a,a&
-    @extend .reset-link-defaults
 
 
 .news-article__photo
