@@ -925,9 +925,9 @@ input-size(input-height, padding-vertical, padding-horizontal, font-size, line-h
 //
 // CUSTOM MIXINS
 // --------------------------------------------------
-/*------------------------------------*\
+/*--------------------------------------
     Some mixins from Nib library
-\*------------------------------------*/
+--------------------------------------*/
 border(color, args...)
   if color is a 'color'
     border: 1px solid color args
@@ -958,9 +958,9 @@ relative()
   -pos('relative', arguments)
 
 
-/*------------------------------------*\
+/*--------------------------------------
   Shortcuts for pseudo-elements
-\*------------------------------------*/
+--------------------------------------*/
 pb()
   content: '';
   display: block;
@@ -972,18 +972,18 @@ pi($align = auto)
   vertical-align $align
 
 
-/*------------------------------------*\
+/*--------------------------------------
   Quick image insert
-\*------------------------------------*/
+--------------------------------------*/
 img($name, $position = '50% 50%', $repeat = no-repeat)
   background-image data($img-path + $name)
   background-repeat $repeat
   background-position unquote($position)
 
 
-/*------------------------------------*\
+/*--------------------------------------
     Layout helpers
-\*------------------------------------*/
+--------------------------------------*/
 hLine($align = baseline)
   &>*
     display: inline-block
@@ -1029,6 +1029,8 @@ jLine($align = baseline)
       line-height: $line-height-base
 
 
+fLine()
+
 vAlign($type = middle, $full = true)
   hLine $type
   &:after
@@ -1042,9 +1044,9 @@ vAlign($type = middle, $full = true)
       width: 100%
 
 
-/*------------------------------------*\
+/*--------------------------------------
     Unsorted
-\*------------------------------------*/
+--------------------------------------*/
 test($color = red)
   border $color !important
 
@@ -1057,9 +1059,9 @@ trans()
 
 
 
-/*------------------------------------*\
+/*--------------------------------------
     Resetting
-\*------------------------------------*/
+--------------------------------------*/
 nested-reset()
   div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
   pre, a, abbr, acronym, address, code, del, dfn, em, img,

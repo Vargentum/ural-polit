@@ -50,6 +50,18 @@ $ ->
       $(@).html(labelActive)
 
 
+# Flexslider controller
+$ ->
+  $('.experts-all__carousel').flexslider(
+    animation: 'slide'
+    controlNav: off
+    itemWidth: 150
+    maxItems: 4
+    move: 1
+    prevText: ''
+    nextText: ''
+  )
+
 ###
 # change header when scrolling (disabled)
 $ ->

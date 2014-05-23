@@ -182,18 +182,24 @@ rotateY(deg) {
   padding-left: 10px;
   padding-right: 10px;
 }
-/*------------------------------------*     Some mixins from Nib library
-\*------------------------------------*/
-/*------------------------------------*   Shortcuts for pseudo-elements
-\*------------------------------------*/
-/*------------------------------------*   Quick image insert
-\*------------------------------------*/
-/*------------------------------------*     Layout helpers
-\*------------------------------------*/
-/*------------------------------------*     Unsorted
-\*------------------------------------*/
-/*------------------------------------*     Resetting
-\*------------------------------------*/
+/*--------------------------------------
+    Some mixins from Nib library
+--------------------------------------*/
+/*--------------------------------------
+  Shortcuts for pseudo-elements
+--------------------------------------*/
+/*--------------------------------------
+  Quick image insert
+--------------------------------------*/
+/*--------------------------------------
+    Layout helpers
+--------------------------------------*/
+/*--------------------------------------
+    Unsorted
+--------------------------------------*/
+/*--------------------------------------
+    Resetting
+--------------------------------------*/
 /* normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -378,7 +384,7 @@ th {
 .tag,
 .comment-controls__unit,
 .btn-subject-show-more,
-.expert-full .expert-full__label,
+.expert-about__label,
 .news-article__tag {
   display: inline-block;
   margin-bottom: 0;
@@ -402,19 +408,19 @@ th {
 .tag:focus,
 .comment-controls__unit:focus,
 .btn-subject-show-more:focus,
-.expert-full .expert-full__label:focus,
+.expert-about__label:focus,
 .news-article__tag:focus,
 .btn:active:focus,
 .tag:active:focus,
 .comment-controls__unit:active:focus,
 .btn-subject-show-more:active:focus,
-.expert-full .expert-full__label:active:focus,
+.expert-about__label:active:focus,
 .news-article__tag:active:focus,
 .btn.active:focus,
 .tag.active:focus,
 .comment-controls__unit.active:focus,
 .btn-subject-show-more.active:focus,
-.expert-full .expert-full__label.active:focus,
+.expert-about__label.active:focus,
 .news-article__tag.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
@@ -424,13 +430,13 @@ th {
 .tag:hover,
 .comment-controls__unit:hover,
 .btn-subject-show-more:hover,
-.expert-full .expert-full__label:hover,
+.expert-about__label:hover,
 .news-article__tag:hover,
 .btn:focus,
 .tag:focus,
 .comment-controls__unit:focus,
 .btn-subject-show-more:focus,
-.expert-full .expert-full__label:focus,
+.expert-about__label:focus,
 .news-article__tag:focus {
   color: #51515b;
   text-decoration: none;
@@ -439,13 +445,13 @@ th {
 .tag:active,
 .comment-controls__unit:active,
 .btn-subject-show-more:active,
-.expert-full .expert-full__label:active,
+.expert-about__label:active,
 .news-article__tag:active,
 .btn.active,
 .tag.active,
 .comment-controls__unit.active,
 .btn-subject-show-more.active,
-.expert-full .expert-full__label.active,
+.expert-about__label.active,
 .news-article__tag.active {
   outline: 0;
   background-image: none;
@@ -455,19 +461,19 @@ th {
 .tag.disabled,
 .comment-controls__unit.disabled,
 .btn-subject-show-more.disabled,
-.expert-full .expert-full__label.disabled,
+.expert-about__label.disabled,
 .news-article__tag.disabled,
 .btn[disabled],
 .tag[disabled],
 .comment-controls__unit[disabled],
 .btn-subject-show-more[disabled],
-.expert-full .expert-full__label[disabled],
+.expert-about__label[disabled],
 .news-article__tag[disabled],
 fieldset[disabled] .btn,
 fieldset[disabled] .tag,
 fieldset[disabled] .comment-controls__unit,
 fieldset[disabled] .btn-subject-show-more,
-fieldset[disabled] .expert-full .expert-full__label,
+fieldset[disabled] .expert-about__label,
 fieldset[disabled] .news-article__tag {
   cursor: not-allowed;
   pointer-events: none;
@@ -1214,7 +1220,8 @@ pre code {
 .social-widget.type-group-widget,
 .encyclopedia-section,
 .btn-subject-show-more,
-.expert-full .expert-full__section,
+.expert-about__section,
+.experts-all,
 .news-section.type-important,
 .news-article.type-opinion,
 .news-article.type-poll .news-article__body,
@@ -1227,18 +1234,21 @@ pre code {
 }
 .l-island--fence,
 .comment-article,
-.expert-full .expert-full__section,
+.expert-about__section,
+.experts-all,
 .news-article.type-opinion {
   position: relative;
   border: none;
 }
 .l-island--fence:before,
 .comment-article:before,
-.expert-full .expert-full__section:before,
+.expert-about__section:before,
+.experts-all:before,
 .news-article.type-opinion:before,
 .l-island--fence:after,
 .comment-article:after,
-.expert-full .expert-full__section:after,
+.expert-about__section:after,
+.experts-all:after,
 .news-article.type-opinion:after {
   content: '';
   display: block;
@@ -1254,7 +1264,8 @@ pre code {
 }
 .l-island--fence:before,
 .comment-article:before,
-.expert-full .expert-full__section:before,
+.expert-about__section:before,
+.experts-all:before,
 .news-article.type-opinion:before {
   top: -5px;
 }
@@ -1265,8 +1276,8 @@ pre code {
   display: inline-block;
 }
 .reset-list,
-.expert-full .expert-full__about ul,
-.expert-full .expert-full__author-articles ul,
+.expert-about__about ul,
+.expert-about__author-articles ul,
 .news-article.type-poll ul {
   margin: 0;
   padding: 0;
@@ -1299,14 +1310,17 @@ a.news-article__title:focus,
   text-decoration: none;
 }
 .disable-article-hovers,
+.news-section.type-expert-opinions .news-section.type-persons .news-article,
 .news-article.type-top-commented,
 .news-article.type-poll,
 .news-article.type-template,
 .disable-article-hovers:hover,
+.news-section.type-expert-opinions .news-section.type-persons .news-article:hover,
 .news-article.type-top-commented:hover,
 .news-article.type-poll:hover,
 .news-article.type-template:hover,
 .disable-article-hovers:focus,
+.news-section.type-expert-opinions .news-section.type-persons .news-article:focus,
 .news-article.type-top-commented:focus,
 .news-article.type-poll:focus,
 .news-article.type-template:focus {
@@ -1320,7 +1334,7 @@ a.news-article__title:focus,
   display: block !important;
 }
 .tag,
-.expert-full .expert-full__label,
+.expert-about__label,
 .news-article__tag {
   color: #51515b;
   background-color: rgba(0,0,0,0);
@@ -1332,85 +1346,85 @@ a.news-article__title:focus,
   font-size: 11px !important;
 }
 .tag:hover,
-.expert-full .expert-full__label:hover,
+.expert-about__label:hover,
 .news-article__tag:hover,
 .tag:focus,
-.expert-full .expert-full__label:focus,
+.expert-about__label:focus,
 .news-article__tag:focus,
 .tag:active,
-.expert-full .expert-full__label:active,
+.expert-about__label:active,
 .news-article__tag:active,
 .tag.active,
-.expert-full .expert-full__label.active,
+.expert-about__label.active,
 .news-article__tag.active,
 .open .dropdown-toggle.tag,
-.open .dropdown-toggle.expert-full .expert-full__label,
+.open .dropdown-toggle.expert-about__label,
 .open .dropdown-toggle.news-article__tag {
   color: #51515b;
   background-color: rgba(0,0,0,0);
   border-color: #474750;
 }
 .tag:active,
-.expert-full .expert-full__label:active,
+.expert-about__label:active,
 .news-article__tag:active,
 .tag.active,
-.expert-full .expert-full__label.active,
+.expert-about__label.active,
 .news-article__tag.active,
 .open .dropdown-toggle.tag,
-.open .dropdown-toggle.expert-full .expert-full__label,
+.open .dropdown-toggle.expert-about__label,
 .open .dropdown-toggle.news-article__tag {
   background-image: none;
 }
 .tag.disabled,
-.expert-full .expert-full__label.disabled,
+.expert-about__label.disabled,
 .news-article__tag.disabled,
 .tag[disabled],
-.expert-full .expert-full__label[disabled],
+.expert-about__label[disabled],
 .news-article__tag[disabled],
 fieldset[disabled] .tag,
-fieldset[disabled] .expert-full .expert-full__label,
+fieldset[disabled] .expert-about__label,
 fieldset[disabled] .news-article__tag,
 .tag.disabled:hover,
-.expert-full .expert-full__label.disabled:hover,
+.expert-about__label.disabled:hover,
 .news-article__tag.disabled:hover,
 .tag[disabled]:hover,
-.expert-full .expert-full__label[disabled]:hover,
+.expert-about__label[disabled]:hover,
 .news-article__tag[disabled]:hover,
 fieldset[disabled] .tag:hover,
-fieldset[disabled] .expert-full .expert-full__label:hover,
+fieldset[disabled] .expert-about__label:hover,
 fieldset[disabled] .news-article__tag:hover,
 .tag.disabled:focus,
-.expert-full .expert-full__label.disabled:focus,
+.expert-about__label.disabled:focus,
 .news-article__tag.disabled:focus,
 .tag[disabled]:focus,
-.expert-full .expert-full__label[disabled]:focus,
+.expert-about__label[disabled]:focus,
 .news-article__tag[disabled]:focus,
 fieldset[disabled] .tag:focus,
-fieldset[disabled] .expert-full .expert-full__label:focus,
+fieldset[disabled] .expert-about__label:focus,
 fieldset[disabled] .news-article__tag:focus,
 .tag.disabled:active,
-.expert-full .expert-full__label.disabled:active,
+.expert-about__label.disabled:active,
 .news-article__tag.disabled:active,
 .tag[disabled]:active,
-.expert-full .expert-full__label[disabled]:active,
+.expert-about__label[disabled]:active,
 .news-article__tag[disabled]:active,
 fieldset[disabled] .tag:active,
-fieldset[disabled] .expert-full .expert-full__label:active,
+fieldset[disabled] .expert-about__label:active,
 fieldset[disabled] .news-article__tag:active,
 .tag.disabled.active,
-.expert-full .expert-full__label.disabled.active,
+.expert-about__label.disabled.active,
 .news-article__tag.disabled.active,
 .tag[disabled].active,
-.expert-full .expert-full__label[disabled].active,
+.expert-about__label[disabled].active,
 .news-article__tag[disabled].active,
 fieldset[disabled] .tag.active,
-fieldset[disabled] .expert-full .expert-full__label.active,
+fieldset[disabled] .expert-about__label.active,
 fieldset[disabled] .news-article__tag.active {
   background-color: rgba(0,0,0,0);
   border-color: #51515b;
 }
 .tag .badge,
-.expert-full .expert-full__label .badge,
+.expert-about__label .badge,
 .news-article__tag .badge {
   color: rgba(0,0,0,0);
   background-color: #51515b;
@@ -1477,7 +1491,7 @@ output {
 .project-search input {
   display: block;
   width: 100%;
-  height: 36px;
+  height: 28px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.428571429;
@@ -1529,7 +1543,7 @@ input[type="search"] {
   -webkit-appearance: none;
 }
 input[type="date"] {
-  line-height: 36px;
+  line-height: 28px;
 }
 .form-group {
   margin-bottom: 15px;
@@ -1621,16 +1635,16 @@ select[multiple].input-lg {
   position: relative;
 }
 .has-feedback .form-control {
-  padding-right: 45px;
+  padding-right: 35px;
 }
 .has-feedback .form-control-feedback {
   position: absolute;
   top: 25px;
   right: 0;
   display: block;
-  width: 36px;
-  height: 36px;
-  line-height: 36px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
   text-align: center;
 }
 .has-success .help-block,
@@ -1801,19 +1815,19 @@ select[multiple].input-lg {
   width: 20px;
   height: 20px;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -22px -31px;
+  background-position: -73px -22px;
   width: 20px;
   height: 20px;
 }
 input[type=radio]:checked ~ .custom-choise-input__label:before {
   background-image: url("../img/ural-polit-icons.png");
-  background-position: 0px -31px;
+  background-position: -73px 0px;
   width: 20px;
   height: 20px;
 }
 input[type=checkbox]:checked ~ .custom-choise-input__label:before {
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -57px 0px;
+  background-position: 0px -62px;
   width: 20px;
   height: 20px;
 }
@@ -5102,8 +5116,8 @@ a.list-group-item-danger.active:focus {
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 1px 0 rgba(255,255,255,0.1);
-  margin-top: 7px;
-  margin-bottom: 7px;
+  margin-top: 11px;
+  margin-bottom: 11px;
 }
 @media (min-width:768px) {
   .navbar-form .form-group {
@@ -5169,8 +5183,8 @@ a.list-group-item-danger.active:focus {
   border-bottom-left-radius: 0;
 }
 .navbar-btn {
-  margin-top: 7px;
-  margin-bottom: 7px;
+  margin-top: 11px;
+  margin-bottom: 11px;
 }
 .navbar-btn.btn-sm {
   margin-top: 10px;
@@ -6120,7 +6134,7 @@ a.list-group-item-danger.active:focus {
   .dropup > .btn > .caret,
   .comment-controls__unit > .caret,
   .btn-subject-show-more > .caret,
-  .expert-full .expert-full__label > .caret,
+  .expert-about__label > .caret,
   .news-article__tag > .caret {
     border-top-color: #000 !important;
   }
@@ -6585,11 +6599,19 @@ a:hover,
 a:focus {
   text-decoration: underline;
 }
+select {
+  height: 28px;
+}
+select:disabled {
+  background-color: transparent;
+  border-color: #a6a6a6;
+}
 body {
   overflow-x: hidden;
 }
-/*------------------------------------*     HEADER
-\*------------------------------------*/
+/*--------------------------------------
+    HEADER
+--------------------------------------*/
 .l-header {
   background-color: #f6f6f7;
   border-bottom: 1px solid #999;
@@ -6692,8 +6714,9 @@ body {
   margin-left: -10px;
   margin-right: -10px;
 }
-/*------------------------------------*     FOOTER
-\*------------------------------------*/
+/*--------------------------------------
+    FOOTER
+--------------------------------------*/
 .l-footer {
   background-color: #f6f6f7;
   padding-bottom: 15px;
@@ -6753,13 +6776,15 @@ body {
 .l-footer__btm a:focus {
   text-decoration: none;
 }
-/*------------------------------------*     MAIN
-\*------------------------------------*/
+/*--------------------------------------
+    MAIN
+--------------------------------------*/
 .l-main {
   position: relative;
 }
-/*------------------------------------*     COMPONENTS
-\*------------------------------------*/
+/*--------------------------------------
+    COMPONENTS
+--------------------------------------*/
 .logo {
   display: block;
   margin-top: 10px;
@@ -6855,13 +6880,13 @@ body {
 }
 .widget-weather__unit.state-day:before {
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -27px -53px;
+  background-position: -69px -62px;
   width: 18px;
   height: 17px;
 }
 .widget-weather__unit.state-night:before {
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -57px -22px;
+  background-position: -49px -62px;
   width: 18px;
   height: 17px;
 }
@@ -6904,7 +6929,7 @@ body {
   position: relative;
   top: -1px;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -64px -53px;
+  background-position: -95px -42px;
   width: 12px;
   height: 12px;
 }
@@ -6915,7 +6940,7 @@ body {
   position: relative;
   top: -1px;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -79px -28px;
+  background-position: -95px -28px;
   width: 12px;
   height: 12px;
 }
@@ -6926,7 +6951,7 @@ body {
   position: relative;
   top: -1px;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -79px -14px;
+  background-position: -95px -14px;
   width: 12px;
   height: 12px;
 }
@@ -6986,7 +7011,7 @@ body {
   display: inline-block;
   vertical-align: auto;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -79px -42px;
+  background-position: -95px -56px;
   width: 9px;
   height: 9px;
   margin-right: 2px;
@@ -7141,7 +7166,7 @@ body {
   left: 15px;
   top: 50%;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -35px 0px;
+  background-position: -38px -31px;
   width: 20px;
   height: 21px;
   -webkit-transform: translateY(-50%);
@@ -7164,7 +7189,7 @@ body {
   transform: translateY(-50%);
   background-color: transparent;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -47px -53px;
+  background-position: -73px -44px;
   width: 15px;
   height: 14px;
 }
@@ -7342,7 +7367,7 @@ body {
 .btn-show-menu {
   display: block;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: 0px 0px;
+  background-position: -38px 0px;
   width: 33px;
   height: 29px;
   position: absolute;
@@ -7356,8 +7381,9 @@ body {
     margin: 0 auto;
   }
 }
-/*------------------------------------*   Comment
-\*------------------------------------*/
+/*--------------------------------------
+  Comment
+--------------------------------------*/
 .comment-article {
   margin: 5px 0;
   display: block;
@@ -7403,7 +7429,7 @@ a.comment-article.state-disabled:focus {
   display: inline-block;
   vertical-align: middle;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -79px 0px;
+  background-position: -95px 0px;
   width: 12px;
   height: 12px;
   margin-right: 5px;
@@ -7415,8 +7441,9 @@ a.comment-article.state-disabled:focus {
   margin-top: 5px;
   font-size: 12px;
 }
-/*------------------------------------*   Tag list
-\*------------------------------------*/
+/*--------------------------------------
+  Tag list
+--------------------------------------*/
 .tag-list {
   margin: 30px 0 20px;
   font: 12px Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -7457,8 +7484,9 @@ a.comment-article.state-disabled:focus {
   color: #c5cacc;
   width: 100px;
 }
-/*------------------------------------*   Tag list
-\*------------------------------------*/
+/*--------------------------------------
+  Tag list
+--------------------------------------*/
 .social-widget.type-share,
 .social-widget.type-follow {
   margin-bottom: 15px;
@@ -7508,8 +7536,9 @@ a.comment-article.state-disabled:focus {
   font-size: 14px;
   margin: 0 0 15px;
 }
-/*------------------------------------*   Comment controls
-\*------------------------------------*/
+/*--------------------------------------
+  Comment controls
+--------------------------------------*/
 .comment-controls {
   color: #51515b;
   font-weight: 700;
@@ -7554,8 +7583,9 @@ a.comment-article.state-disabled:focus {
   border-right: 8px solid transparent;
   margin-left: -7px;
 }
-/*------------------------------------*   Project page section
-\*------------------------------------*/
+/*--------------------------------------
+  Project page section
+--------------------------------------*/
 .project-page {
   position: relative;
   float: left;
@@ -7590,8 +7620,9 @@ a.comment-article.state-disabled:focus {
   padding-bottom: 10px;
   border-bottom: 5px solid #51515b;
 }
-/*------------------------------------*   Encyclopedia section
-\*------------------------------------*/
+/*--------------------------------------
+  Encyclopedia section
+--------------------------------------*/
 .encyclopedia-section__title {
   font-size: 38px;
   margin: 0;
@@ -7709,7 +7740,7 @@ a.comment-article.state-disabled:focus {
   right: 10px;
   top: 50%;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: -57px -41px;
+  background-position: 0px -84px;
   width: 16px;
   height: 8px;
   -webkit-transition-property: -webkit-transform;
@@ -7725,8 +7756,9 @@ a.comment-article.state-disabled:focus {
   -ms-transform: rotate(0) translateY(-50%);
   transform: rotate(0) translateY(-50%);
 }
-/*------------------------------------*   Pagination
-\*------------------------------------*/
+/*--------------------------------------
+  Pagination
+--------------------------------------*/
 .pagination {
   position: relative;
   border-top: 1px solid #999;
@@ -7779,8 +7811,9 @@ a.comment-article.state-disabled:focus {
   -ms-flex: 1;
   flex: 1;
 }
-/*------------------------------------*   Subject elements
-\*------------------------------------*/
+/*--------------------------------------
+  Subject elements
+--------------------------------------*/
 .btn-subject-show-more {
   position: relative;
   float: left;
@@ -7805,74 +7838,325 @@ a.comment-article.state-disabled:focus {
 .btn-subject-show-more:focus {
   background-color: #dcdce0;
 }
-.expert-full {
+.expert-about {
   text-align: center;
   font-size: 12px;
 }
-.expert-full p {
+.expert-about p {
   margin: 0;
 }
-.expert-full .expert-full__section {
+.expert-about__section {
   margin: 0 0 3px;
   padding: 15px;
 }
-.expert-full .expert-full__photo {
+.expert-about__photo {
   border-radius: 50%;
   display: block;
   width: 75px;
   height: 75px;
   margin: 0 auto 5px;
 }
-.expert-full .expert-full__label {
+.expert-about__label {
   width: 100px;
   margin: 5px auto;
   text-align: center;
   cursor: default;
 }
-.expert-full .expert-full__name {
+.expert-about__name {
   font-size: 14px;
   margin: 5px 0;
 }
-.expert-full .expert-full__about h3 {
+.expert-about__about h3 {
   font-size: 12px;
   margin: 15px 0 0;
 }
-.expert-full .expert-full__about li {
+.expert-about__about li {
   display: inline;
 }
-.expert-full .expert-full__author-articles h2 {
+.expert-about__author-articles h2 {
   margin: 0 0 10px;
 }
-.expert-full .expert-full__author-articles li {
+.expert-about__author-articles li {
   margin: 15px 0;
 }
-.expert-full .expert-full__author-articles li a {
+.expert-about__author-articles li a {
   font-weight: 700;
   font-size: 13px;
 }
-.expert-full .expert-full__author-articles li a:hover,
-.expert-full .expert-full__author-articles li a:focus {
+.expert-about__author-articles li a:hover,
+.expert-about__author-articles li a:focus {
   text-decoration: underline !important;
 }
-.expert-full .expert-full__author-articles time {
+.expert-about__author-articles time {
   margin: 0;
+}
+/*--------------------------------------
+  Section with slider and filters to find experts
+----------------------------------------*/
+.experts-all-carousel {
+  position: relative;
+}
+.experts-all__person {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+.experts-all__person img {
+  display: block;
+  margin: 0 auto 10px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+.experts-all__filter {
+  position: relative;
+  font-size: 12px;
+  color: #999;
+  margin: 0 -10px;
+}
+.experts-all__filter>* {
+  margin: 0 10px;
+}
+.flexbox .experts-all__filter {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.flexbox .experts-all__filter select {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flexbox .experts-all__filter select:first-of-type {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+.no-flexbox .experts-all__filter>* {
+  display: inline-block;
+  vertical-align: middle;
+}
+.experts-all__filter .btn-default {
+  font-size: inherit;
+  height: 28px;
+  font-weight: 400;
+  border: 1px solid #a6a6a6;
+  width: 80px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus {
+  outline: none;
+}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.flexslider {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+}
+.flexslider:hover .flex-prev {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  left: 10px;
+}
+.flexslider:hover .flex-next {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  right: 10px;
+}
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+.flex-pauseplay a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  color: #000;
+}
+.slides:after {
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+html[xmlns] .slides {
+  display: block;
+}
+* html .slides {
+  height: 1%;
+}
+.no-js .slides > li:first-child {
+  display: block;
+}
+.flex-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  margin: 20px;
+}
+.loading .flex-viewport {
+  max-height: 300px;
+}
+.carousel li {
+  margin-right: 5px;
+}
+.flex-direction-nav a {
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  z-index: 10;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.flex-direction-nav .flex-prev {
+  left: 10px;
+  background-image: url("../img/ural-polit-icons.png");
+  background-position: 0px 0px;
+  width: 17px;
+  height: 60px;
+}
+.flex-direction-nav .flex-next {
+  right: 10px;
+  background-image: url("../img/ural-polit-icons.png");
+  background-position: -19px 0px;
+  width: 17px;
+  height: 60px;
+}
+.flex-direction-nav .flex-disabled {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: default;
+}
+.flexslider:hover .flex-next:hover,
+.flexslider:hover .flex-prev:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: -40px;
+  text-align: center;
+}
+.flex-control-nav li {
+  margin: 0 6px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+.flex-control-paging li a {
+  width: 11px;
+  height: 11px;
+  display: block;
+  background: #666;
+  background: rgba(0,0,0,0.5);
+  cursor: pointer;
+  text-indent: -9999px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+}
+.flex-control-paging li a:hover {
+  background: #333;
+  background: rgba(0,0,0,0.7);
+}
+.flex-control-paging li a.flex-active {
+  background: #000;
+  background: rgba(0,0,0,0.9);
+  cursor: default;
+}
+.flex-control-thumbs {
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden;
+}
+.flex-control-thumbs li {
+  width: 25%;
+  float: left;
+  margin: 0;
+}
+.flex-control-thumbs img {
+  width: 100%;
+  display: block;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  cursor: pointer;
+}
+.flex-control-thumbs img:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.flex-control-thumbs .flex-active {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  cursor: default;
 }
 .news-section {
   position: relative;
-/*------------------------------------*     TYPE: header section 1
-  \*------------------------------------*/
-/*------------------------------------*     NEWS SECTION TYPE: header section 2 (banners)
-  \*------------------------------------*/
-/*------------------------------------*     NEWS SECTION TYPE: Important materials
-  \*------------------------------------*/
-/*------------------------------------*     NEWS SECTION TYPE: person
-  \*------------------------------------*/
-/*------------------------------------*     NEWS SECTION TYPE: project
-  \*------------------------------------*/
-/*------------------------------------*     NEWS SECTION TYPE: news from partners
-  \*------------------------------------*/
-/*------------------------------------*     NEWS SECTION TYPE: Important
-  \*------------------------------------*/
+/*--------------------------------------
+    TYPE: header section 1
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS SECTION TYPE: header section 2 (banners)
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS SECTION TYPE: Important materials
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS SECTION TYPE: person
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS SECTION TYPE: project
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS SECTION TYPE: news from partners
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS SECTION TYPE: Important
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS SECTION TYPE: expert-opinions
+  --------------------------------------*/
 }
 .news-section ul {
   margin: 0;
@@ -8243,8 +8527,108 @@ a.comment-article.state-disabled:focus {
   font-size: 16px;
   color: #999;
 }
-/*------------------------------------*   NEWS SECTION components
-\*------------------------------------*/
+.news-section.type-expert-opinions {
+  position: relative;
+/*Left article*/
+/*Right article*/
+}
+.news-section.type-expert-opinions .layout-l {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+@media (min-width:768px) {
+  .news-section.type-expert-opinions .layout-l {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width:1024px) {
+  .news-section.type-expert-opinions .layout-l {
+    float: left;
+    width: 65%;
+  }
+}
+.news-section.type-expert-opinions .layout-r {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+@media (min-width:768px) {
+  .news-section.type-expert-opinions .layout-r {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width:1024px) {
+  .news-section.type-expert-opinions .layout-r {
+    float: left;
+    width: 35%;
+  }
+}
+.news-section.type-expert-opinions .news-article.type-preview-L {
+  border: 1px solid #b8b8b8;
+  padding: 20px;
+  position: relative;
+}
+.news-section.type-expert-opinions .news-article.type-preview-L:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 70px;
+  background-image: url("../img/ural-polit-icons.png");
+  background-position: -60px -31px;
+  width: 11px;
+  height: 20px;
+}
+.news-section.type-expert-opinions .news-section.type-persons .news-article {
+  border-top: none;
+  padding-left: 20px;
+  text-align: left;
+  font-size: 12px;
+}
+.news-section.type-expert-opinions .news-section.type-persons .news-article .news-article__tag {
+  padding: 3px 10px 2px;
+}
+.news-section.type-expert-opinions .news-section.type-persons .news-article .news-article__title {
+  font-size: 14px;
+}
+.news-section.type-expert-opinions .news-section.type-persons .news-article .news-article__subTitle {
+  font-size: 11px;
+  font-weight: 400;
+  color: #a6a6a6;
+  margin-top: 20px;
+  border-top: 1px solid #a6a6a6;
+  padding-top: 20px;
+}
+/*--------------------------------------
+  NEWS SECTION components
+--------------------------------------*/
 .news-section__title {
   margin: 0;
   font-size: 18px;
@@ -8260,8 +8644,9 @@ a.comment-article.state-disabled:focus {
   font-size: 14px;
   padding-top: 19px;
 }
-/*------------------------------------*   NEWS ARTICLE
-\*------------------------------------*/
+/*--------------------------------------
+  NEWS ARTICLE
+--------------------------------------*/
 .news-article {
   color: #51515b;
   padding: 5px 10px;
@@ -8271,26 +8656,36 @@ a.comment-article.state-disabled:focus {
   transition: background-color 400ms, border-color 400ms;
   margin-bottom: -1px;
   text-decoration: none;
-/*------------------------------------*     NEWS ARTICLE TYPE: preview Short
-  \*------------------------------------*/
-/*------------------------------------*     NEWS ARTICLE TYPE: preview Middle
-  \*------------------------------------*/
-/*------------------------------------*     NEWS ARTICLE TYPE: preview Large
-  \*------------------------------------*/
-/*------------------------------------*     NEWS ARTICLE TYPE: preview XLarge
-  \*------------------------------------*/
-/*------------------------------------*     NEWS ARTICLE TYPE: opinion
-  \*------------------------------------*/
-/*------------------------------------*     NEWS ARTICLE TYPE: top commented
-  \*------------------------------------*/
-/*------------------------------------*     NEWS ARTICLE TYPE: poll
-  \*------------------------------------*/
-/*------------------------------------*    NEWS ARTICLE TYPE: Carousel
- \*------------------------------------*/
-/*------------------------------------*     NEWS ARTICLE TYPE: template
-  \*------------------------------------*/
-/*------------------------------------*     NEWS ARTICLE STATE: disabled (base class)
-  \*------------------------------------*/
+/*--------------------------------------
+    NEWS ARTICLE TYPE: preview Short
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS ARTICLE TYPE: preview Middle
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS ARTICLE TYPE: preview Large
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS ARTICLE TYPE: preview XLarge
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS ARTICLE TYPE: opinion
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS ARTICLE TYPE: top commented
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS ARTICLE TYPE: poll
+  --------------------------------------*/
+/*--------------------------------------
+   NEWS ARTICLE TYPE: Carousel
+ --------------------------------------*/
+/*--------------------------------------
+    NEWS ARTICLE TYPE: template
+  --------------------------------------*/
+/*--------------------------------------
+    NEWS ARTICLE STATE: disabled (base class)
+  --------------------------------------*/
 }
 .news-article:before,
 .news-article:after {
@@ -8394,8 +8789,21 @@ a.comment-article.state-disabled:focus {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
-  padding: 10px;
+  padding: 50px 10px 10px;
+}
+.news-article.type-preview-XL .news-article__header:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  z-index: -1;
 }
 .news-article.type-preview-XL time {
   color: #fff;
@@ -8908,8 +9316,9 @@ fieldset[disabled] .news-article.type-carousel .news-article__tag.active {
 .news-article.state-visited * {
   color: inherit;
 }
-/*------------------------------------*   NEWS ARTICLE components
-\*------------------------------------*/
+/*--------------------------------------
+  NEWS ARTICLE components
+--------------------------------------*/
 .news-article__body {
   display: block;
   margin: 5px 0;
@@ -9105,7 +9514,7 @@ a.news-article__title:focus {
   right: 100%;
   bottom: -1px;
   background-image: url("../img/ural-polit-icons.png");
-  background-position: 0px -53px;
+  background-position: -22px -62px;
   width: 25px;
   height: 18px;
 }

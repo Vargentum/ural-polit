@@ -1,60 +1,115 @@
-.expert-full
+.expert-about
   text-align: center;
   font-size: 12px
 
   p
     margin: 0
 
-  .expert-full__section
-    @extend .l-island--fence
-    margin: 0 0 3px
-    padding: 15px
+.expert-about__section
+  @extend .l-island--fence
+  margin: 0 0 3px
+  padding: 15px
 
-  .expert-full__photo
-    border-radius 50%
+.expert-about__photo
+  border-radius 50%
+  display block
+  size 75px
+  margin: 0 auto 5px;
+
+.expert-about__label
+  @extend .tag
+  width: 100px
+  margin: 5px auto;
+  text-align: center;
+  cursor default
+
+.expert-about__name
+  font-size: 14px
+  margin: 5px 0
+
+.expert-about__about
+  h3
+    font-size: 12px
+    margin: 15px 0 0
+
+  ul
+    @extend .reset-list
+
+  li
+    display inline
+
+
+.expert-about__author-articles
+
+  h2
+    margin: 0 0 10px
+
+  ul
+    @extend .reset-list
+
+  li
+    margin: 15px 0
+
+    a
+      font-weight: 700
+      font-size: 13px
+      &:hover,&:focus
+        text-decoration: underline !important
+
+  time
+    margin: 0
+
+
+
+/*--------------------------------------
+  Section with slider and filters to find experts
+----------------------------------------*/
+.experts-all
+  @extend .l-island--fence
+
+.experts-all-carousel
+  position relative
+
+.experts-all__person
+  font-size: 12px
+  font-weight: 700
+  text-align: center;
+
+  img
     display block
+    margin: 0 auto 10px
     size 75px
-    margin: 0 auto 5px;
+    border-radius 50%
 
-  .expert-full__label
-    @extend .tag
-    width: 100px
-    margin: 5px auto;
+
+.experts-all__filter
+  position relative
+  font-size: 12px
+  color: #999;
+  margin: 0 -10px
+
+  &>*
+    margin: 0 10px
+
+  .flexbox &
+    display flex
+    justify-content space-between
+    align-items center
+
+    select
+      flex 1
+
+      &:first-of-type
+        flex 3
+
+  .no-flexbox &
+    hLine middle
+
+  .btn-default
+    font-size: inherit;
+    height: $input-height-base
+    font-weight: 400;
+    border 1px solid $gray-lighter
+    width: 80px
+    text-transform: uppercase;
     text-align: center;
-    cursor default
-
-  .expert-full__name
-    font-size: 14px
-    margin: 5px 0
-
-  .expert-full__about
-    h3
-      font-size: 12px
-      margin: 15px 0 0
-
-    ul
-      @extend .reset-list
-
-    li
-      display inline
-
-
-  .expert-full__author-articles
-
-    h2
-      margin: 0 0 10px
-
-    ul
-      @extend .reset-list
-
-    li
-      margin: 15px 0
-
-      a
-        font-weight: 700
-        font-size: 13px
-        &:hover,&:focus
-          text-decoration: underline !important
-
-    time
-      margin: 0
