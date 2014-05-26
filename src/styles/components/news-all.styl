@@ -241,6 +241,18 @@
     .news-article__body
       font-size: 13px
 
+    /*--------------------------------------
+      Partners section subtype: widget view
+    --------------------------------------*/
+    &.subtype-widget
+      @extend .l-island--fence
+      border-top none
+
+      li
+        make-sm-column(10)
+
+      .news-article
+        margin: 0
 
   /*--------------------------------------
     NEWS SECTION TYPE: Important
@@ -753,6 +765,192 @@
       font-size: 15px
 
 
+  /*--------------------------------------
+    NEWS ARTICLE TYPE: template gallery
+  --------------------------------------*/
+  &.type-template-gallery
+    $border-c = #6c6d75
+    $bg-c = rgb(81, 82, 92)
+
+    @extend .disable-article-hovers
+    padding: 0
+    border none
+    margin-top: -5px
+
+    .news-article__body
+      background-color: $bg-c
+      color rgba(255,255,255,.6)
+      padding: 5px 0
+
+    time
+      display block
+      font-size: 12px
+      margin: 10px 0
+
+    .news-article__title
+      font-size: 32px
+      margin: 5px 0
+      color: $body-bg;
+
+    .news-article__subTitle
+      margin: 10px 0
+      
+    .news-article__counter
+      color: $bg-c
+      background-color: @color
+      &:after
+        border-top-color @background-color
+
+
+    .l-island
+      border $border-c
+      background-color transparent
+
+
+    .news-section.type-similar-articles
+      margin: 30px 0
+
+      .news-section__title
+        margin: 0 0 10px
+        padding-top: 0
+        padding-bottom: 0
+        font-size: 15px
+        font-weight: 400
+        color: rgba(255,255,255,.5);
+
+      .news-article
+        color: rgba(255,255,255,.8);
+        margin-bottom: 15px
+
+        time
+          margin: 0
+          font-size: 10px
+          color: rgba(255,255,255,.7);
+
+        .news-article__title
+          margin: 0
+          font-size: 15px
+          font-weight: 400
+
+        &:hover,&:focus
+          border $border-c
+          background-color: transparent
+
+
+    .tag-list
+      a
+        color rgba(255,255,255,.7)
+
+    .social-widget__title
+      color: $body-bg
+
+
+    figure
+      color: $body-bg;
+      font-weight: 700
+      font-size: 14px
+
+    figcaption
+      display block
+      margin: 10px 0
+
+    .flex-prev
+      sprite $carousel-prev-light
+
+    .flex-next
+      sprite $carousel-next-light
+
+    .gallery-slider
+      position relative
+      border $border-c
+
+      .flex-viewport
+        margin: 0 40px 10px
+
+    .gallery-slider__header
+      jLine middle
+      padding: 10px 40px
+      font-size: 16px
+
+
+    .gallery-slider__views
+      padding-right: 15px
+      border-right 1px solid $gray-light
+      margin-right: 8px
+      &:before
+        pi middle
+        sprite $icon-eye
+        margin-right: 7px
+        transform translateY(-2px)
+
+
+    .gallery-slider__attitude
+      padding: 0 5px
+      &:before
+        pi middle
+        sprite $icon-thumbs-up
+        margin-right: 7px
+        transform translateY(-5px)
+
+      &:after
+        pi middle
+        sprite $icon-thumbs-down
+        margin-left: 7px
+
+
+    .gallery-carousel
+      $item-spacer = 10px
+
+      .slides li
+        position: relative
+        margin: 0 $item-spacer
+        padding: $item-spacer
+        border $border-c
+        border-radius 1px
+
+      li.flex-active-slide
+        background-color: $border-c
+
+        &:before
+          pb()
+          background-color: rgba(0,0,0,.4)
+
+          .csscalc &
+            size s('calc(100% - (%s * 2))', $item-spacer)
+            left $item-spacer
+            top $item-spacer
+
+          .no-csscalc &
+            size 100%
+            left 0
+            top 0
+
+      .flex-prev,
+      .flex-next
+        opacity: 1 !important
+        width: 160px
+        height: 115px
+        margin-top: -(@height / 2)
+
+        &:before
+          pb()
+          top 50%
+          transform translateY(-50%)
+
+      .flex-prev
+        left -10px
+        background: linear-gradient(to left, rgba(0,0,0,0) 0%, $bg-c 60%, $bg-c 100%);
+        &:before
+          sprite $carousel-prev-light
+          left 10px
+
+
+      .flex-next
+        right -10px
+        background: linear-gradient(to right, rgba(0,0,0,0) 0%, $bg-c 60%, $bg-c 100%);
+        &:before
+          sprite $carousel-next-light
+          right 10px
 
 
 

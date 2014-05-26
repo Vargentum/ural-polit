@@ -62,6 +62,38 @@ $ ->
     nextText: ''
   )
 
+  galleryCarousel = $('.gallery-carousel')
+  gallerySlider = $('.gallery-slider')
+
+  counterAllSlides = $('.gallery-slider__counter--all')
+  counterCurrentSlide = $('.gallery-slider__counter--current')
+
+  galleryCarousel.flexslider({
+    animation: "slide"
+    controlNav: false
+    animationLoop: false
+    slideshow: false
+    itemWidth: 160
+    move: 1
+    prevText: ''
+    nextText: ''
+    asNavFor: '.gallery-slider'
+  });
+
+  gallerySlider.flexslider({
+    animation: "slide"
+    controlNav: false
+    animationLoop: false
+    slideshow: false
+    prevText: ''
+    nextText: ''
+    sync: ".gallery-carousel"
+    init: =>
+      slidesLength = $(@).find('.slides').find('li').length
+      counterAllSlides.html(slidesLength)
+      counterCurrentSlide.html(1)
+  });
+
 ###
 # change header when scrolling (disabled)
 $ ->
