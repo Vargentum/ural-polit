@@ -19,6 +19,10 @@ $ ->
       globalWidth >= 768 and globalWidth <= 1023
       callback()
 
+    else if type == 'phone'
+      globalWidth < 768
+      callback()
+
   media('tablet', ->
     $('.project-search').click ->
       $(@).addClass('state-active')
@@ -26,6 +30,14 @@ $ ->
       input.trigger('focus')
       input.blur =>
         $(@).removeClass('state-active')
+  )
+
+  media('phone', ->
+    el1 = $('.l-header').find('.set-region')
+    el2 = $('.l-header').find('.project-catalog')
+    $('.btn-show-menu').click ->
+      el1.slideToggle()
+      el2.slideToggle()
   )
 
 
@@ -93,6 +105,15 @@ $ ->
       counterAllSlides.html(slidesLength)
       counterCurrentSlide.html(1)
   });
+
+###$ ->
+  el = $('body')
+  el.queryLoader2(
+    backgroundColor: '#fff'
+    barColor: '#c41b1a'
+    completeAnimation: 'fade'
+    percentage: on
+  )###
 
 ###
 # change header when scrolling (disabled)

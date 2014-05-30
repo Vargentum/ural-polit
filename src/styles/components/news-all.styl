@@ -44,6 +44,7 @@
 
     .news-article__header
       display block
+      min-height 100px
       width: 100%
 
     .news-article__title
@@ -271,14 +272,14 @@
     position relative
 
     .layout-l
-      make-xs-column(10)
-      make-sm-column(5)
+      make-xs-column(6)
+      make-sm-column(6)
       make-md-column(6.5)
       margin-bottom: 20px
 
     .layout-r
-      make-xs-column(10)
-      make-sm-column(5)
+      make-xs-column(4)
+      make-sm-column(4)
       make-md-column(3.5)
       margin-bottom: 20px
 
@@ -516,8 +517,6 @@
       .no-csscalc &
         width: 260px
 
-
-
     .news-article__author
       font-size: 11px
 
@@ -553,6 +552,25 @@
           pb(left top)
           size 100%
           background-color: rgba(200,200,200,.75)
+
+
+    +b('(max-width: 400px)')
+
+      .flexbox &
+        flex-direction column
+
+      .no-flexbox &
+        &>*
+          display block
+
+      .news-article__column-rt
+        margin-top: 10px
+        .csscalc &,
+        .no-csscalc &
+          width: 100%
+
+
+
 
 
   /*--------------------------------------
