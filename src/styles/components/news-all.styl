@@ -1,6 +1,6 @@
-/*------------------------------------*\
+/*--------------------------------------
   NEWS SECTION: header section 2 (banners)
-\*------------------------------------*/
+--------------------------------------*/
 .news-section
   position relative
 
@@ -13,9 +13,9 @@
 
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     TYPE: header section 1
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-header-section-1
     make-row()
     @extend .hidden-xs
@@ -30,9 +30,9 @@
         hide-except(1..3)
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS SECTION TYPE: header section 2 (banners)
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-header-section-2
     make-row()
     @extend .hidden-sm
@@ -44,6 +44,7 @@
 
     .news-article__header
       display block
+      min-height 100px
       width: 100%
 
     .news-article__title
@@ -54,9 +55,9 @@
 
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS SECTION TYPE: Important materials
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-important
     @extend .l-island
     margin-left: 0
@@ -130,9 +131,9 @@
           background-color darken($body-bg-contrast, 10%)
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS SECTION TYPE: person
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-persons
     text-align: center;
 
@@ -167,9 +168,9 @@
       li
         make-xs-column(5)
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS SECTION TYPE: project
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-projects
     text-align: center;
     @extend .hidden-xs
@@ -205,9 +206,9 @@
         make-xs-column(5)
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS SECTION TYPE: news from partners
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-from-partner
     make-md-column(10)
     @extend .hidden-xs
@@ -241,10 +242,22 @@
     .news-article__body
       font-size: 13px
 
+    /*--------------------------------------
+      Partners section subtype: widget view
+    --------------------------------------*/
+    &.subtype-widget
+      @extend .l-island--fence
+      border-top none
 
-  /*------------------------------------*\
+      li
+        make-sm-column(10)
+
+      .news-article
+        margin: 0
+
+  /*--------------------------------------
     NEWS SECTION TYPE: Important
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-news-feed
 
     .news-section__title
@@ -252,9 +265,60 @@
       color: $gray-light
 
 
-/*------------------------------------*\
+  /*--------------------------------------
+    NEWS SECTION TYPE: expert-opinions
+  --------------------------------------*/
+  &.type-expert-opinions
+    position relative
+
+    .layout-l
+      make-xs-column(6)
+      make-sm-column(6)
+      make-md-column(6.5)
+      margin-bottom: 20px
+
+    .layout-r
+      make-xs-column(4)
+      make-sm-column(4)
+      make-md-column(3.5)
+      margin-bottom: 20px
+
+    /*Left article*/
+    .news-article.type-preview-L
+      border lighten($gray-lighter, 20%)
+      padding: 20px
+      position relative
+      &:before
+        pb(left 100% top 70px)
+        sprite $opinion-section-article-pointer
+
+    /*Right article*/
+    .news-section.type-persons .news-article
+      @extend .disable-article-hovers
+      border-top: none
+      padding-left: 20px
+      text-align: left;
+      font-size: 12px
+
+      .news-article__tag
+        padding: 3px 10px 2px
+
+      .news-article__title
+        font-size: 14px
+
+      .news-article__subTitle
+        font-size: 11px
+        font-weight: 400
+        color: $gray-lighter;
+        margin-top: 20px
+        border-top: 1px solid @color
+        padding-top: 20px
+
+
+
+/*--------------------------------------
   NEWS SECTION components
-\*------------------------------------*/
+--------------------------------------*/
 .news-section__title
   margin: 0
   font-size: 18px
@@ -274,9 +338,9 @@
 
 
 
-/*------------------------------------*\
+/*--------------------------------------
   NEWS ARTICLE
-\*------------------------------------*/
+--------------------------------------*/
 .news-article
   color $text-color
   padding: 5px 10px
@@ -311,17 +375,17 @@
 
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS ARTICLE TYPE: preview Short
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-preview-S
     @extend .arrow-after
     font-weight: 700
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS ARTICLE TYPE: preview Middle
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-preview-M
     padding-top: 15px
     padding-bottom: 15px
@@ -360,9 +424,9 @@
 
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS ARTICLE TYPE: preview Large
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-preview-L
     padding-top: 10px
     padding-bottom: 10px
@@ -379,18 +443,26 @@
       font-weight: 700
       border-width: 2px
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS ARTICLE TYPE: preview XLarge
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-preview-XL
     position relative
     color $body-bg
     padding: 0
 
+
     .news-article__header
       absolute bottom left
+      z-index: 1;
       width: 100%;
-      padding: 10px
+      padding: 50px 10px 10px
+      //mask
+      &:before
+        pb(bottom left)
+        size 100%
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 100%);
+        z-index: -1;
 
     time
       color: $body-bg;
@@ -416,9 +488,9 @@
       relative left top bottom right
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS ARTICLE TYPE: opinion
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-opinion
     @extend .l-island--fence
     padding-top: 10px
@@ -444,8 +516,6 @@
 
       .no-csscalc &
         width: 260px
-
-
 
     .news-article__author
       font-size: 11px
@@ -484,9 +554,28 @@
           background-color: rgba(200,200,200,.75)
 
 
-  /*------------------------------------*\
+    +b('(max-width: 400px)')
+
+      .flexbox &
+        flex-direction column
+
+      .no-flexbox &
+        &>*
+          display block
+
+      .news-article__column-rt
+        margin-top: 10px
+        .csscalc &,
+        .no-csscalc &
+          width: 100%
+
+
+
+
+
+  /*--------------------------------------
     NEWS ARTICLE TYPE: top commented
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-top-commented
     @extend .disable-article-hovers
 
@@ -506,9 +595,9 @@
 
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS ARTICLE TYPE: poll
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-poll
     @extend .disable-article-hovers
 
@@ -561,9 +650,9 @@
         font-weight: 700
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
    NEWS ARTICLE TYPE: Carousel
- \*------------------------------------*/
+ --------------------------------------*/
   &.type-carousel
     position relative
     padding: 0
@@ -607,15 +696,16 @@
       absolute top 186px left 10px
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS ARTICLE TYPE: template
-  \*------------------------------------*/
+  --------------------------------------*/
   &.type-template
     make-xs-column(10)
     make-sm-column(6)
     make-md-column(7)
     padding-top: 15px
     padding-bottom: 15px
+    @extend .disable-article-hovers
 
     time
       display block
@@ -693,13 +783,199 @@
       font-size: 15px
 
 
+  /*--------------------------------------
+    NEWS ARTICLE TYPE: template gallery
+  --------------------------------------*/
+  &.type-template-gallery
+    $border-c = #6c6d75
+    $bg-c = rgb(81, 82, 92)
+
+    @extend .disable-article-hovers
+    padding: 0
+    border none
+    margin-top: -5px
+
+    .news-article__body
+      background-color: $bg-c
+      color rgba(255,255,255,.6)
+      padding: 5px 0
+
+    time
+      display block
+      font-size: 12px
+      margin: 10px 0
+
+    .news-article__title
+      font-size: 32px
+      margin: 5px 0
+      color: $body-bg;
+
+    .news-article__subTitle
+      margin: 10px 0
+      
+    .news-article__counter
+      color: $bg-c
+      background-color: @color
+      &:after
+        border-top-color @background-color
+
+
+    .l-island
+      border $border-c
+      background-color transparent
+
+
+    .news-section.type-similar-articles
+      margin: 30px 0
+
+      .news-section__title
+        margin: 0 0 10px
+        padding-top: 0
+        padding-bottom: 0
+        font-size: 15px
+        font-weight: 400
+        color: rgba(255,255,255,.5);
+
+      .news-article
+        color: rgba(255,255,255,.8);
+        margin-bottom: 15px
+
+        time
+          margin: 0
+          font-size: 10px
+          color: rgba(255,255,255,.7);
+
+        .news-article__title
+          margin: 0
+          font-size: 15px
+          font-weight: 400
+
+        &:hover,&:focus
+          border $border-c
+          background-color: transparent
+
+
+    .tag-list
+      a
+        color rgba(255,255,255,.7)
+
+    .social-widget__title
+      color: $body-bg
+
+
+    figure
+      color: $body-bg;
+      font-weight: 700
+      font-size: 14px
+
+    figcaption
+      display block
+      margin: 10px 0
+
+    .flex-prev
+      sprite $carousel-prev-light
+
+    .flex-next
+      sprite $carousel-next-light
+
+    .gallery-slider
+      position relative
+      border $border-c
+
+      .flex-viewport
+        margin: 0 40px 10px
+
+    .gallery-slider__header
+      jLine middle
+      padding: 10px 40px
+      font-size: 16px
+
+
+    .gallery-slider__views
+      padding-right: 15px
+      border-right 1px solid $gray-light
+      margin-right: 8px
+      &:before
+        pi middle
+        sprite $icon-eye
+        margin-right: 7px
+        transform translateY(-2px)
+
+
+    .gallery-slider__attitude
+      padding: 0 5px
+      &:before
+        pi middle
+        sprite $icon-thumbs-up
+        margin-right: 7px
+        transform translateY(-5px)
+
+      &:after
+        pi middle
+        sprite $icon-thumbs-down
+        margin-left: 7px
+
+
+    .gallery-carousel
+      $item-spacer = 10px
+
+      .slides li
+        position: relative
+        margin: 0 $item-spacer
+        padding: $item-spacer
+        border $border-c
+        border-radius 1px
+
+      li.flex-active-slide
+        background-color: $border-c
+
+        &:before
+          pb()
+          background-color: rgba(0,0,0,.4)
+
+          .csscalc &
+            size s('calc(100% - (%s * 2))', $item-spacer)
+            left $item-spacer
+            top $item-spacer
+
+          .no-csscalc &
+            size 100%
+            left 0
+            top 0
+
+      .flex-prev,
+      .flex-next
+        opacity: 1 !important
+        width: 160px
+        height: 115px
+        margin-top: -(@height / 2)
+
+        &:before
+          pb()
+          top 50%
+          transform translateY(-50%)
+
+      .flex-prev
+        left -10px
+        background: linear-gradient(to left, rgba(0,0,0,0) 0%, $bg-c 60%, $bg-c 100%);
+        &:before
+          sprite $carousel-prev-light
+          left 10px
+
+
+      .flex-next
+        right -10px
+        background: linear-gradient(to right, rgba(0,0,0,0) 0%, $bg-c 60%, $bg-c 100%);
+        &:before
+          sprite $carousel-next-light
+          right 10px
 
 
 
 
-  /*------------------------------------*\
+  /*--------------------------------------
     NEWS ARTICLE STATE: disabled (base class)
-  \*------------------------------------*/
+  --------------------------------------*/
   &.state-visited
     color: $gray-lighter
     background-color: transparent
@@ -709,9 +985,9 @@
 
 
 
-/*------------------------------------*\
+/*--------------------------------------
   NEWS ARTICLE components
-\*------------------------------------*/
+--------------------------------------*/
 .news-article__body
   display block
   margin: 5px 0
@@ -792,17 +1068,9 @@
       text-decoration: underline;
 
 .news-article__tag
-  @extend .btn
-  button-variant($text-color, rgba(0,0,0,0), $text-color);
-  border-width 1px
-  font-weight: normal
+  @extend .tag
   padding-left:  4px
   padding-right: 4px
-  text-transform: uppercase;
-  display inline-block !important
-  font-size: 11px !important;
-  a,a&
-    @extend .reset-link-defaults
 
 
 .news-article__photo

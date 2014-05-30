@@ -1,6 +1,6 @@
-/*------------------------------------*\
+/*--------------------------------------
     Some useful classes
-\*------------------------------------*/
+--------------------------------------*/
 .l-hLine
   hLine()
 
@@ -65,3 +65,15 @@ for $i in bottom middle top float
 
 .is-shown
   display block !important
+
+
+.tag
+  @extend .btn
+  button-variant($text-color, rgba(0,0,0,0), $text-color);
+  border-width 1px
+  font-weight: normal
+  text-transform: uppercase;
+  display inline-block !important
+  font-size: 11px !important;
+  a,a&
+    @extend .reset-link-defaults
