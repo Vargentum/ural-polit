@@ -473,6 +473,19 @@ for $item in $exchange-fluctuations
   img
     img-responsive()
 
+  &.type-centered
+    text-align: center;
+
+    img
+      display inline-block
+
+  &.type-bordered
+    margin: 20px 0
+    padding: 20px 0
+    border-top: 1px solid $gray-lighter
+    border-bottom: 1px solid $gray-lighter
+
+.bnr-wrap--ctr
 
 
 .btn-show-menu
@@ -670,9 +683,41 @@ for $item in $exchange-fluctuations
 .project-page__title
   font-size: 36px
   margin: 20px 0
-  padding-bottom: 10px
+  padding: 0 10px 10px
   border-bottom: 5px solid $text-color
 
+
+.project-page__filter
+  position relative
+  font-size: 12px
+  color: #999;
+
+  &>*
+    margin: 0 10px
+
+  .flexbox &
+    display flex
+    justify-content space-between
+    align-items center
+
+    select
+      flex 1
+
+      &:first-of-type
+        flex 3
+
+  .no-flexbox &
+    hLine middle
+
+  .btn-default
+    font-size: inherit;
+    height: $input-height-base
+    font-weight: 400;
+    border 1px solid $gray-lighter
+    width: 80px
+    text-transform: uppercase;
+    text-align: center;
+    transform translateY(-1px)
 
 /*--------------------------------------
   Encyclopedia section
@@ -812,3 +857,111 @@ for $item in $exchange-fluctuations
 
 
 
+/*--------------------------------------
+  Last mention
+--------------------------------------*/
+$last-mention-bg = #f1f1f2
+.last-mention
+  margin: 20px 0
+
+  .flexbox &
+    display flex
+
+    &>*
+      flex 1
+
+.last-mention__subject
+  position relative
+  padding: 10px
+  background-color: $last-mention-bg
+  border-radius 0 0 2px 2px
+  //corner at top-right
+  &:before
+    pb(top right)
+    border-top:  25px solid $body-bg
+    border-left: 10px solid transparent
+    z-index: 1;
+
+.last-mention__subject__tag
+  margin: 0 0 10px
+  font-size: 11px
+  color $gray-lighter
+  font-weight: 400
+
+.last-mention__subject__photo
+  float left
+  margin-right: 10px
+  background-color: $body-bg
+  padding: 5px
+
+  img
+    size 100px
+
+
+.last-mention__subject__title
+  font-size: 14px
+  line-height: 1.4;
+  margin: 10px 0 0
+
+
+
+.last-mention__article
+  position relative
+
+  // divider
+  &:before
+    pb(right 100% top)
+    size 2px 100%
+    border-left: 1px solid darken($last-mention-bg, 10%)
+    border-right: 1px solid $body-bg
+
+  //icon
+  &:after
+    pb(right 10px top 11px)
+    sprite $icon-mention
+
+.last-mention__article__token
+  display block
+  width: 40px;
+  padding-left: 10px
+  position relative
+  border-radius 0 0 1px 1px
+  background-color: darken($last-mention-bg, 10%)
+  color $body-bg
+  font-size: 15px
+  font-weight: 700;
+  //right corner
+  &:after
+    pb(top right)
+    border-top:  25px solid $body-bg
+    border-left: 10px solid transparent
+
+.last-mention__article__body
+  position relative
+  padding: 10px
+  border 5px solid $last-mention-bg
+  border-radius 2px 2px 0 0
+  line-height: 1.1;
+
+.last-mention__article__tag
+  font-weight: 400;
+  color $gray-lighter
+  font-size: 12px
+  margin: 0 0 5px
+
+.last-mention__article__title
+  margin: 10px 0
+  font-size: 10px
+  text-transform: uppercase;
+
+  a
+    text-decoration: underline;
+    &:hover,&:focus
+      text-decoration: none;
+
+.last-mention__article__photo
+  float left
+  margin-right: 10px
+
+  img
+    size 80px 60px
