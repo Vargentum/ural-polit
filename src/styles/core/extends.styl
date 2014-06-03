@@ -75,5 +75,13 @@ for $i in bottom middle top float
   text-transform: uppercase;
   display inline-block !important
   font-size: 11px !important;
-  a,a&
-    @extend .reset-link-defaults
+  text-decoration: none;
+
+  &:hover,&:focus
+    border-color $gray-light
+
+
+
+.force-link-hover
+  &:hover,&:focus
+    text-decoration: underline !important

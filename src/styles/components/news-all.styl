@@ -285,12 +285,16 @@
 
     /*Left article*/
     .news-article.type-preview-L
+      trans none
       border lighten($gray-lighter, 20%)
       padding: 20px
       position relative
       &:before
         pb(left 100% top 70px)
         sprite $opinion-section-article-pointer
+
+      &:hover:before
+        sprite $opinion-section-article-pointer-active
 
     /*Right article*/
     .news-section.type-persons .news-article
@@ -393,6 +397,7 @@
     font-size: 15px
     border-top: 1px solid $gray-light
 
+
     .news-article__photo
       size 80px 60px
       margin-right: 15px
@@ -486,6 +491,9 @@
       vertical-align: middle;
       //remove inheritances from default news-aritcle__header
       relative left top bottom right
+      padding-top: 3px
+      padding-bottom: 3px
+      font-weight: 400
 
 
   /*--------------------------------------
@@ -1062,10 +1070,10 @@
 
 .news-article__title
   display: block
-  a,a&
-    @extend .reset-link-defaults
+  a&,a
+    text-decoration: none;
     &:hover,&:focus
-      text-decoration: underline;
+      text-decoration: underline !important
 
 .news-article__tag
   @extend .tag
