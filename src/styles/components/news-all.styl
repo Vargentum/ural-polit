@@ -910,18 +910,38 @@
         transform translateY(-2px)
 
 
-    .gallery-slider__attitude
-      padding: 0 5px
-      &:before
-        pi middle
-        sprite $icon-thumbs-up
-        margin-right: 7px
-        transform translateY(-5px)
+    .gallery-slider__like-plus,
+    .gallery-slider__like-minus
+      position relative
+      padding-right: 20px
+      color #fff
 
-      &:after
-        pi middle
+      &:hover,&:focus
+        text-decoration: underline !important
+
+      &:before
+        content ''
+        display block
+        position absolute
+        top 50%
+        margin-top: -8px
+        right 0
         sprite $icon-thumbs-down
-        margin-left: 7px
+        trans transform
+
+      &:hover:before
+        transform translateY(4px)
+
+    .gallery-slider__like-plus
+      padding-right: 0
+      padding-left: 20px
+
+      &:before
+        left 0
+        sprite $icon-thumbs-up
+
+      &:hover:before
+        transform translateY(-4px)
 
 
     .gallery-carousel

@@ -9702,31 +9702,56 @@ fieldset[disabled] .news-article.type-carousel .news-article__tag.active {
   -ms-transform: translateY(-2px);
   transform: translateY(-2px);
 }
-.news-article.type-template-gallery .gallery-slider__attitude {
-  padding: 0 5px;
+.news-article.type-template-gallery .gallery-slider__like-plus,
+.news-article.type-template-gallery .gallery-slider__like-minus {
+  position: relative;
+  padding-right: 20px;
+  color: #fff;
 }
-.news-article.type-template-gallery .gallery-slider__attitude:before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  background-image: url("../img/ural-polit-icons.png");
-  background-position: -61px -84px;
-  width: 12px;
-  height: 17px;
-  margin-right: 7px;
-  -webkit-transform: translateY(-5px);
-  -ms-transform: translateY(-5px);
-  transform: translateY(-5px);
+.news-article.type-template-gallery .gallery-slider__like-plus:hover,
+.news-article.type-template-gallery .gallery-slider__like-minus:hover,
+.news-article.type-template-gallery .gallery-slider__like-plus:focus,
+.news-article.type-template-gallery .gallery-slider__like-minus:focus {
+  text-decoration: underline !important;
 }
-.news-article.type-template-gallery .gallery-slider__attitude:after {
+.news-article.type-template-gallery .gallery-slider__like-plus:before,
+.news-article.type-template-gallery .gallery-slider__like-minus:before {
   content: '';
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  right: 0;
   background-image: url("../img/ural-polit-icons.png");
   background-position: -47px -84px;
   width: 12px;
   height: 17px;
-  margin-left: 7px;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+.news-article.type-template-gallery .gallery-slider__like-plus:hover:before,
+.news-article.type-template-gallery .gallery-slider__like-minus:hover:before {
+  -webkit-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  transform: translateY(4px);
+}
+.news-article.type-template-gallery .gallery-slider__like-plus {
+  padding-right: 0;
+  padding-left: 20px;
+}
+.news-article.type-template-gallery .gallery-slider__like-plus:before {
+  left: 0;
+  background-image: url("../img/ural-polit-icons.png");
+  background-position: -61px -84px;
+  width: 12px;
+  height: 17px;
+}
+.news-article.type-template-gallery .gallery-slider__like-plus:hover:before {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
 }
 .news-article.type-template-gallery .gallery-carousel .slides li {
   position: relative;
