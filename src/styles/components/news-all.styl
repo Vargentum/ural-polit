@@ -246,8 +246,13 @@
       Partners section subtype: widget view
     --------------------------------------*/
     &.subtype-widget
-      @extend .l-island--fence
+      @extend .l-island
       border-top none
+
+      .news-section__title
+        font-size: 16px
+        padding-top: 5px
+        padding-bottom: 10px
 
       li
         make-sm-column(10)
@@ -541,7 +546,9 @@
     @extend .l-island--fence
     padding-top: 10px
     padding-bottom: 10px
-    jLine middle
+
+    &.l-jLine--middle
+      jLine middle  //increase priority
 
     $author-photo-size = 80px
 
@@ -724,7 +731,11 @@
 
 
     .carousel-indicators
-      bottom 0
+      bottom 15px
+      margin-bottom: 0
+      &:after
+        display none
+
       li
         size 10px
         border none
@@ -741,10 +752,10 @@
       border-width: 2px
 
     .news-article__counter
-      absolute top 185px right 10px
+      absolute bottom 8px right 10px
 
     .news-article__photo-total
-      absolute top 186px left 10px
+      absolute bottom 9px left 10px
 
 
   /*--------------------------------------
