@@ -7928,6 +7928,12 @@ a.comment-article.state-disabled:focus {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+.no-flexbox .pagination {
+  padding-bottom: 20px;
+}
+.no-flexbox .pagination a {
+  margin-bottom: 20px;
+}
 .pagination__ellipsis>* {
   background-color: transparent !important;
   border-color: transparent !important;
