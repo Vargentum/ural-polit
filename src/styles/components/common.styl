@@ -382,12 +382,16 @@ for $item in $exchange-fluctuations
     margin-bottom: 15px
 
   a
-    pressable()
     display block
     padding: 5px 10px
     color inherit
     border $input-border
     border-radius 1px
+    trans border-color
+
+    &:hover,&:focus,&.active
+      text-decoration: none;
+      border-color darken($input-border, 50%)
 
 
   .l-footer &
@@ -707,12 +711,6 @@ for $item in $exchange-fluctuations
     justify-content space-between
     align-items center
 
-    select
-      flex 1
-
-      &:first-of-type
-        flex 3
-
   .no-flexbox &
     hLine middle
 
@@ -725,6 +723,14 @@ for $item in $exchange-fluctuations
     text-transform: uppercase;
     text-align: center;
     transform translateY(-1px)
+
+.project-page__filter__item
+
+  .flexbox &
+    flex 1
+
+  &:first-of-type
+    flex 3
 
 /*--------------------------------------
   Encyclopedia section

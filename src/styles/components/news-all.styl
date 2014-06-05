@@ -462,6 +462,7 @@
       z-index: 1;
       width: 100%;
       padding: 50px 10px 10px
+      color: $body-bg;
       //mask
       &:before
         pb(bottom left)
@@ -470,7 +471,7 @@
         z-index: -1;
 
     time
-      color: $body-bg;
+      color inherit
 
     .news-article__title
       font-size: 28px
@@ -479,6 +480,10 @@
       position static
       background none
       padding: 0
+      color inherit
+
+      a
+        color inherit
 
     .news-article__tag
       button-variant($body-bg, rgba(81, 81, 91, .4), $body-bg);
@@ -494,7 +499,40 @@
       padding-top: 3px
       padding-bottom: 3px
       font-weight: 400
+      color $text-color !important
+      &:hover,&:focus
+        text-decoration: none !important;
 
+
+    +b($media-max-tablet)
+      padding 10px
+
+      .news-article__header
+        padding: 10px 0
+        position static
+        color $text-color
+
+        &:before
+          display none
+
+      .news-article__title
+        margin: 10px 0
+
+      .news-article__tag
+        top 20px
+        left 20px
+
+      time
+        color: $gray-light
+
+      .news-article__counter
+        color $body-bg !important
+        background-color  $text-color
+        arrow-bottom @background-color
+
+        &:hover
+          background-color  lighten($text-color, 15%)
+          arrow-bottom @background-color
 
   /*--------------------------------------
     NEWS ARTICLE TYPE: opinion
@@ -592,7 +630,7 @@
     margin-bottom: 20px
 
     time
-      width: 70px
+      width: 75px
       font-size: 12px
 
 
@@ -608,6 +646,11 @@
   --------------------------------------*/
   &.type-poll
     @extend .disable-article-hovers
+
+    .news-article__title
+      a
+        color $body-bg
+
 
     .news-article__body
       @extend .l-island
@@ -915,9 +958,6 @@
       position relative
       padding-right: 20px
       color #fff
-
-      &:hover,&:focus
-        text-decoration: underline !important
 
       &:before
         content ''

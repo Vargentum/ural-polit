@@ -227,3 +227,29 @@
 [data-toggle="buttons"] > .btn > input[type="checkbox"] {
   display: none;
 }
+
+.btn-group__selectbox
+  @extend .btn-group
+  font-size: 13px
+  color: $gray-light
+
+  *
+    font-size: inherit !important;
+    color: inherit !important;
+
+  &>*
+    width: 100%;
+    text-align: left;
+    &>*
+      display block
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+
+  .dropdown-toggle
+    position relative
+    padding:0 20px 0 10px
+
+  .caret
+    absolute top 10px right 10px
+    border-top-color $gray-light
