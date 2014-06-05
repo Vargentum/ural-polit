@@ -106,6 +106,10 @@ $ ->
       counterCurrentSlide.html(1)
   });
 
+#  custom select init
+$ ->
+  $('select').selectpicker();
+
 ###$ ->
   el = $('body')
   el.queryLoader2(

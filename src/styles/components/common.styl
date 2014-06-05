@@ -718,19 +718,61 @@ for $item in $exchange-fluctuations
     font-size: inherit;
     height: $input-height-base
     font-weight: 400;
-    border 1px solid $gray-lighter
-    width: 80px
-    text-transform: uppercase;
-    text-align: center;
-    transform translateY(-1px)
+    border $gray-lighter
+
+  +b($media-max-tablet)
+    padding: 25px 0 35px
+
 
 .project-page__filter__item
+  $filter-item-fallback-w = 17%
+  $filter-item-XL-factor = 2.5
+
+  .btn-default
+    border-color $gray-light
+
+  .caret
+    border-top-color $gray-light
 
   .flexbox &
     flex 1
 
-  &:first-of-type
-    flex 3
+  .no-flexbox &
+    width: $filter-item-fallback-w
+
+  &.type-XL
+
+    .flexbox &
+      flex $filter-item-XL-factor
+
+    .no-flexbox &
+      width: ($filter-item-XL-factor * $filter-item-fallback-w)
+
+    +b($media-max-tablet)
+      .flexbox &
+        flex 1
+      .no-flexbox
+        width: $filter-item-fallback-w
+
+
+.project-page__filter__label
+  +b($media-max-tablet)
+    absolute left right top
+    display: block
+    text-align: center
+
+
+
+.project-page__filter__submit
+  .btn-default
+    width: 80px
+    text-transform: uppercase;
+    text-align: center;
+
+  +b($media-max-tablet)
+    absolute left right bottom
+    hLine()
+    text-align center
 
 /*--------------------------------------
   Encyclopedia section
