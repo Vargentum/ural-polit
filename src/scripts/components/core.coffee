@@ -74,13 +74,26 @@ $ ->
     nextText: ''
   )
 
-  galleryCarousel = $('.gallery-carousel')
-  gallerySlider = $('.gallery-slider')
+  slider = $('.gallery-slider')
+  sliderNav = $('.gallery-carousel')
 
-  counterAllSlides = $('.gallery-slider__counter--all')
-  counterCurrentSlide = $('.gallery-slider__counter--current')
+  counterCurrent = $('.gallery-slider__counter--current')
+  counterTotal = $('.gallery-slider__counter--all')
+  counterCurrentInitVal = 1
 
-  galleryCarousel.flexslider({
+  findItem = (e) ->
+    e.find('.slides').find('li')
+
+  getCurrentSliderItemIndex = ->
+    for item in sliderItem
+      if $(item).hasClass('flex-active-slide')
+        return $(item).index()
+
+
+  sliderItem = findItem slider
+  sliderNavItem = findItem sliderNav
+
+  sliderNav.flexslider(
     animation: "slide"
     controlNav: false
     animationLoop: false
@@ -90,9 +103,9 @@ $ ->
     prevText: ''
     nextText: ''
     asNavFor: '.gallery-slider'
-  });
+  )
 
-  gallerySlider.flexslider({
+  slider.flexslider(
     animation: "slide"
     controlNav: false
     animationLoop: false
@@ -100,11 +113,21 @@ $ ->
     prevText: ''
     nextText: ''
     sync: ".gallery-carousel"
-    init: =>
-      slidesLength = $(@).find('.slides').find('li').length
-      counterAllSlides.html(slidesLength)
-      counterCurrentSlide.html(1)
-  });
+    init: ->
+      counterTotal.html sliderItem.length
+      counterCurrent.html counterCurrentInitVal
+
+    after: ->
+      i = getCurrentSliderItemIndex()
+      counterCurrent.html ++i
+  )
+
+  sliderNavItem.click ->
+    i = $(@).index()
+    counterCurrent.html ++i
+
+
+
 
 #  custom select init
 $ ->
@@ -113,9 +136,15 @@ $ ->
 $ ->
   body = $('body')
   ie10 = window.navigator.msPointerEnabled;
+  ieMobile = (!!window.ActiveXObject and +(/IEMobile\/(\d+\.?(\d+)?)/.exec(navigator.userAgent)[1])) or NaN
 
   if ie10
     body.addClass('ie10')
+
+  else if ieMobile
+    body.addClass('ieMobile')
+
+
 
 
 ###$ ->

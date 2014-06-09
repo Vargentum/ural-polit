@@ -201,11 +201,6 @@ rotateY(deg) {
 /*--------------------------------------
     Resetting
 --------------------------------------*/
-@media (max-width:767px) {
-  .mobile-font-size {
-    font-size: 20px;
-  }
-}
 /* normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -8244,15 +8239,15 @@ a.comment-article.state-disabled:focus {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .flexbox .pagination {
-    display: block;
-    border-bottom: none;
-    padding-bottom: 20px;
-  }
-  .flexbox .pagination a {
-    margin-bottom: 20px;
-  }
+.ie10 .flexbox .pagination,
+.ieMobile .flexbox .pagination {
+  display: block;
+  border-bottom: none;
+  padding-bottom: 20px;
+}
+.ie10 .flexbox .pagination a,
+.ieMobile .flexbox .pagination a {
+  margin-bottom: 20px;
 }
 .no-flexbox .pagination {
   padding-bottom: 20px;
@@ -9952,10 +9947,6 @@ fieldset[disabled] .news-article.type-carousel .news-article__tag.active {
   position: relative;
   margin-bottom: 30px;
 }
-.news-article.type-template figure img {
-  width: 100%;
-  height: auto;
-}
 .news-article.type-template figure figcaption {
   position: absolute;
   display: block;
@@ -9982,6 +9973,11 @@ fieldset[disabled] .news-article.type-carousel .news-article__tag.active {
   margin-top: 3px;
   color: #999;
   font-size: 10px;
+}
+.news-article.type-template img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .news-article.type-template .news-article__body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -10268,6 +10264,13 @@ fieldset[disabled] .news-article.type-carousel .news-article__tag.active {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+@media (max-width:767px) {
+  .news-article.type-template-gallery .gallery-carousel .flex-prev,
+  .news-article.type-template-gallery .gallery-carousel .flex-next {
+    width: 50px;
+    background: none !important;
+  }
 }
 .news-article.type-template-gallery .gallery-carousel .flex-prev {
   left: -10px;
