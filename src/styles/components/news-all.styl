@@ -487,6 +487,9 @@
       padding: 0
       color inherit
 
+      +b($media-max-phone)
+        font-size 20px
+
       a
         color inherit
 
@@ -607,22 +610,25 @@
           background-color: rgba(200,200,200,.75)
 
 
-    +b('(max-width: 400px)')
+    +b('screen and (max-width: 500px)')
 
-      .flexbox &
-        flex-direction column
+      header
+        .flexbox &
+          flex-direction column
 
-      .no-flexbox &
-        &>*
-          display block
+        .no-flexbox &
+          &>*
+            display block
 
       .news-article__column-rt
         margin-top: 10px
+        text-align: center;
         .csscalc &,
         .no-csscalc &
           width: 100%
 
-
+      .news-article__body
+        text-align: center;
 
 
 
@@ -720,6 +726,11 @@
       position relative
       padding: 0 0 110px;
 
+      img
+        @extend .img-responsive
+        width: 100%;
+
+
     .carousel-caption
       absolute top 100% left
       padding: 15px 20px
@@ -776,6 +787,9 @@
     .news-article__title
       font-size: $font-size-h1
       margin: 0 0 15px
+
+      +b($media-max-phone)
+        font-size 20px
 
     .news-article__subTitle
       font-size: $font-size-h2
@@ -871,6 +885,9 @@
       font-size: 32px
       margin: 5px 0
       color: $body-bg;
+
+      +b($media-max-phone)
+        font-size 20px
 
     .news-article__subTitle
       margin: 10px 0

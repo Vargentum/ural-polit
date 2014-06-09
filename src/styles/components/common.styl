@@ -695,6 +695,8 @@ for $item in $exchange-fluctuations
   padding: 0 10px 10px
   border-bottom: 5px solid $text-color
 
+  +b($media-max-phone)
+    font-size 20px
 
 
 
@@ -780,6 +782,11 @@ for $item in $exchange-fluctuations
 .encyclopedia-section__title
   font-size: 38px
   margin: 0
+  padding: 0 10px
+
+  +b($media-max-phone)
+    font-size 20px
+
 
 .encyclopedia-section
   @extend .l-island
@@ -800,8 +807,20 @@ for $item in $exchange-fluctuations
     top 0
 
   header
-    jLine()
     padding: 15px 0
+    jLine()
+
+    .flexbox &
+    .no-flexbox &
+      +b('screen and (max-width: 450px)')
+        display: block
+        &>*
+          display block
+          text-align: center;
+          margin: 0 auto 20px
+          &:last-child
+            margin-bottom: 0
+
     h3
       margin: 0
 
@@ -875,6 +894,13 @@ for $item in $exchange-fluctuations
   .flexbox &
     display flex
     justify-content space-between
+
+    .ie10 &
+      display: block
+      border-bottom: none
+      padding-bottom: 20px
+      a
+        margin-bottom: 20px
 
   .no-flexbox &
     padding-bottom: 20px

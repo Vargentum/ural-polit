@@ -110,6 +110,14 @@ $ ->
 $ ->
   $('select').selectpicker();
 
+$ ->
+  body = $('body')
+  ie10 = window.navigator.msPointerEnabled;
+
+  if ie10
+    body.addClass('ie10')
+
+
 ###$ ->
   el = $('body')
   el.queryLoader2(

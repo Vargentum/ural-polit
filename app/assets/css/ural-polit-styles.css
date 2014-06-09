@@ -201,6 +201,11 @@ rotateY(deg) {
 /*--------------------------------------
     Resetting
 --------------------------------------*/
+@media (max-width:767px) {
+  .mobile-font-size {
+    font-size: 20px;
+  }
+}
 /* normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -2493,6 +2498,7 @@ img {
 .carousel-inner > .item > a > img,
 .thumbnail > img,
 .thumbnail a > img,
+.news-article.type-carousel .carousel-inner img,
 .news-article__photo,
 .news-article__photo img {
   display: block;
@@ -7937,6 +7943,11 @@ a.comment-article.state-disabled:focus {
   padding: 0 10px 10px;
   border-bottom: 5px solid #51515b;
 }
+@media (max-width:767px) {
+  .project-page__title {
+    font-size: 20px;
+  }
+}
 .project-page__filter {
   position: relative;
   font-size: 12px;
@@ -8043,6 +8054,12 @@ a.comment-article.state-disabled:focus {
 .encyclopedia-section__title {
   font-size: 38px;
   margin: 0;
+  padding: 0 10px;
+}
+@media (max-width:767px) {
+  .encyclopedia-section__title {
+    font-size: 20px;
+  }
 }
 .encyclopedia-section {
   border: none;
@@ -8114,6 +8131,22 @@ a.comment-article.state-disabled:focus {
   text-align: left;
   font-size: 14px;
   line-height: 1.428571429;
+}
+@media screen and (max-width: 450px) {
+  .flexbox .encyclopedia-section header,
+  .no-flexbox .encyclopedia-section header {
+    display: block;
+  }
+  .flexbox .encyclopedia-section header>*,
+  .no-flexbox .encyclopedia-section header>* {
+    display: block;
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+  .flexbox .encyclopedia-section header>*:last-child,
+  .no-flexbox .encyclopedia-section header>*:last-child {
+    margin-bottom: 0;
+  }
 }
 .encyclopedia-section header h3 {
   margin: 0;
@@ -8210,6 +8243,16 @@ a.comment-article.state-disabled:focus {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .flexbox .pagination {
+    display: block;
+    border-bottom: none;
+    padding-bottom: 20px;
+  }
+  .flexbox .pagination a {
+    margin-bottom: 20px;
+  }
 }
 .no-flexbox .pagination {
   padding-bottom: 20px;
@@ -9364,6 +9407,11 @@ html[xmlns] .slides {
   padding: 0;
   color: inherit;
 }
+@media (max-width:767px) {
+  .news-article.type-preview-XL .news-article__title {
+    font-size: 20px;
+  }
+}
 .news-article.type-preview-XL .news-article__title a {
   color: inherit;
 }
@@ -9623,23 +9671,27 @@ fieldset[disabled] .news-article.type-opinion.state-visited .news-article__tag.a
   height: 100%;
   background-color: rgba(200,200,200,0.75);
 }
-@media (max-width: 400px) {
-  .flexbox .news-article.type-opinion {
+@media screen and (max-width: 500px) {
+  .flexbox .news-article.type-opinion header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
   }
-  .no-flexbox .news-article.type-opinion>* {
+  .no-flexbox .news-article.type-opinion header>* {
     display: block;
   }
   .news-article.type-opinion .news-article__column-rt {
     margin-top: 10px;
+    text-align: center;
   }
   .csscalc .news-article.type-opinion .news-article__column-rt,
   .no-csscalc .news-article.type-opinion .news-article__column-rt {
     width: 100%;
+  }
+  .news-article.type-opinion .news-article__body {
+    text-align: center;
   }
 }
 .news-article.type-top-commented {
@@ -9757,6 +9809,9 @@ fieldset[disabled] .news-article.type-opinion.state-visited .news-article__tag.a
 .news-article.type-carousel .carousel-inner {
   position: relative;
   padding: 0 0 110px;
+}
+.news-article.type-carousel .carousel-inner img {
+  width: 100%;
 }
 .news-article.type-carousel .carousel-caption {
   position: absolute;
@@ -9883,6 +9938,11 @@ fieldset[disabled] .news-article.type-carousel .news-article__tag.active {
   font-size: 32px;
   margin: 0 0 15px;
 }
+@media (max-width:767px) {
+  .news-article.type-template .news-article__title {
+    font-size: 20px;
+  }
+}
 .news-article.type-template .news-article__subTitle {
   font-size: 16px;
   color: #999;
@@ -9966,6 +10026,11 @@ fieldset[disabled] .news-article.type-carousel .news-article__tag.active {
   font-size: 32px;
   margin: 5px 0;
   color: #fff;
+}
+@media (max-width:767px) {
+  .news-article.type-template-gallery .news-article__title {
+    font-size: 20px;
+  }
 }
 .news-article.type-template-gallery .news-article__subTitle {
   margin: 10px 0;
