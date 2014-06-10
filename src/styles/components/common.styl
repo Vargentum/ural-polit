@@ -870,44 +870,51 @@ for $item in $exchange-fluctuations
   Pagination
 --------------------------------------*/
 .pagination
+  display block
   position relative
   border-top: 1px solid $gray-light
-  border-bottom: 1px solid $gray-light
   margin: 0
-  padding: 40px 15px
+  padding: 40px 15px 20px
+
+  li
+    display inline-block
+    margin 0 18px 18px 0
+
+    &:last-child
+      margin-right: 0
 
   a
-    margin: 0 20px
+    size 40px
+    padding: 0 !important
     trans all
 
-  li:first-child
-    a
-      margin-left: 0
+    .flexbox &
+      display flex
+      justify-content center
+      align-items center
 
-  li:last-child
-    a
-      margin-right: 0
+    .no-flexbox
+      display block
+      text-align: center
+      line-height: 38px
+
+
+
 
   .active
     transform scale(1.25)
 
-  .flexbox &
-    display flex
-    justify-content space-between
-
-    .ie10 &,
-    .ieMobile &
-      display: block
-      border-bottom: none
-      padding-bottom: 20px
-      a
-        margin-bottom: 20px
-
-  .no-flexbox &
-    padding-bottom: 20px
+  scale-pag-item($size)
     a
-      margin-bottom: 20px
+      size $size
+      .no-flexbox &
+        line-height: ($size - 2px)
 
+  +b($media-table)
+    scale-pag-item(35px)
+
+  +b($media-max-phone)
+    scale-pag-item(30px)
 
 
 .pagination__ellipsis

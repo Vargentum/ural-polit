@@ -8205,55 +8205,69 @@ a.comment-article.state-disabled:focus {
   Pagination
 --------------------------------------*/
 .pagination {
+  display: block;
   position: relative;
   border-top: 1px solid #999;
-  border-bottom: 1px solid #999;
   margin: 0;
-  padding: 40px 15px;
+  padding: 40px 15px 20px;
+}
+.pagination li {
+  display: inline-block;
+  margin: 0 18px 18px 0;
+}
+.pagination li:last-child {
+  margin-right: 0;
 }
 .pagination a {
-  margin: 0 20px;
+  width: 40px;
+  height: 40px;
+  padding: 0 !important;
   -webkit-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 400ms;
   transition-duration: 400ms;
 }
-.pagination li:first-child a {
-  margin-left: 0;
+.flexbox .pagination a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
-.pagination li:last-child a {
-  margin-right: 0;
+.pagination a .no-flexbox {
+  display: block;
+  text-align: center;
+  line-height: 38px;
 }
 .pagination .active {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
-.flexbox .pagination {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+@media $media-table {
+  .pagination a {
+    width: 35px;
+    height: 35px;
+  }
+  .no-flexbox .pagination a {
+    line-height: 33px;
+  }
 }
-.ie10 .flexbox .pagination,
-.ieMobile .flexbox .pagination {
-  display: block;
-  border-bottom: none;
-  padding-bottom: 20px;
-}
-.ie10 .flexbox .pagination a,
-.ieMobile .flexbox .pagination a {
-  margin-bottom: 20px;
-}
-.no-flexbox .pagination {
-  padding-bottom: 20px;
-}
-.no-flexbox .pagination a {
-  margin-bottom: 20px;
+@media (max-width:767px) {
+  .pagination a {
+    width: 30px;
+    height: 30px;
+  }
+  .no-flexbox .pagination a {
+    line-height: 28px;
+  }
 }
 .pagination__ellipsis>* {
   background-color: transparent !important;
