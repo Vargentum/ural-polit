@@ -8127,7 +8127,7 @@ a.comment-article.state-disabled:focus {
   font-size: 14px;
   line-height: 1.428571429;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 510px) {
   .flexbox .encyclopedia-section header,
   .no-flexbox .encyclopedia-section header {
     display: block;
@@ -8207,7 +8207,6 @@ a.comment-article.state-disabled:focus {
 .pagination {
   display: block;
   position: relative;
-  border-top: 1px solid #999;
   margin: 0;
   padding: 40px 15px 20px;
 }
@@ -9117,6 +9116,14 @@ html[xmlns] .slides {
   position: relative;
 /*Left article*/
 /*Right article*/
+}
+.news-section.type-expert-opinions:before,
+.news-section.type-expert-opinions:after {
+  content: " ";
+  display: table;
+}
+.news-section.type-expert-opinions:after {
+  clear: both;
 }
 .news-section.type-expert-opinions .layout-l {
   position: relative;
